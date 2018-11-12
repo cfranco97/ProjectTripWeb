@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a8b2f3e1-cf5b-44c5-b146-eb3c301d01b7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/web/css/site.css" afterPath="$PROJECT_DIR$/webtrip/frontend/web/css/site.css" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/webtrip/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/web/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+              <folding>
+                <marker date="1542040708953" expanded="true" signature="1828:1875" ph="..." />
+                <marker date="1542040708953" expanded="true" signature="2070:2181" ph="..." />
+                <marker date="1542040708953" expanded="true" signature="2098:2181" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/web/css/site.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>li</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2/base/Application.php" />
+        <option value="$PROJECT_DIR$/webtrip/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/web/css/site.css" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/webtrip/vendor/composer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/typeahead.js" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-common" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="site" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8b2f3e1-cf5b-44c5-b146-eb3c301d01b7" name="Default" comment="" />
+      <created>1542033392506</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542033392506</updated>
+      <workItem from="1542033395119" duration="5969000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5969000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2/web/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2/base/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="98" column="32" lean-forward="false" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/web/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <marker date="1542040708953" expanded="true" signature="1828:1875" ph="..." />
+            <marker date="1542040708953" expanded="true" signature="2070:2181" ph="..." />
+            <marker date="1542040708953" expanded="true" signature="2098:2181" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
