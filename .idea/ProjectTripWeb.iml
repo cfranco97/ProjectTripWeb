@@ -15,6 +15,8 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/codeception/stub" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/codeception/verify" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/conquer/excanvas" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/conquer/jvectormap" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/egulias/email-validator" />

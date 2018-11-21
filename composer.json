@@ -1,0 +1,5 @@
+{
+    "require": {
+        "conquer/jvectormap": "^1.0"
+    }
+}

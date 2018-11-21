@@ -36,17 +36,18 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Top', 'url' => ['/site/index']],
+        ['label' => 'Top', 'url' => ['/site/top']],
+        //['label' => 'FaQ', 'url' => ['/site/signup']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = ['label' => 'Trips', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Visited + Wishlist', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Profile', 'items' => [
-            ['label' => 'View Profile', 'url' => '#'],
+        $menuItems[] = ['label' => 'Trips', 'url' => ['/site/trips']];
+        $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
+        $menuItems[] = ['label' => 'Visited + Wishlist', 'url' => ['/site/wishlist']];
+        $menuItems[] = ['label' => 'Account', 'items' => [
+            ['label' => 'View Profile', 'url' => ['/site/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
         ]];
     }

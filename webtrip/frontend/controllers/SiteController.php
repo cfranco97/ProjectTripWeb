@@ -134,14 +134,43 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays about page.
+     * Displays pages.
      *
      * @return mixed
      */
-    public function actionAbout()
+    public function actionProfile()
     {
-        return $this->render('about');
+        return $this->render('profile');
     }
+
+    public function actionWishlist()
+    {
+        return $this->render('wishlist');
+    }
+
+    public function actionTop()
+    {
+        return $this->render('top');
+    }
+
+    public function actionTrips()
+    {
+        return $this->render('trips');
+    }
+
+    public function actionGallery()
+    {
+        return $this->render('gallery');
+    }
+
+    public function actionEditProfile()
+    {
+        return $this->render('editProfile');
+    }
+
+    /*public function actionGoToCountry(){
+        return $this->render('country');
+    }*/
 
     /**
      * Signs user up.
