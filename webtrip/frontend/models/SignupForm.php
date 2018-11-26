@@ -12,6 +12,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $id_country;
 
 
     /**
@@ -33,6 +34,8 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['id_country', 'exist', 'targetClass' => 'app\models\Country', 'targetAttribute' => 'id_country', 'skipOnEmpty' => true],
         ];
     }
 
@@ -50,6 +53,7 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
+        $user->id_country = $this->id_country;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         
