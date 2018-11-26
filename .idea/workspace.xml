@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8b2f3e1-cf5b-44c5-b146-eb3c301d01b7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ProjectTripWeb.iml" afterPath="$PROJECT_DIR$/.idea/ProjectTripWeb.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/User.php" afterPath="$PROJECT_DIR$/webtrip/common/models/User.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/composer.json" afterPath="$PROJECT_DIR$/webtrip/composer.json" />
-      <change beforePath="$PROJECT_DIR$/webtrip/composer.lock" afterPath="$PROJECT_DIR$/webtrip/composer.lock" />
       <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/index.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/index.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/signup.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/signup.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,9 +44,23 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="486">
+              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+              <folding>
+                <element signature="e#37#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding>
+                <element signature="e#126#147#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +110,7 @@
       <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2121">
+            <state relative-caret-position="780">
               <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
@@ -139,6 +149,7 @@
         <option value="$PROJECT_DIR$/webtrip/vendor/conquer/jvectormap/JVectorMapWidget.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/User.php" />
         <option value="$PROJECT_DIR$/webtrip/composer.json" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/signup.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/site/index.php" />
       </list>
     </option>
@@ -401,12 +412,12 @@
       <workItem from="1542639631182" duration="6334000" />
       <workItem from="1542713464174" duration="9132000" />
       <workItem from="1542969940569" duration="357000" />
-      <workItem from="1543230517863" duration="1849000" />
+      <workItem from="1543230517863" duration="2296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23989000" />
+    <option name="totallyTimeSpent" value="24436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -647,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/about.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -737,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2121">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/country.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -799,6 +795,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/common/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -809,19 +813,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        <state relative-caret-position="780">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="e#126#147#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="486">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="e#37#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
