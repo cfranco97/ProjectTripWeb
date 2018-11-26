@@ -68,6 +68,8 @@
       <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/webtrip/vendor/conquer/excanvas" />
       <path value="$PROJECT_DIR$/webtrip/vendor/conquer/jvectormap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

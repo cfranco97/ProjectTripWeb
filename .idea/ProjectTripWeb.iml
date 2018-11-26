@@ -23,6 +23,8 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/phar-io/version" />
