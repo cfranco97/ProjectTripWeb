@@ -64,4 +64,11 @@ class Country extends \yii\db\ActiveRecord
     {
         return $this->hasMany(User::className(), ['id_country' => 'id_country']);
     }
+    public static function getCountry($id_country) {
+        $data=\app\models\Country::find()
+            ->where(['id_continent'=>$id_country])
+            ->select(['id_country','name AS name'])->asArray()->all();
+
+        return $data;
+    }
 }

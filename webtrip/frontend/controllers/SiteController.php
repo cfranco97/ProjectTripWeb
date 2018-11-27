@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use frontend\models\CountryForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -113,6 +114,20 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionSubcat() {
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+
+            if ($parents != null) {
+                $cat_id = $parents[0];
+                $out = \app\models\Continent::getCountry($cat_id);
+                echo Json::encode(['output'=>$out, 'selected'=>'']);
+                return;
+            }
+        }
+        echo Json::encode(['output'=>'', 'selected'=>'']);
+    }
     /**
      * Displays contact page.
      *
