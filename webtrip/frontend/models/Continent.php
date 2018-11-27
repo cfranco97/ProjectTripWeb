@@ -47,13 +47,5 @@ class Continent extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Country::className(), ['id_continent' => 'id_continent']);
     }
-
-    public static function getCountry($id_country) {
-        $data=\app\models\Country::find()
-            ->where(['id_continent'=>$id_country])
-            ->select(['id_country','name'])->asArray()->all();
-
-        return $data;
-    }
 }
 

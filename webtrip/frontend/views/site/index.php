@@ -27,6 +27,7 @@ $this->title = 'TripHelper';
         ['id' =>'cat-id'])?>
     <?= $form->field($model, 'country')->widget(DepDrop::className(), [
             'options'=>['id_country'=>'name','prompt'=>'Select Country'],
+            'type' => DepDrop::TYPE_SELECT2,
             'pluginOptions'=>[
                     'depends'=>['cat-id'],
                     'placeholder'=>['Select Country'],

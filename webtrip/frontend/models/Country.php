@@ -67,7 +67,7 @@ class Country extends \yii\db\ActiveRecord
     public static function getCountry($id_country) {
         $data=\app\models\Country::find()
             ->where(['id_continent'=>$id_country])
-            ->select(['id_country','name AS name'])->asArray()->all();
+            ->select(['id_country AS id','name'])->asArray()->all();
 
         return $data;
     }

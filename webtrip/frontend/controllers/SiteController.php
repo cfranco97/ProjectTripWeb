@@ -121,7 +121,7 @@ class SiteController extends Controller
 
             if ($parents != null) {
                 $cat_id = $parents[0];
-                $out = \app\models\Continent::getCountry($cat_id);
+                $out = \app\models\Country::getCountry($cat_id);
                 echo Json::encode(['output'=>$out, 'selected'=>'']);
                 return;
             }
