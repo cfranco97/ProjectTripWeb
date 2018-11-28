@@ -7,7 +7,6 @@ use yii\widgets\DetailView;
 $this->title = $country->name;
 ?>
 
-<?= \Yii::$app->user->identity->username ?>
 <h1><?= Html::encode($this->title) ?></h1>
 <table>
     <tr>
