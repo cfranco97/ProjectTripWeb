@@ -19,7 +19,6 @@ use yii\helpers\html;
             <p>Name:</p>
             <p>Username:</p>
             <p>Email:</p>
-            <p>Gender:</p>
             <p>Country:</p>
             <br>
             <?= Html::a('Edit Profile', ['/site/edit-profile'], ['class'=>'btn btn-primary']) ?>

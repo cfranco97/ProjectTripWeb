@@ -47,7 +47,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Visited + Wishlist', 'url' => ['/site/wishlist']];
         $menuItems[] = ['label' => 'Account', 'items' => [
-            ['label' => 'View Profile', 'url' => ['/site/profile']],
+            ['label' => 'View Profile', 'url' => ['/user/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
         ]];
     }

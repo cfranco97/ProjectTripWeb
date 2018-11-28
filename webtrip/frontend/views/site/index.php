@@ -22,10 +22,10 @@ $this->title = 'TripHelper';
 ]); ?>
 </div>
 
-<h1>BAD AT GEOGRAPHY? HERE</h1>
-<div class ="Country-form">
+<h1>BAD AT GEOGRAPHY?</h1>
+    <div>
 
-    <?php $form = ActiveForm::begin(['id' => 'form-country']); ?>
+    <?php $form = ActiveForm::begin(['id' => 'country-form']); ?>
     <?= $form->field($model, 'continent')->dropDownList(ArrayHelper::map(Continent::find()->all(), 'id_continent','name'),
         ['id' =>'cat-id', 'prompt'=>'Select a Continent'])?>
     <?= $form->field($model, 'country')->widget(DepDrop::className(), [
@@ -41,13 +41,13 @@ $this->title = 'TripHelper';
         ]);
     ?>
         <div class="form-group">
-            <?= Html::submitButton('View this country', ['class' => 'btn btn-primary', 'name' => 'country-button']) ?>
+            <?= Html::submitButton('View', ['class' => 'btn btn-primary', 'name' => 'country-button']) ?>
         </div>
 
-</div>
+        <?php ActiveForm::end(); ?>
 
 
-
+    </div>
 
 </html>
 

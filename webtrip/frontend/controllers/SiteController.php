@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\Country;
 use frontend\models\CountryForm;
 use Yii;
 use yii\base\InvalidParamException;
@@ -76,7 +77,14 @@ class SiteController extends Controller
     {
         $model = new CountryForm();
 
-        return $this->render('index',['model' => $model,]);
+
+
+        if ($model->load(Yii::$app->request->post())) {
+            $country=Country::find()->where(['id_country'=>$model->country])->one();
+            return $this->render('country', ['model' => $model , 'country'=>$country]);
+        } else {
+            return $this->render('index', ['model' => $model]);
+        }
     }
 
     /**
@@ -113,6 +121,11 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    /**
+     *
+     * return all country from a continent
+     */
 
     public function actionSubcat() {
         $out = [];
@@ -151,6 +164,16 @@ class SiteController extends Controller
         }
     }
 
+
+//    protected function findModel($id)
+//    {
+//        if (($model = Country::findOne($id)) !== null) {
+//            return $model;
+//        }
+//
+//        throw new NotFoundHttpException('The requested page does not exist.');
+//    }
+
     /**
      * Displays pages.
      *
@@ -185,10 +208,6 @@ class SiteController extends Controller
     {
         return $this->render('editProfile');
     }
-
-    /*public function actionGoToCountry(){
-        return $this->render('country');
-    }*/
 
     /**
      * Signs user up.
