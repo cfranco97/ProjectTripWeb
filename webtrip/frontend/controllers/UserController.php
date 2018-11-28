@@ -1,7 +1,8 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
+use app\models\Country;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
@@ -43,6 +44,12 @@ class UserController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
 
     /**
      * Displays a single User model.
@@ -50,11 +57,27 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionProfile()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        $user= $this->findUser();
+        $country=Country::find()->where(['id_country'=>$user->id_country])->one();
+        return $this->render('profile', [
+            'user' => $user,
+            'country' => $country
         ]);
+
+    }
+
+    public function actionEdit()
+    {
+        $user= $this->findUser();
+        if ($user->load(Yii::$app->request->post()) && $user->save()) {
+            return $this->redirect(['profile','user'=>$user]);
+        }
+        else{
+        return $this->render('edit', [
+            'user' =>$user,
+        ]);}
     }
 
     /**
@@ -123,5 +146,10 @@ class UserController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function findUser(){
+        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
+        return $user;
     }
 }

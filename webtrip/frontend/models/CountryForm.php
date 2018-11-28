@@ -24,12 +24,4 @@ class CountryForm extends Model
         ];
     }
 
-    public function findCountry(){
-        $country=$this->country;
-        $countrysearch=Country::find()->where(['id_country'=>$country])->one();
-        return $countrysearch;
-    }
-
-
-
 }
