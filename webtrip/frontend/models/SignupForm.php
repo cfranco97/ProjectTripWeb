@@ -56,7 +56,13 @@ class SignupForm extends Model
         $user->id_country = $this->id_country;
         $user->setPassword($this->password);
         $user->generateAuthKey();
+        //return $user->save() ? $user : null;
+        $user->save(false);
         
-        return $user->save() ? $user : null;
+        // Asigns the user role when a new account is made.
+        $auth = \Yii::$app->authManager;
+        $authorRole = $auth->getRole('user');
+        $auth->assign($authorRole, $user->getId());
+        return $user;
     }
 }
