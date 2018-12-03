@@ -25,7 +25,6 @@ use yii\bootstrap\ActiveForm;
         ]
     ])
     ?>
-    <?php ActiveForm::end(); ?>
     <?=  $form-> field($model, 'enddate')->widget(DatePicker::classname(), [
 
         'options' => ['placeholder' => 'End date & time'],
