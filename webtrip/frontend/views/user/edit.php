@@ -31,9 +31,7 @@ $items=ArrayHelper::map(Continent::find()->all(), 'id_continent','name');
             'allowClear' => true
         ],
     ]); ?>
-
-    <?= $form->field($user, 'password_hash')->textInput(['maxlength' => true]) ?>
-    <?= Html::a('Edit password', ['site/trips']) ?>
+    <?= Html::a('Edit password', ['user/change-password','user'=>$user]) ?>
 
 
 

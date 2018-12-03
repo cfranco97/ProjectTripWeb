@@ -3,9 +3,12 @@
 namespace frontend\controllers;
 
 use app\models\Country;
+use frontend\models\ChangePassword;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
+use yii\base\InvalidParamException;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -114,6 +117,16 @@ class UserController extends Controller
         }
 
         return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+    public function actionChangePassword()
+    {
+        $model = new ChangePassword();
+        if ($model->load(Yii::$app->getRequest()->post()) && $model->change()) {
+            return $this->goHome();
+        }
+        return $this->render('change-password', [
             'model' => $model,
         ]);
     }

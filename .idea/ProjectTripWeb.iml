@@ -25,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/dependent-dropdown" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-depdrop" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/myclabs/deep-copy" />
@@ -42,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/sebastian/code-unit-reverse-lookup" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/sebastian/diff" />
@@ -56,6 +58,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/dom-crawler" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/symfony/event-dispatcher" />

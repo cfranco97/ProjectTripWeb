@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use app\models\Country;
 use common\models\User;
 use frontend\models\CountryForm;
+use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\Json;
@@ -196,14 +197,19 @@ class SiteController extends Controller
         return $this->render('top');
     }
 
-    public function actionTrips()
-    {
-        return $this->render('trips');
-    }
-
     public function actionGallery()
     {
         return $this->render('gallery');
+    }
+
+    public function actionTrips()
+    {
+        $id_country = Yii::$app->request->get('id_country');
+        $country = Country::find()->where(['id_country' => $id_country])->one();
+        $model = new TripForm();
+        return $this->render('trips',[
+        'model' => $model,
+        'country' => $country]);
     }
 
     public function actionEditProfile()

@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "conquer/jvectormap": "*",
         "kartik-v/yii2-widget-depdrop": "dev-master",
-        "kartik-v/yii2-widget-select2": "@dev"
+        "kartik-v/yii2-widget-select2": "@dev",
+        "kartik-v/yii2-widget-datepicker": ">=1.3.4@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
