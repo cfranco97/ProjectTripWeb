@@ -10,32 +10,12 @@ use yii\bootstrap\ActiveForm;
 
 
 ?>
-<div class="site-trip">
+<?php foreach ($trips as $trip) {?>
 
-    <div class="row">
-       <h1>You are planing a trip to <?= $country->name?></h1>
-        </div class ="trip-form">
-    <?php $form = ActiveForm::begin(['id' => 'trip-form']); ?>
-    <?=  $form-> field($model, 'startdate')->widget(DatePicker::classname(), [
+        <header>
+            <h4><?= $trip->id_country ?></h4>
+        </header>
+    <h4><?= $trip->startdate ?></h4>
+    <h4><?= $trip->enddate ?></h4>
 
-        'options' => ['placeholder' => 'End date & time'],
-        'pluginOptions' => [
-            'autoclose' => true,
-            'format' => 'yyyy-mm-dd',
-        ]
-    ])
-    ?>
-    <?=  $form-> field($model, 'enddate')->widget(DatePicker::classname(), [
-
-        'options' => ['placeholder' => 'End date & time'],
-        'pluginOptions' => [
-            'autoclose' => true,
-            'format' => 'yyyy-mm-dd',
-        ]
-    ])
-    ?>
-    <?php ActiveForm::end(); ?>
-
-
-    </div>
-</div>
+<?php } ?>

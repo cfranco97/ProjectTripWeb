@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use app\models\Country;
 use common\models\User;
 use frontend\models\CountryForm;
+use frontend\models\Trip;
 use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
@@ -202,14 +203,37 @@ class SiteController extends Controller
         return $this->render('gallery');
     }
 
-    public function actionTrips()
+    public function actionTrip()
     {
         $id_country = Yii::$app->request->get('id_country');
         $country = Country::find()->where(['id_country' => $id_country])->one();
         $model = new TripForm();
-        return $this->render('trips',[
+
+        if ($model->load(Yii::$app->request->post())&& $model->validate()) {
+            $model->id_country=$id_country;
+            $model->id_user=Yii::$app->user->id;
+            if ($model->Trip()) {
+
+
+                $trips = $this->findTrips();
+
+                return $this->render('trips', [
+                    'trips'=> $trips]);
+
+            }
+        }else{
+        return $this->render('newtrip',[
         'model' => $model,
         'country' => $country]);
+        }
+        $this->refresh();
+    }
+
+    public function actionMytrips()
+    {
+        $trips = $this->findTrips();
+        return $this->render('trips', [
+            'trips'=> $trips]);
     }
 
     public function actionEditProfile()
@@ -287,6 +311,17 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    public function findUser(){
+        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
+        return $user;
+    }
+
+    public function findTrips(){
+        $alltrips=Trip::find()->where(['id_user' =>  Yii::$app->user->id])->all();
+        return $alltrips;
+
     }
     protected function findModel($id)
     {

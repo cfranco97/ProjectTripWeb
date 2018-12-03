@@ -1,24 +1,44 @@
 <?php
 
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model \common\models\LoginForm */
+
+use kartik\date\DatePicker;
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use yii\bootstrap\ActiveForm;
 
 
-$this->title = $country->name;
 ?>
+<div class="site-trip">
 
-<?= \Yii::$app->user->identity->username ?>
-    <h1><?= Html::encode($this->title) ?></h1>
-    <table>
-        <tr>
-            <th>Capital: <?= $country->capital?></th>
-        </tr>
-        <tr>
-            <th>Population: <?= $country->population?></th>
-        </tr>
-        <tr>
-            <th><?= $country->description?></th>
-        </tr>
-    </table>
+    <div class="row">
+        <h1>You are planing a trip to <?= $country->name?></h1>
+    </div class ="trip-form">
 
-<?= Html::a('Plan a trip to this country', ['site/trips']) ?>
+    <?php $form = ActiveForm::begin(['id' => 'trip-form']); ?>
+    <?=  $form-> field($model, 'startdate')->widget(DatePicker::classname(), [
+
+        'options' => ['placeholder' => 'End date & time'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd',
+        ]
+    ])
+    ?>
+    <?=  $form-> field($model, 'enddate')->widget(DatePicker::classname(), [
+
+        'options' => ['placeholder' => 'End date & time'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd',
+        ]
+    ])
+    ?>
+    <?= $form->field($model, 'notes')->textArea() ?>
+    <?= Html::submitButton('Ok', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
+    <?php ActiveForm::end(); ?>
+
+
+</div>
+</div>

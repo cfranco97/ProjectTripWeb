@@ -88,6 +88,10 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasOne(Country::className(), ['id_country' => 'id_country']);
     }
+    public function getTrips()
+    {
+        return $this->hasMany(User::className(), ['id' => 'id_user']);
+    }
 
 
     /**
