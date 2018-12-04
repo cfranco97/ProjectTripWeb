@@ -12,6 +12,7 @@ class ReviewForm extends Model
     public $message;
     public $id_trip;
     public $id_user;
+    public $id_country;
 
 
     /**
@@ -20,14 +21,13 @@ class ReviewForm extends Model
     public function rules()
     {
         return [
-                [['rating'], 'required'],
                 [['rating'], 'integer'],
                 [['message'], 'string', 'max' => 200],
 
         ];
     }
 
-    public function saveAjaxReview()
+    public function saveReview()
     {
         if (!$this->validate()) {
             return null;
@@ -37,6 +37,7 @@ class ReviewForm extends Model
         $review->message = $this->message;
         $review->id_trip = $this->id_trip;
         $review->id_user = $this->id_user;
+        $review->id_country = $this->id_country;
         return $review->save() ? $review : null;
     }
 

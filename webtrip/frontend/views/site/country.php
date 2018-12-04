@@ -1,13 +1,14 @@
 <?php
 
+use kartik\icons\Icon;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
 
 $this->title = $country->name;
 ?>
 
-<h1><?= Html::encode($this->title) ?></h1>
+<h1><?= Html::encode($this->title);?> </h1>
+
 <table>
     <tr>
     <th>Capital: <?= $country->capital?></th>

@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/inputmask" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/jquery" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/jquery-ui" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/punycode" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/typeahead.js" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/bower-asset/yii2-pjax" />
@@ -14,6 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/codeception/phpunit-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/codeception/stub" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/codeception/verify" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/components/flag-icon-css" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/conquer/excanvas" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/conquer/jvectormap" />
@@ -25,6 +27,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/dependent-dropdown" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-depdrop" />
@@ -76,6 +79,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/yiisoft/yii2-debug" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/yiisoft/yii2-faker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/yiisoft/yii2-gii" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/yiisoft/yii2-jui" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/yiisoft/yii2-swiftmailer" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -2,24 +2,14 @@
 namespace frontend\controllers;
 
 use app\models\Country;
-use common\models\User;
-use frontend\models\CountryForm;
+use app\models\Review;
 use frontend\models\ReviewForm;
 use frontend\models\Trip;
 use frontend\models\TripForm;
 use Yii;
-use yii\base\InvalidParamException;
-use yii\helpers\Json;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
-use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -105,17 +95,47 @@ class TripController extends Controller
             'trips'=> $trips]);
     }
 
-    public function actionTripInformation(){
+    public function actionTripInformation()
+    {
         $id_trip = Yii::$app->request->get('id_trip');
-        $trip=Trip::find()->where(['id_trip' =>$id_trip])->one();
+        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
+        $model = Review::find()->where(['id_trip' => $id_trip])->one();
+        if ($model != null) {
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->render('view-information', [
+                    'model' => $model,
+                    'trip' => $trip]);
+            } else {
+                return $this->render('view-information', [
+                    'model' => $model,
+                    'trip' => $trip]);
+            }
+        } else {
+            $model = new ReviewForm();
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+                $model->id_user = Yii::$app->user->id;
+                $model->id_trip = $id_trip;
+                $model->id_country = $trip->id_country;
+                if ($model->saveReview()) {
 
-        $model = new TripForm();
+                    return $this->render('view-information', [
+                        'trip' => $trip,
+                        'model' => $model
+                    ]);
+                }
+            } else {
 
-        return $this->render('view-information',[
-            'trip' => $trip,
-            'model' => $model
-        ]);
+                return $this->render('view-information', [
+                    'trip' => $trip,
+                    'model' => $model
+                ]);
+            }
+        }
+
     }
+
+
+
 
     public function actionDelete(){
         $id_trip = Yii::$app->request->get('id_trip');

@@ -77,6 +77,10 @@
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-rating" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/components/flag-icon-css" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

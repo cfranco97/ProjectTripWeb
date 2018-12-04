@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 ?>
 
 <div class="container">
-    <div>
+    <div class="col-lg-6" >
     <h1><?= $trip->country->name?></h1>
     <p>You go on <?= $trip->startdate?></p>
     <p>Coming back on <?= $trip->enddate?></p>
@@ -26,15 +26,16 @@ use yii\bootstrap\ActiveForm;
 ]) ?>
     </p>
     </div>
-    <div>
+    <div class="col-lg-6" >
         <?php $form = ActiveForm::begin(['id' => 'rating-form']); ?>
-        <?=  $form->field($model, 'rating')->widget(StarRating::classname(), [
-            'pluginOptions' => ['step' => 0.1]
+        <?= $form->field($model, 'rating')->widget(StarRating::classname(), [
+            'pluginOptions' => ['step' => 1]
         ]);
         ?>
         <?= $form->field($model, 'message')->textArea() ?>
-        <?= Html::submitButton('Ok', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
+        <?= Html::submitButton('Send your review', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
         <?php ActiveForm::end(); ?>
+        <small>You can edit your review anytime</small>
 
     </div>
 

@@ -12,6 +12,7 @@ use Yii;
  * @property string $message
  * @property int $id_user
  * @property int $id_trip
+ * @property int $id_country
  */
 class Review extends \yii\db\ActiveRecord
 {
@@ -30,7 +31,7 @@ class Review extends \yii\db\ActiveRecord
     {
         return [
             [['rating'], 'required'],
-            [['rating', 'id_user', 'id_trip'], 'integer'],
+            [['rating', 'id_user', 'id_trip','id_country'], 'integer'],
             [['message'], 'string', 'max' => 200],
         ];
     }
@@ -46,6 +47,7 @@ class Review extends \yii\db\ActiveRecord
             'message' => 'Message',
             'id_user' => 'Id User',
             'id_trip' => 'Id Trip',
+            'id_country' => 'Id Country',
         ];
     }
 }
