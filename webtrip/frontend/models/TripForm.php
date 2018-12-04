@@ -37,7 +37,7 @@ class TripForm extends Model
         ];
     }
 
-    public function Trip()
+    public function saveTrip()
     {
         if (!$this->validate()) {
             return null;

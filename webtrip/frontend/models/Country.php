@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use frontend\models\Trip;
 use Yii;
 
 /**

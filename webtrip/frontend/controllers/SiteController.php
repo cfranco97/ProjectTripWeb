@@ -203,38 +203,43 @@ class SiteController extends Controller
         return $this->render('gallery');
     }
 
-    public function actionTrip()
-    {
-        $id_country = Yii::$app->request->get('id_country');
-        $country = Country::find()->where(['id_country' => $id_country])->one();
-        $model = new TripForm();
-
-        if ($model->load(Yii::$app->request->post())&& $model->validate()) {
-            $model->id_country=$id_country;
-            $model->id_user=Yii::$app->user->id;
-            if ($model->Trip()) {
-
-
-                $trips = $this->findTrips();
-
-                return $this->render('trips', [
-                    'trips'=> $trips]);
-
-            }
-        }else{
-        return $this->render('newtrip',[
-        'model' => $model,
-        'country' => $country]);
-        }
-        $this->refresh();
-    }
-
-    public function actionMytrips()
-    {
-        $trips = $this->findTrips();
-        return $this->render('trips', [
-            'trips'=> $trips]);
-    }
+//    public function actionTrip()
+//    {
+//        $id_country = Yii::$app->request->get('id_country');
+//        $country = Country::find()->where(['id_country' => $id_country])->one();
+//        $model = new TripForm();
+//
+//        if ($model->load(Yii::$app->request->post())&& $model->validate()) {
+//            $model->id_country=$id_country;
+//            $model->id_user=Yii::$app->user->id;
+//            if ($model->Trip()) {
+//
+//
+//
+//                $trips = $this->findTrips();
+//
+//
+//                return $this->render('trips', [
+//                    'trips'=> $trips
+//
+//                    ]);
+//
+//
+//            }
+//            return $this->refresh();
+//        }else{
+//        return $this->render('newtrip',[
+//        'model' => $model,
+//        'country' => $country]);
+//        }
+//    }
+//
+//    public function actionMytrips()
+//    {
+//        $trips = $this->findTrips();
+//        return $this->render('trips', [
+//            'trips'=> $trips]);
+//    }
 
     public function actionEditProfile()
     {

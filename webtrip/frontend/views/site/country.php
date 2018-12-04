@@ -20,5 +20,5 @@ $this->title = $country->name;
     </tr>
 </table>
 <?php $id_country=$country->id_country?>
-<?= Html::a('Plan a trip to this country', ['trip', 'id_country' => $id_country]) ?>
+<?= Html::a('Plan a trip to this country', ['trip/trip', 'id_country' => $id_country]) ?>
 

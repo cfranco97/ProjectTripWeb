@@ -2,6 +2,8 @@
 
 namespace frontend\models;
 
+use app\models\Country;
+use common\models\User;
 use Yii;
 
 /**

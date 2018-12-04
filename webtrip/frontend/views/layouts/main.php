@@ -43,7 +43,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = ['label' => 'Trips', 'url' => ['/site/mytrips']];
+        $menuItems[] = ['label' => 'Trips', 'url' => ['/trip/mytrips']];
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Visited + Wishlist', 'url' => ['/site/wishlist']];
         $menuItems[] = ['label' => 'Account', 'items' => [
