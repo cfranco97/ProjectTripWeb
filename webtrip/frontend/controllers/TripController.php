@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use app\models\Country;
 use common\models\User;
 use frontend\models\CountryForm;
+use frontend\models\ReviewForm;
 use frontend\models\Trip;
 use frontend\models\TripForm;
 use Yii;
@@ -107,14 +108,19 @@ class TripController extends Controller
     public function actionTripInformation(){
         $id_trip = Yii::$app->request->get('id_trip');
         $trip=Trip::find()->where(['id_trip' =>$id_trip])->one();
+
+        $model = new TripForm();
+
         return $this->render('view-information',[
-            'trip' => $trip]);
+            'trip' => $trip,
+            'model' => $model
+        ]);
     }
 
     public function actionDelete(){
         $id_trip = Yii::$app->request->get('id_trip');
         Trip::find()->where(['id_trip' =>$id_trip])->one()->delete();
-        return $this->render('index');
+        return $this->goHome();
     }
 
     public function findTrips(){

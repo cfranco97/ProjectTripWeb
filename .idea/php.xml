@@ -75,6 +75,8 @@
       <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/inputmask" />
       <path value="$PROJECT_DIR$/webtrip/vendor/composer" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-rating" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
