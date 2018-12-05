@@ -76,7 +76,7 @@ class TripController extends Controller
         $model->id_user=Yii::$app->user->id;
         if ($model->saveTrip()) {
 
-            $trips = $this->findTrips();
+            $trips = $this->findTripsByUser();
 
             return $this->redirect(['mytrips','trips'=>$trips]);
             }
@@ -90,7 +90,7 @@ class TripController extends Controller
 
     public function actionMytrips()
     {
-        $trips = $this->findTrips();
+        $trips = $this->findTripsByUser();
         return $this->render('index', [
             'trips'=> $trips]);
     }
@@ -134,6 +134,21 @@ class TripController extends Controller
 
     }
 
+    public function actionEdit()
+    {
+        $id_trip = Yii::$app->request->get('id_trip');
+        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
+        $country=Country::find()->where(['id_country'=>$trip->id_country])->one();
+        if ($trip->load(Yii::$app->request->post()) && $trip->save()) {
+            return $this->redirect(['trip-information','id_trip'=>$id_trip]);
+        }
+        else{
+            return $this->render('edit', [
+                'trip' =>$trip,
+                'country' =>$country,
+            ]);}
+    }
+
 
 
 
@@ -143,9 +158,11 @@ class TripController extends Controller
         return $this->goHome();
     }
 
-    public function findTrips(){
+    public function findTripsByUser(){
         $alltrips=Trip::find()->where(['id_user' =>  Yii::$app->user->id])->all();
         return $alltrips;
 
     }
+
+
 }

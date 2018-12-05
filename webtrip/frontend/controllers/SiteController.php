@@ -8,6 +8,7 @@ use frontend\models\Trip;
 use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -193,10 +194,6 @@ class SiteController extends Controller
         return $this->render('wishlist');
     }
 
-    public function actionTop()
-    {
-        return $this->render('top');
-    }
 
     public function actionGallery()
     {
@@ -328,6 +325,26 @@ class SiteController extends Controller
         return $alltrips;
 
     }
+
+    public function actionTop(){
+
+
+        $query=Country::find()
+            ->select(['{{country}}.name','COUNT({{trip}}.id_trip)'])
+            ->joinWith('trips')
+            ->groupBy('country.id_country')
+            ->orderBy(['trip.id_trip'=> SORT_DESC])
+            ->limit(10)->createCommand()->queryAll();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' =>  $query,
+        ]);
+        return $this->render('top', [
+            'dataProvider' => $dataProvider,
+        ]);
+
+    }
+
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {

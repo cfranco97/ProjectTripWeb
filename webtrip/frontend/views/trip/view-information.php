@@ -16,14 +16,17 @@ use yii\bootstrap\ActiveForm;
     <h3>What you are going to do</h3>
     <p><?= $trip->notes?></p>
 
+
     <p>
-    <?= Html::a('Delete this Trip',['delete','id_trip'=>$trip->id_trip],[
+        <?= Html::a('Edit Profile', ['edit','id_trip'=>$trip->id_trip], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete this Trip',['delete','id_trip'=>$trip->id_trip],[
             'class'=>'btn btn-danger',
             'data'=>[
                     'confirm'=>'Are you sure you want to delete this?',
                     'method'=>'post',
                     ]
-]) ?>
+        ])
+        ?>
     </p>
     </div>
     <div class="col-lg-6" >
