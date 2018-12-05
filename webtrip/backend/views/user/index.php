@@ -35,8 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at',
             'updated_at',
             'id_country',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            //se o user for de tipo God, pode o butão DELETE e apagar users registados.
+            ['class' => 'yii\grid\ActionColumn', 'visibleButtons' => ['delete' => Yii::$app->user->can('god')]],
         ],
     ]); ?>
 </div>

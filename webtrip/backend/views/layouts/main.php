@@ -53,6 +53,17 @@ AppAsset::register($this);
             . Html::endForm()
             . '</li>';
     }
+    elseif(Yii::$app->user->can('god')) {
+        $menuItems[] = ['label' => 'Manage Users', 'url' => ['/user/index']];
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>';
+    }
     else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')

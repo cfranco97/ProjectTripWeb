@@ -30,15 +30,22 @@ class UserController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','view','create','update','delete'],
+                'only' => ['index','view','create','update', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['index','view','create','update','delete'],
+                        'actions' => ['index','view','create','update'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
+                    [
+                        'actions' => ['index','view','create','update','delete'],
+                        'allow' => true,
+                        'roles' => ['god'],
+                    ],
                 ],
             ],
+
+
         ];
     }
 
@@ -125,11 +132,12 @@ class UserController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
-        if (\Yii::$app->user->can('admin')) {
-            $this->findModel($id)->delete();
+    {    //se o user tiver permisões de admin pode apagar o user com o id selecionado.
+        if (\Yii::$app->user->can('god'))
+        {
+                $this->findModel($id)->delete();
 
-            return $this->redirect(['index']);
+                return $this->redirect(['index']);
         }
     }
 
