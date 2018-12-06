@@ -31,6 +31,8 @@ class TripForm extends Model
             ['notes', 'required'],
             ['notes', 'string'],
 
+            ['enddate', 'compare', 'compareAttribute' => 'startdate', 'operator' => '>'],
+
 
 
 

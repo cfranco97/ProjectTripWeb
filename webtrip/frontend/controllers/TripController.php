@@ -81,7 +81,7 @@ class TripController extends Controller
         $model->id_user=Yii::$app->user->id;
         if ($model->saveTrip()) {
 
-            $trips = $this->findTripsByUser();
+            $trips = $this->findTripsDoneByUser();
 
             return $this->redirect(['mytrips','trips'=>$trips]);
             }
@@ -95,9 +95,12 @@ class TripController extends Controller
 
     public function actionMytrips()
     {
-        $trips = $this->findTripsByUser();
+        $todoTrips = $this->findTripToDoByUser();
+        $doneTrips = $this->findTripsDoneByUser();
         return $this->render('index', [
-            'trips'=> $trips]);
+            'doneTrips'=> $doneTrips,
+            'todoTrips'=> $todoTrips,
+        ]);
     }
 
     public function actionTripInformation()
@@ -163,10 +166,17 @@ class TripController extends Controller
         return $this->goHome();
     }
 
-    public function findTripsByUser(){
-        $alltrips=Trip::find()->where(['id_user' =>  Yii::$app->user->id])->all();
-        return $alltrips;
+    public function findTripsDoneByUser(){
+        $today = date('Y-m-d');
+        $doneTrips=Trip::find()->where(['<','enddate',$today])->orderBy('startdate DESC')->all();
+        return $doneTrips;
 
+    }
+
+    public function findTripToDoByUser(){
+        $today = date('Y-m-d');
+        $todoTrips=Trip::find()->where(['>=','enddate',$today])->orderBy('enddate ASC')->all();
+        return $todoTrips;
     }
 
 
