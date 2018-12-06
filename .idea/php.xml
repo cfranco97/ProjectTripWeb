@@ -81,6 +81,8 @@
       <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery-ui" />
       <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-jui" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-fileinput" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

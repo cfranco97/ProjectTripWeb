@@ -25,12 +25,14 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/dependent-dropdown" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-depdrop" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-rating" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/myclabs/deep-copy" />
