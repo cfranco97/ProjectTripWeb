@@ -14,20 +14,60 @@ use yii\widgets\DetailView;
 
     <div class="col-lg-6">
         <h2>Countries</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Position</th>
+                <th>Country</th>
+                <th>Number of visits</th>
+            </tr>
+            </thead>
+            <tbody>
 
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-                'name',
-                'id_trip',
-                //['class' => 'yii\grid\ActionColumn'],
-            ],
-        ]); ?>
+        <?php
+        $x=0; ?><?php
+            foreach ($query as $row) { ?>
+                <tr>
+               <?php $x++; ?>
+                    <td><?php echo $x ?></td>
+                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->numero ?></td>
+
+        <br>
+
+            <?php } ?>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="col-lg-6">
         <h2>Continent</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Position</th>
+                <th>Country</th>
+                <th>Average rating</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php
+            $x=0; ?><?php
+            foreach ($query2 as $row) { ?>
+            <tr>
+                <?php $x++; ?>
+                <td><?php echo $x ?></td>
+                <td><?php echo $row->name; ?></td>
+                <td><?php echo $row->averagerating ?></td>
+
+                <br>
+
+                <?php } ?>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

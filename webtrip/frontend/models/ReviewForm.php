@@ -21,7 +21,7 @@ class ReviewForm extends Model
     public function rules()
     {
         return [
-                [['rating'], 'integer'],
+                [['rating'], 'double'],
                 [['message'], 'string', 'max' => 200],
 
         ];

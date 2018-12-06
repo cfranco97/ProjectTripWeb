@@ -32,7 +32,7 @@ use yii\bootstrap\ActiveForm;
     <div class="col-lg-6" >
         <?php $form = ActiveForm::begin(['id' => 'rating-form']); ?>
         <?= $form->field($model, 'rating')->widget(StarRating::classname(), [
-            'pluginOptions' => ['step' => 1]
+            'pluginOptions' => ['step' => 0,5]
         ]);
         ?>
         <?= $form->field($model, 'message')->textArea() ?>

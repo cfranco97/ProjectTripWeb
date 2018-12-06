@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "review".
  *
  * @property int $id_review
- * @property int $rating
+ * @property double $rating
  * @property string $message
  * @property int $id_user
  * @property int $id_trip
@@ -19,6 +19,8 @@ class Review extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
+    public $averagerating;
     public static function tableName()
     {
         return 'review';
@@ -31,7 +33,8 @@ class Review extends \yii\db\ActiveRecord
     {
         return [
             [['rating'], 'required'],
-            [['rating', 'id_user', 'id_trip','id_country'], 'integer'],
+            [['id_user', 'id_trip','id_country'], 'integer'],
+            [['rating'], 'double'],
             [['message'], 'string', 'max' => 200],
         ];
     }

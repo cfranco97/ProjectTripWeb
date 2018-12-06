@@ -329,18 +329,28 @@ class SiteController extends Controller
     public function actionTop(){
 
 
-        $query=Country::find()
-            ->select(['{{country}}.name','COUNT({{trip}}.id_trip)'])
-            ->joinWith('trips')
-            ->groupBy('country.id_country')
-            ->orderBy(['trip.id_trip'=> SORT_DESC])
-            ->limit(10)->createCommand()->queryAll();
+        $query=Country::findBySql("SELECT country.name,COUNT(trip.id_trip) AS numero FROM trip
+LEFT JOIN country ON trip.id_country = country.id_country
+GROUP BY name ORDER BY numero DESC    ")->all();
 
-        $dataProvider = new ActiveDataProvider([
-            'query' =>  $query,
-        ]);
+        $query2=Country::findBySql("SELECT country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
+LEFT JOIN country ON review.id_country = country.id_country
+GROUP BY name
+ORDER BY averagerating desc")->all();
+
+
+//            ->select(['{{country}}.name','COUNT({{trip}}.id_trip)'])
+//            ->joinWith('trips')
+//            ->groupBy('country.id_country')
+//            ->orderBy(['trip.id_trip'=> SORT_DESC])
+//            ->limit(10)->all();
+
+//        $dataProvider = new ActiveDataProvider([
+//            'query' =>  $query,
+//        ]);
         return $this->render('top', [
-            'dataProvider' => $dataProvider,
+            'query' => $query,
+            'query2' =>$query2,
         ]);
 
     }
