@@ -19,17 +19,17 @@ use app\models\Country;
         <div class="col-lg-5" >
 
 
-            <p>Username: <?= $user->username?></p>
-            <p>Email: <?= $user->email?></p>
-            <p>Country: <?= $country->name?></p>
+            <p><b>Username: </b><?= $user->username?></p>
+            <p><b>Email: </b><?= $user->email?></p>
+            <p><b>Country: </b> <?= $country->name?></p>
             <br>
             <?= Html::a('Edit Profile', ['edit', 'user'=>$user], ['class' => 'btn btn-primary']) ?>
 
         </div>
 
         <div class="col-lg-5" >
-            <p>X% World Visited</p>
-            <h3>X Countries Visited</h3>
+            <h3><b>X% World Visited</b></h3>
+            <h3><b>X Countries Visited</b></h3>
             <br>
             <?= Html::a('Gallery', ['/site/gallery'], ['class'=>'btn btn-primary']) ?>
             <br>

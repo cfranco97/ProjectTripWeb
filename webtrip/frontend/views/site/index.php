@@ -14,17 +14,19 @@ use yii\widgets\ActiveForm;
 $this->title = 'TripHelper';
 ?>
 
-<html>
-
 <div>
+
+<div class="col-lg-9">
 <?= JVectorMapWidget::widget([
     'map'=>'world_mill_en',
 ]); ?>
 </div>
 
-<h1>BAD AT GEOGRAPHY?</h1>
+<div class="col-lg-3"
+    <h1><b>BAD AT GEOGRAPHY?</b></h1>
+    <br>
+    <br>
     <div>
-    <?php echo date('Y-m-d')?>
     <?php $form = ActiveForm::begin(['id' => 'country-form']); ?>
     <?= $form->field($model, 'continent')->dropDownList(ArrayHelper::map(Continent::find()->all(), 'id_continent','name'),
         ['id' =>'cat-id', 'prompt'=>'Select a Continent'])?>
@@ -48,7 +50,7 @@ $this->title = 'TripHelper';
 
 
     </div>
-
+</div>
 </html>
 
 

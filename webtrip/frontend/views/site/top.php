@@ -12,7 +12,7 @@ use yii\widgets\DetailView;
 
 <div class="container">
 
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <h2>Countries</h2>
         <table class="table">
             <thead>
@@ -41,7 +41,8 @@ use yii\widgets\DetailView;
         </table>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-5">
         <h2>Continent</h2>
         <table class="table">
             <thead>
