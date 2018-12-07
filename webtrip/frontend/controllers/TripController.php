@@ -110,6 +110,7 @@ class TripController extends Controller
         $model = Review::find()->where(['id_trip' => $id_trip])->one();
         if ($model != null) {
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                Yii::$app->session->setFlash('success', "Review Updated");
                 return $this->render('view-information', [
                     'model' => $model,
                     'trip' => $trip]);
@@ -125,6 +126,7 @@ class TripController extends Controller
                 $model->id_trip = $id_trip;
                 $model->id_country = $trip->id_country;
                 if ($model->saveReview()) {
+                    Yii::$app->session->setFlash('success', "Review sent");
 
                     return $this->render('view-information', [
                         'trip' => $trip,
