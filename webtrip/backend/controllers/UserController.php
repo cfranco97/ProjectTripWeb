@@ -93,7 +93,11 @@ class UserController extends Controller
             $model = new User();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+                Yii::$app->session->setFlash('success', "User created with success!");
+
                 return $this->redirect(['view', 'id' => $model->id]);
+
             }
 
             return $this->render('create', [
@@ -115,6 +119,7 @@ class UserController extends Controller
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                Yii::$app->session->setFlash('success', "User updated with success!");
                 return $this->redirect(['view', 'id' => $model->id]);
             }
 
@@ -136,7 +141,7 @@ class UserController extends Controller
         if (\Yii::$app->user->can('god'))
         {
                 $this->findModel($id)->delete();
-
+                Yii::$app->session->setFlash('success', "User deleted with success!");
                 return $this->redirect(['index']);
         }
     }
