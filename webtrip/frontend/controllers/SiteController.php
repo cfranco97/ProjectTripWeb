@@ -1,10 +1,11 @@
 <?php
 namespace frontend\controllers;
 
-use app\models\Country;
+
+use common\models\Country;
 use common\models\User;
 use frontend\models\CountryForm;
-use frontend\models\Trip;
+use common\models\Trip;
 use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
@@ -17,7 +18,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
+use common\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\NotFoundHttpException;
 
@@ -139,7 +140,7 @@ class SiteController extends Controller
 
             if ($parents != null) {
                 $cat_id = $parents[0];
-                $out = \app\models\Country::getCountry($cat_id);
+                $out = Country::getCountry($cat_id);
                 echo Json::encode(['output'=>$out, 'selected'=>'']);
                 return;
             }
@@ -329,8 +330,8 @@ class SiteController extends Controller
     public function actionTop(){
 
 
-        $query=Country::findBySql("SELECT country.name,COUNT(trip.id_trip) AS numero FROM trip
-LEFT JOIN country ON trip.id_country = country.id_country
+        $query=Country::findBySql("SELECT country.name,COUNT(review.id_trip) AS numero FROM review
+LEFT JOIN country ON review.id_country = country.id_country
 GROUP BY name ORDER BY numero DESC    ")->all();
 
         $query2=Country::findBySql("SELECT country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
@@ -339,10 +340,10 @@ GROUP BY name
 ORDER BY averagerating desc")->all();
 
 
-//            ->select(['{{country}}.name','COUNT({{trip}}.id_trip)'])
+//            ->select(['{{country}}.name','COUNT({{review}}.id_trip)'])
 //            ->joinWith('trips')
 //            ->groupBy('country.id_country')
-//            ->orderBy(['trip.id_trip'=> SORT_DESC])
+//            ->orderBy(['review.id_trip'=> SORT_DESC])
 //            ->limit(10)->all();
 
 //        $dataProvider = new ActiveDataProvider([

@@ -2,10 +2,10 @@
 
 namespace frontend\controllers;
 
-use app\models\Country;
+use common\models\Country;
+use common\models\User;
 use frontend\models\ChangePassword;
 use Yii;
-use app\models\User;
 use app\models\UserSearch;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -63,10 +63,8 @@ class UserController extends Controller
     public function actionProfile()
     {
         $user= $this->findUser();
-        $country=Country::find()->where(['id_country'=>$user->id_country])->one();
         return $this->render('profile', [
             'user' => $user,
-            'country' => $country
         ]);
 
     }

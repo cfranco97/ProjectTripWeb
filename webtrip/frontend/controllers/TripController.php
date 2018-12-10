@@ -1,10 +1,11 @@
 <?php
 namespace frontend\controllers;
 
-use app\models\Country;
-use app\models\Review;
+
+use common\models\Country;
+use common\models\Review;
+use common\models\Trip;
 use frontend\models\ReviewForm;
-use frontend\models\Trip;
 use frontend\models\TripForm;
 use Yii;
 use yii\web\Controller;
@@ -24,7 +25,7 @@ class TripController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','trip-information','my-trips','trip','edit','delete'],
+                'only' => ['logout', 'signup','review-information','my-trips','review','edit','delete'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -32,12 +33,12 @@ class TripController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','trip-information','my-trips','trip','edit','delete'],
+                        'actions' => ['logout','review-information','my-trips','review','edit','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['trip-information','my-trips','trip','edit','delete'],
+                        'actions' => ['review-information','my-trips','review','edit','delete'],
                         'allow' => false,
                         'roles' => ['?'],
                     ],
@@ -113,11 +114,11 @@ class TripController extends Controller
                 Yii::$app->session->setFlash('success', "Review Updated");
                 return $this->render('view-information', [
                     'model' => $model,
-                    'trip' => $trip]);
+                    'review' => $trip]);
             } else {
                 return $this->render('view-information', [
                     'model' => $model,
-                    'trip' => $trip]);
+                    'review' => $trip]);
             }
         } else {
             $model = new ReviewForm();
@@ -129,14 +130,14 @@ class TripController extends Controller
                     Yii::$app->session->setFlash('success', "Review sent");
 
                     return $this->render('view-information', [
-                        'trip' => $trip,
+                        'review' => $trip,
                         'model' => $model
                     ]);
                 }
             } else {
 
                 return $this->render('view-information', [
-                    'trip' => $trip,
+                    'review' => $trip,
                     'model' => $model
                 ]);
             }
@@ -150,11 +151,11 @@ class TripController extends Controller
         $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
         $country=Country::find()->where(['id_country'=>$trip->id_country])->one();
         if ($trip->load(Yii::$app->request->post()) && $trip->save()) {
-            return $this->redirect(['trip-information','id_trip'=>$id_trip]);
+            return $this->redirect(['review-information','id_trip'=>$id_trip]);
         }
         else{
             return $this->render('edit', [
-                'trip' =>$trip,
+                'review' =>$trip,
                 'country' =>$country,
             ]);}
     }

@@ -1,8 +1,7 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
-use frontend\models\Trip;
 use Yii;
 
 /**
@@ -72,7 +71,7 @@ class Country extends \yii\db\ActiveRecord
         return $this->hasMany(Trip::className(), ['id_country' => 'id_country']);
     }
     public static function getCountry($id_country) {
-        $data=\app\models\Country::find()
+        $data=Country::find()
             ->where(['id_continent'=>$id_country])
             ->select(['id_country AS id','name'])->asArray()->all();
 

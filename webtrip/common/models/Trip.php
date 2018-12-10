@@ -1,13 +1,13 @@
 <?php
 
-namespace frontend\models;
+namespace common\models;
 
-use app\models\Country;
+use common\models\Country;
 use common\models\User;
 use Yii;
 
 /**
- * This is the model class for table "trip".
+ * This is the model class for table "review".
  *
  * @property int $id_trip
  * @property int $id_country
@@ -60,6 +60,11 @@ class Trip extends \yii\db\ActiveRecord
 
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id_user' => 'id']);
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
+    }
+
+    public function getReviews()
+    {
+        return $this->hasMany(Review::className(), ['id_review' => 'id_review']);
     }
 }

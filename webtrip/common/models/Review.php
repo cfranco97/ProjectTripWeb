@@ -1,7 +1,8 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
+use common\models\Trip;
 use Yii;
 
 /**
@@ -52,5 +53,13 @@ class Review extends \yii\db\ActiveRecord
             'id_trip' => 'Id Trip',
             'id_country' => 'Id Country',
         ];
+    }
+    public function getTrip()
+    {
+        return $this->hasOne(Trip::className(), ['id_trip' => 'id_trip']);
+    }
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 }

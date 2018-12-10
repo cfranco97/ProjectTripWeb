@@ -36,7 +36,7 @@ use yii\bootstrap\ActiveForm;
         ]);
         ?>
         <?= $form->field($model, 'message')->textArea() ?>
-        <?= Html::submitButton('Send your review', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
+        <?= Html::submitButton('Send your review', ['class' => 'btn btn-primary', 'name' => 'review-button']) ?>
         <?php ActiveForm::end(); ?>
         <small>You can edit your review anytime</small>
 

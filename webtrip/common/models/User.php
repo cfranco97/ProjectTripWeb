@@ -1,7 +1,7 @@
 <?php
 namespace common\models;
 
-use app\models\Country;
+use common\models\Country;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -26,6 +26,7 @@ use yii\web\IdentityInterface;
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
+    const STATUS_BLOCK = 5;
     const STATUS_ACTIVE = 10;
 
 
@@ -53,23 +54,51 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-//            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-//            [['status', 'created_at', 'updated_at', 'id_country'], 'integer'],
-//            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-//            [['auth_key'], 'string', 'max' => 32],
-//            [['username'], 'unique'],
-//            [['email'], 'unique'],
-//            [['password_reset_token'], 'unique'],
+
+            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['status', 'created_at', 'updated_at', 'id_country'], 'integer'],
+            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['auth_key'], 'string', 'max' => 32],
+            [['username'], 'unique'],
+            [['email'], 'unique'],
+            [['password_reset_token'], 'unique'],
 
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Username',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password',
+            'password_reset_token' => 'Password Reset Token',
+            'email' => 'Email',
+            'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'id_country' => 'Country',
+        ];
+
+    }
+
 
     public function getCountry()
     {
         return $this->hasOne(Country::className(), ['id_country' => 'id_country']);
+    }
+
+    public function getTrips()
+    {
+        return $this->hasMany(Trip::className(), ['id' => 'id_user']);
+    }
+
+    public function getReviews()
+    {
+        return $this->hasMany(Review::className(), ['id' => 'id_user']);
     }
 
     /**

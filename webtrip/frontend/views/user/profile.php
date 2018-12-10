@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use app\models\User;
-use app\models\Country;
+use common\models\Country;
 
 ?>
 
@@ -21,7 +21,7 @@ use app\models\Country;
 
             <p>Username: <?= $user->username?></p>
             <p>Email: <?= $user->email?></p>
-            <p>Country: <?= $country->name?></p>
+            <p>Country: <?= $user->country->name?></p>
             <br>
             <?= Html::a('Edit Profile', ['edit', 'user'=>$user], ['class' => 'btn btn-primary']) ?>
 

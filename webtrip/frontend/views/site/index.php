@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use app\models\Continent;
+use common\models\Continent;
 use kartik\depdrop\DepDrop;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
