@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use app\models\User;
-use app\models\Country;
+use common\models\User;
+use common\models\Country;
 
 ?>
 
