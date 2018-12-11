@@ -22,15 +22,17 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' =>['index','edit','block'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['index','edit','block'],
                         'allow' => true,
+                        'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['logout', 'index','edit','block'],
+                        'actions' => ['index','edit'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],
