@@ -83,6 +83,8 @@
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput" />
       <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-fileinput" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-grid" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

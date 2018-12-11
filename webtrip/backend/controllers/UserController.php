@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use common\models\User;
+use common\models\UserSearch;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -61,6 +62,13 @@ class UserController extends Controller
      */
     public function actionIndex()
     {
+
+//        $searchModel = new UserSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
 
         $users = $this->allUsers();
         return $this->render('index', [

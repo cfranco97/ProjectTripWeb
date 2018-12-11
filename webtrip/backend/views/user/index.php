@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 
+use kartik\grid\GridView;
 use yii\helpers\Html;
 
 $this->title = 'My Yii Application';
@@ -28,3 +29,13 @@ $this->title = 'My Yii Application';
         </tr>
     <?php } ?>
 </table>
+<!---->
+<?php //echo GridView::widget([
+//    'id' => 'kv-grid-demo',
+//    'dataProvider' => $dataProvider,
+//    'filterModel' => $searchModel,
+//    'columns' => $gridColumns, // check the configuration for grid columns by clicking button above
+//    'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
+//    'headerRowOptions' => ['class' => 'kartik-sheet-style'],
+//    'filterRowOptions' => ['class' => 'kartik-sheet-style'],
+//    'pjax' => true, // pjax is set to always true for this demo?>

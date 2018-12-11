@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($country, 'name')->textInput(['autofocus' => true]) ?>
 
+            <?= $form->field($country, 'capital')?>
+
             <?= $form->field($country, 'description')->textArea() ?>
 
             <?= $form->field($country, 'cod') ?>

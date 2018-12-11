@@ -28,6 +28,8 @@
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/dependent-dropdown" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-dialog" />
+      <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-grid" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
