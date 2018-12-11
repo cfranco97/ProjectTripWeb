@@ -29,7 +29,7 @@ $this->title = 'My Yii Application';
         </tr>
     <?php } ?>
 </table>
-<!---->
+
 <?php //echo GridView::widget([
 //    'id' => 'kv-grid-demo',
 //    'dataProvider' => $dataProvider,
