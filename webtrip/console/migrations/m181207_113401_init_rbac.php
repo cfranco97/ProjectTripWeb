@@ -12,6 +12,8 @@ class m181207_113401_init_rbac extends Migration
      */
     public function safeUp()
     {
+        $auth = Yii::$app->authManager;
+
 
     }
 
