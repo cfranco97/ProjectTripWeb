@@ -1,11 +1,15 @@
 <?php
 namespace frontend\controllers;
 
-use app\models\Country;
+
+use common\models\Country;
 use common\models\User;
 use frontend\models\CountryForm;
+use common\models\Trip;
+use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -14,7 +18,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
+use common\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\NotFoundHttpException;
 
@@ -136,7 +140,7 @@ class SiteController extends Controller
 
             if ($parents != null) {
                 $cat_id = $parents[0];
-                $out = \app\models\Country::getCountry($cat_id);
+                $out = Country::getCountry($cat_id);
                 echo Json::encode(['output'=>$out, 'selected'=>'']);
                 return;
             }
@@ -191,20 +195,49 @@ class SiteController extends Controller
         return $this->render('wishlist');
     }
 
-    public function actionTop()
-    {
-        return $this->render('top');
-    }
-
-    public function actionTrips()
-    {
-        return $this->render('trips');
-    }
 
     public function actionGallery()
     {
         return $this->render('gallery');
     }
+
+//    public function actionTrip()
+//    {
+//        $id_country = Yii::$app->request->get('id_country');
+//        $country = Country::find()->where(['id_country' => $id_country])->one();
+//        $model = new TripForm();
+//
+//        if ($model->load(Yii::$app->request->post())&& $model->validate()) {
+//            $model->id_country=$id_country;
+//            $model->id_user=Yii::$app->user->id;
+//            if ($model->Trip()) {
+//
+//
+//
+//                $trips = $this->findTrips();
+//
+//
+//                return $this->render('trips', [
+//                    'trips'=> $trips
+//
+//                    ]);
+//
+//
+//            }
+//            return $this->refresh();
+//        }else{
+//        return $this->render('newtrip',[
+//        'model' => $model,
+//        'country' => $country]);
+//        }
+//    }
+//
+//    public function actionMytrips()
+//    {
+//        $trips = $this->findTrips();
+//        return $this->render('trips', [
+//            'trips'=> $trips]);
+//    }
 
     public function actionEditProfile()
     {
@@ -282,6 +315,47 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function findUser(){
+        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
+        return $user;
+    }
+
+    public function findTrips(){
+        $alltrips=Trip::find()->where(['id_user' =>  Yii::$app->user->id])->all();
+        return $alltrips;
+
+    }
+
+    public function actionTop(){
+
+
+        $query=Country::findBySql("SELECT country.name,COUNT(review.id_trip) AS numero FROM review
+LEFT JOIN country ON review.id_country = country.id_country
+GROUP BY name ORDER BY numero DESC    ")->all();
+
+        $query2=Country::findBySql("SELECT country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
+LEFT JOIN country ON review.id_country = country.id_country
+GROUP BY name
+ORDER BY averagerating desc")->all();
+
+
+//            ->select(['{{country}}.name','COUNT({{review}}.id_trip)'])
+//            ->joinWith('trips')
+//            ->groupBy('country.id_country')
+//            ->orderBy(['review.id_trip'=> SORT_DESC])
+//            ->limit(10)->all();
+
+//        $dataProvider = new ActiveDataProvider([
+//            'query' =>  $query,
+//        ]);
+        return $this->render('top', [
+            'query' => $query,
+            'query2' =>$query2,
+        ]);
+
+    }
+
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {

@@ -1,17 +1,19 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Country;
+use common\models\Trip;
 use common\models\User;
-use common\models\UserSearch;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\LoginForm;
 
 /**
  * Site controller
  */
-class UserController extends Controller
+class TripController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -21,15 +23,15 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>['index','edit','block'],
+                'only' => ['index','edit','delete'],
                 'rules' => [
                     [
-                        'actions' => ['index','edit','block'],
+                        'actions' => [ 'index','edit','delete'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['index','edit'],
+                        'actions' => [ 'index','edit'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -64,53 +66,49 @@ class UserController extends Controller
     public function actionIndex()
     {
 
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $trips = $this->allTrips();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'trips' => $trips,
+
         ]);
-//
-//        $users = $this->allUsers();
-//        return $this->render('index', [
-//            'users' => $users,
-//
-//        ]);
     }
+
+    public function actionCreate(){
+
+        $trip = new Trip();
+
+
+        if($trip->load(Yii::$app->request->post()) && $trip->save()){
+            return $this->redirect(['index']);
+        }
+
+        return $this->render('create', ['trip' => $trip]);
+    }
+
 
     public function actionEdit(){
 
-        $id= Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->load(Yii::$app->request->post()) && $user->save()) {
+        $id_trip= Yii::$app->request->get('id_trip');
+        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
+        if ($trip->load(Yii::$app->request->post()) && $trip->save()) {
             return $this->redirect(['index']);
         }
         else{
             return $this->render('edit', [
-                'user' =>$user,
+                'trip' =>$trip,
             ]);}
     }
 
-    public function actionBlock()
-    {
+    public function actionDelete(){
 
-        $id = Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->status == 10) {
-            $user->status = 0;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User Blocked");
-            return $this->redirect(['index']);
-        }
-        else{
-            $user->status=10;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User UnBlocked");
-            return $this->redirect(['index']);
-        }
+        $id_trip= Yii::$app->request->get('id_trip');
+        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
+        $trip->delete();
+        return $this->redirect(['index']);
     }
-    public function allUsers(){
-        $users = User::find()->all();
-        return $users;
+
+    public function allTrips(){
+        $trips = Trip::find()->all();
+        return $trips;
     }
 }

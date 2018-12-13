@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' =>'TripHelper',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -43,9 +43,9 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = ['label' => 'Trips', 'url' => ['/site/trips']];
+        $menuItems[] = ['label' => 'Trips', 'url' => ['/trip/mytrips']];
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
-        $menuItems[] = ['label' => 'Visited + Wishlist', 'url' => ['/site/wishlist']];
+        $menuItems[] = ['label' => 'Wishlist', 'url' => ['/site/wishlist']];
         $menuItems[] = ['label' => 'Account', 'items' => [
             ['label' => 'View Profile', 'url' => ['/user/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],

@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use app\models\Continent;
+use common\models\Continent;
 use kartik\depdrop\DepDrop;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
@@ -24,7 +24,7 @@ $this->title = 'TripHelper';
 
 <h1>BAD AT GEOGRAPHY?</h1>
     <div>
-
+    <?php echo date('Y-m-d')?>
     <?php $form = ActiveForm::begin(['id' => 'country-form']); ?>
     <?= $form->field($model, 'continent')->dropDownList(ArrayHelper::map(Continent::find()->all(), 'id_continent','name'),
         ['id' =>'cat-id', 'prompt'=>'Select a Continent'])?>

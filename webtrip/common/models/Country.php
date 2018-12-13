@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 use Yii;
 
@@ -20,6 +20,8 @@ class Country extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $numero;
+    public $averagerating;
     public static function tableName()
     {
         return 'country';
@@ -64,8 +66,12 @@ class Country extends \yii\db\ActiveRecord
     {
         return $this->hasMany(User::className(), ['id_country' => 'id_country']);
     }
+    public function getTrips()
+    {
+        return $this->hasMany(Trip::className(), ['id_country' => 'id_country']);
+    }
     public static function getCountry($id_country) {
-        $data=\app\models\Country::find()
+        $data=Country::find()
             ->where(['id_continent'=>$id_country])
             ->select(['id_country AS id','name'])->asArray()->all();
 

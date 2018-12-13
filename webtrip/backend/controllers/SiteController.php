@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\models\User;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -22,19 +23,19 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login','error'],
                         'allow' => true,
                     ],
                     [   //god ou admin users podem aceder ao index e fazer logout.
                         'actions' => ['logout', 'index'],
                         'allow' => true,
-                        'roles' => ['admin','god'],
+                        'roles' => ['superAdmin','admin'],
                     ],
-                    [ //todos os users autenticados (sem ser admin ou god) só podem fazer logout.
+                    [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
-                    ],
+                    ]
                 ],
             ],
             'verbs' => [
@@ -89,6 +90,11 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionIndexUsers(){
+
+
     }
 
     /**

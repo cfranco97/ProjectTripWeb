@@ -17,7 +17,16 @@ return [
             'class' => 'api\modules\v1\Module'
         ]
     ],
-    'components' => [        
+    'components' => [
+        'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
+        ],
+//        'response'=>[
+//
+//            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON
+//        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
@@ -41,7 +50,7 @@ return [
                     //função que desativa o plurize no link do url, vindo do vendor/yiisoft/yii2/rest/UrlRule.
                     //'pluralize' => false,
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => 'v1/country',
+                    'controller' => ['v1/country','v1/trip','v1/user','v1/review','v1/continent'],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
                     ]

@@ -1,42 +1,57 @@
 <?php
 
-use yii\helpers\Html;
-use yii\grid\GridView;
-
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\UserSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
-$this->params['breadcrumbs'][] = $this->title;
+use common\models\User;
+use kartik\grid\GridView;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+
+$this->title = 'My Yii Application';
 ?>
-<div class="user-index">
+<!--<table class="table">-->
+<!--    <tr>-->
+<!--        <th>Username</th>-->
+<!--        <th>Email</th>-->
+<!--        <th>Country</th>-->
+<!--    </tr>-->
+<!--    --><?php //foreach($users as $user){ ?>
+<!--        <tr>-->
+<!--            <td>--><?//= $user->username; ?><!--</td>-->
+<!--            <td>--><?//= $user->email; ?><!--</td>-->
+<!--            <td>--><?//= $user->country->name; ?><!--</td>-->
+<!--            <td>--><?//= Html::a("Edit",['edit', 'id' => $user->id],['class' => 'btn btn-primary']); ?>
+<!--                --><?php
+//                if($user->status==10) { ?>
+<!---->
+<!--                    <td>--><?//= Html::a( "Block",['block', 'id' => $user->id],['class' => 'btn btn-danger']); ?><!--</td>-->
+<!--               --><?php // } else {?>
+<!--                    <td>--><?//= Html::a( "Unblock",['block', 'id' => $user->id],['class' => 'btn btn-danger']); ?><!--</td>-->
+<!--            --><?php //} ?>
+<!--        </tr>-->
+<!--    --><?php //} ?>
+<!--</table>-->
+   <?php $gridColumns = [
+    [
+        'attribute' => 'username',
+        'vAlign' => 'middle',
+        'width' => '180px',
+    ],
+    [
+        'attribute' => 'email',
+        'vAlign' => 'middle',
+        'width' => '180px',
+    ],
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+] ?>
+<?php echo GridView::widget([
+    'id' => 'kv-grid-demo',
+    'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
+    'columns' => $gridColumns, // check the configuration for grid columns by clicking button above
+    'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
+    'headerRowOptions' => ['class' => 'kartik-sheet-style'],
+    'filterRowOptions' => ['class' => 'kartik-sheet-style'],
+    'pjax' => true,
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'username',
-            //'auth_key',
-            //'password_hash',
-            //'password_reset_token',
-            'email:email',
-            'status',
-            'created_at',
-            'updated_at',
-            'id_country',
-            //se o user for de tipo God, pode o butão DELETE e apagar users registados.
-            ['class' => 'yii\grid\ActionColumn', 'visibleButtons' => ['delete' => Yii::$app->user->can('god')]],
-        ],
-    ]); ?>
-</div>
+    ]); // pjax is set to always true for this demo?>

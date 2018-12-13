@@ -1,30 +1,32 @@
 <?php
+namespace api\modules\v1\models;
 
-namespace app\models;
-
+use common\models\Country;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+
 /**
- * This is the model class for table "user".
+ * User model
  *
- * @property int $id
+ * @property integer $id
  * @property string $username
- * @property string $auth_key
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
- * @property int $status
- * @property int $created_at
- * @property int $updated_at
+ * @property string $auth_key
+ * @property integer $status
+ * @property integer $created_at
+ * @property integer $updated_at
+ * @property string $password write-only password
  * @property int $id_country
  */
-
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
+    const STATUS_BLOCK = 5;
     const STATUS_ACTIVE = 10;
 
 
@@ -35,8 +37,6 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return '{{%user}}';
     }
-
-
 
     /**
      * {@inheritdoc}
@@ -55,7 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
 
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
             [['status', 'created_at', 'updated_at', 'id_country'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
@@ -84,15 +84,22 @@ class User extends ActiveRecord implements IdentityInterface
         ];
 
     }
+
+
     public function getCountry()
     {
         return $this->hasOne(Country::className(), ['id_country' => 'id_country']);
     }
+
     public function getTrips()
     {
-        return $this->hasMany(User::className(), ['id' => 'id_user']);
+        return $this->hasMany(Trip::className(), ['id' => 'id_user']);
     }
 
+    public function getReviews()
+    {
+        return $this->hasMany(Review::className(), ['id' => 'id_user']);
+    }
 
     /**
      * {@inheritdoc}
@@ -227,4 +234,3 @@ class User extends ActiveRecord implements IdentityInterface
 
 
 }
-

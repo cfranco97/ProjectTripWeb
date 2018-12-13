@@ -1,17 +1,18 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Country;
 use common\models\User;
-use common\models\UserSearch;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\LoginForm;
 
 /**
  * Site controller
  */
-class UserController extends Controller
+class CountryController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -21,15 +22,15 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>['index','edit','block'],
+                'only' => ['index','create','edit','delete'],
                 'rules' => [
                     [
-                        'actions' => ['index','edit','block'],
+                        'actions' => [ 'index','edit','create','delete'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['index','edit'],
+                        'actions' => [ 'index','edit','create'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -64,53 +65,49 @@ class UserController extends Controller
     public function actionIndex()
     {
 
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $countries = $this->allCountries();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'countries' => $countries,
+
         ]);
-//
-//        $users = $this->allUsers();
-//        return $this->render('index', [
-//            'users' => $users,
-//
-//        ]);
     }
+
+    public function actionCreate(){
+
+        $country = new Country();
+
+
+        if($country->load(Yii::$app->request->post()) && $country->save()){
+            return $this->redirect(['index']);
+        }
+
+        return $this->render('create', ['country' => $country]);
+    }
+
 
     public function actionEdit(){
 
-        $id= Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->load(Yii::$app->request->post()) && $user->save()) {
+        $id_country= Yii::$app->request->get('id_country');
+        $country = Country::find()->where(['id_country' => $id_country])->one();
+        if ($country->load(Yii::$app->request->post()) && $country->save()) {
             return $this->redirect(['index']);
         }
         else{
             return $this->render('edit', [
-                'user' =>$user,
+                'country' =>$country,
             ]);}
     }
 
-    public function actionBlock()
-    {
+    public function actionDelete(){
 
-        $id = Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->status == 10) {
-            $user->status = 0;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User Blocked");
-            return $this->redirect(['index']);
-        }
-        else{
-            $user->status=10;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User UnBlocked");
-            return $this->redirect(['index']);
-        }
+        $id_country= Yii::$app->request->get('id_country');
+        $country = Country::find()->where(['id_country' => $id_country])->one();
+        $country->delete();
+        return $this->redirect(['index']);
     }
-    public function allUsers(){
-        $users = User::find()->all();
-        return $users;
+
+    public function allCountries(){
+        $countries = Country::find()->all();
+        return $countries;
     }
 }
