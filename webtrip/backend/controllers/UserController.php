@@ -7,7 +7,6 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
 
 /**
  * Site controller
@@ -65,18 +64,18 @@ class UserController extends Controller
     public function actionIndex()
     {
 
-//        $searchModel = new UserSearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//        return $this->render('index', [
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
-//        ]);
-
-        $users = $this->allUsers();
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
-            'users' => $users,
-
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
+//
+//        $users = $this->allUsers();
+//        return $this->render('index', [
+//            'users' => $users,
+//
+//        ]);
     }
 
     public function actionEdit(){
