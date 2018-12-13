@@ -21,7 +21,8 @@ $this->title = 'My Yii Application';
             <td><?= $country->population; ?></td>
             <td><?= $country->capital; ?></td>
             <td><?= Html::a("Edit",['edit', 'id_country' => $country->id_country],['class' => 'btn btn-primary']); ?></td>
-            <td><?= Html::a( "Delete",['delete', 'id_country' =>$country->id_country],['class' => 'btn btn-danger']); ?></td>
+            <td><?= Html::a( "Delete",['delete', 'id_country' =>$country->id_country],['class' => 'btn btn-danger',
+                    'visibleButtons'=>['delete'=>Yii::$app->user->can('superAdmin')]]); ?></td>
         </tr>
     <?php } ?>
 </table>

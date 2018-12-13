@@ -2,8 +2,6 @@
 namespace frontend\models;
 
 use yii\base\Model;
-use app\models\Country;
-use app\models\Continent;
 
 class CountryForm extends Model
 {
@@ -18,6 +16,7 @@ class CountryForm extends Model
     {
         return [
 
+            [['country', 'continent'],'required'],
 
             ['country','exist'],
 

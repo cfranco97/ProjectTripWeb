@@ -22,15 +22,17 @@ class CountryController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' => ['index','create','edit','delete'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => [ 'index','edit','create','delete'],
                         'allow' => true,
+                        'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['logout', 'index','edit','block','create','delete'],
+                        'actions' => [ 'index','edit','create'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],

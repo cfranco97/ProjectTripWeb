@@ -6,7 +6,6 @@ use yii\helpers\Html;
 
 $this->title = 'My Yii Application';
 ?>
-<?= Html::a( "Create new trip",['create'],['class' => 'btn btn-primary']); ?>
     <table class="table">
         <tr>
             <th>User</th>

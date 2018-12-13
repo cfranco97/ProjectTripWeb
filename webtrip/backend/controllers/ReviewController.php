@@ -19,15 +19,17 @@ class ReviewController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' => ['index','edit','delete'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => [ 'index','edit','delete'],
                         'allow' => true,
+                        'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['logout', 'index','edit','block','create','delete'],
+                        'actions' => [ 'index','edit'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],
