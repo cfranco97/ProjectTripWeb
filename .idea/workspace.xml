@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8b2f3e1-cf5b-44c5-b146-eb3c301d01b7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/common/config/aliases.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ContinentController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ReviewController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/TripController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/UserController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/models/Continent.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/models/Review.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/models/Trip.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/webtrip/api/modules/v1/models/User.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/webtrip/backend/controllers/UserController.php" afterPath="$PROJECT_DIR$/webtrip/backend/controllers/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/backend/views/user/index.php" afterPath="$PROJECT_DIR$/webtrip/backend/views/user/index.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/config/main.php" afterPath="$PROJECT_DIR$/webtrip/common/config/main.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/frontend/models/CountryForm.php" afterPath="$PROJECT_DIR$/webtrip/frontend/models/CountryForm.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/api/config/main.php" afterPath="$PROJECT_DIR$/webtrip/api/config/main.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,20 +43,48 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtrip/backend/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
+            <state relative-caret-position="1092">
               <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="e#38#61#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/Module.php">
+      <file leaf-file-name="Country.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Country.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="42">
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Continent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Continent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trip.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Trip.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContinentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ContinentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -61,8 +93,28 @@
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtrip/api/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="189">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webtrip/backend/views/user/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="params.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/config/params.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,57 +124,17 @@
         <entry file="file://$PROJECT_DIR$/webtrip/api/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Country.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Country.php">
+      <file leaf-file-name="robots.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/api/web/robots.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1239">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Country.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/Country.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountryController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/CountryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aliases.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/config/aliases.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="52" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,15 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webtrip/frontend/models/Country.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/top.php" />
-        <option value="$PROJECT_DIR$/webtrip/common/config/params.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/models/User.php" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/user/create.php" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/user/edit.php" />
-        <option value="$PROJECT_DIR$/webtrip/common/models/Continent.php" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/country/create.php" />
-        <option value="$PROJECT_DIR$/webtrip/common/models/TripForm.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/views/trip/edit.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/views/site/index.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/index.php" />
@@ -198,12 +201,21 @@
         <option value="$PROJECT_DIR$/webtrip/backend/controllers/TripController.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/views/trip/index.php" />
         <option value="$PROJECT_DIR$/webtrip/common/config/main.php" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/user/index.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/models/CountryForm.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/webtrip/api/modules/v1/models/Country.php" />
         <option value="$PROJECT_DIR$/webtrip/common/config/aliases.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/models/Continent.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/models/Review.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/models/Trip.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/models/User.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ReviewController.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/TripController.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ContinentController.php" />
         <option value="$PROJECT_DIR$/webtrip/api/config/main.php" />
+        <option value="$PROJECT_DIR$/webtrip/backend/views/user/index.php" />
       </list>
     </option>
   </component>
@@ -355,59 +367,6 @@
               <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="v1" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="v1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="v1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectTripWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="webtrip" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProjectTripWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -586,14 +545,16 @@
     <property name="SearchEverywhereHistoryKey" value="w&#9;FILE&#9;file://D:/wamp64/www/ProjectTripWeb/webtrip/vendor/yiisoft/yii2/base/Widget.php&#10;jvectormap-cont&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\api\modules\v1\controllers" />
+      <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\api\modules\v1\models" />
+      <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\frontend\views\trip" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\frontend\models" />
       <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\common\models" />
       <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\console\models" />
       <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\backend\views\user" />
-      <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\frontend\views\trip" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\ProjectTripWeb\webtrip\frontend\views\trip" />
     </key>
   </component>
@@ -647,12 +608,12 @@
       <workItem from="1544439565633" duration="3140000" />
       <workItem from="1544445701893" duration="16914000" />
       <workItem from="1544522032629" duration="3020000" />
-      <workItem from="1544698311094" duration="3728000" />
+      <workItem from="1544698311094" duration="5175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221998000" />
+    <option name="totallyTimeSpent" value="223445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -711,63 +672,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/models/TripForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="45" column="60" lean-forward="false" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/editProfile.php" />
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/gallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/common/models/Continent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/common/models/Trip.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="52" column="10" lean-forward="false" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/backend/views/review/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -910,6 +814,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <marker date="1544525962559" expanded="true" signature="8270:8428" ph="SELECT count... trip" />
+            <marker date="1544525962559" expanded="true" signature="8480:8659" ph="SELECT count... review" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,16 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/backend/views/user/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-          <folding>
-            <element signature="e#38#61#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/models/CountryForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -1009,36 +907,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/backend/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/common/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/api/config/params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1059,34 +931,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/api/web/index.php">
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/api/config/main.php">
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Review.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="42">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Country.php">
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1239">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="21">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/CountryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/TripController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ReviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Trip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/models/Continent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ContinentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/web/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/config/params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/api/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/backend/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/backend/views/user/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding />
         </state>
       </provider>
