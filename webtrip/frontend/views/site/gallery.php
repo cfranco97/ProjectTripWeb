@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Rui Pedro
- * Date: 19/11/2018
- * Time: 15:24
- */
+?>
+
+<h1><b>Gallery</b></h1>

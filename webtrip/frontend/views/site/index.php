@@ -16,15 +16,16 @@ $this->title = 'TripHelper';
 
 <html>
 
-<div>
+<div class="col-lg-9">
 <?= JVectorMapWidget::widget([
     'map'=>'world_mill_en',
 ]); ?>
 </div>
 
+
+<div class="col-lg-3">
 <h1>BAD AT GEOGRAPHY?</h1>
     <div>
-    <?php echo date('Y-m-d')?>
     <?php $form = ActiveForm::begin(['id' => 'country-form']); ?>
     <?= $form->field($model, 'continent')->dropDownList(ArrayHelper::map(Continent::find()->all(), 'id_continent','name'),
         ['id' =>'cat-id', 'prompt'=>'Select a Continent'])?>
@@ -42,13 +43,13 @@ $this->title = 'TripHelper';
     ?>
         <div class="form-group">
             <?= Html::submitButton('View', ['class' => 'btn btn-primary', 'name' => 'country-button']) ?>
-        </div>
 
+        </div>
         <?php ActiveForm::end(); ?>
 
 
     </div>
-
+</div>
 </html>
 
 

@@ -21,7 +21,7 @@ use common\models\Country;
 
             <p><b>Username: </b><?= $user->username?></p>
             <p><b>Email: </b><?= $user->email?></p>
-            <p><b>Country: </b> <?= $country->name?></p>
+            <p><b>Country: </b> <?= $user->country->name?></p>
             <br>
             <?= Html::a('Edit Profile', ['edit', 'user'=>$user], ['class' => 'btn btn-primary']) ?>
 
@@ -32,9 +32,6 @@ use common\models\Country;
             <h3><b>X Countries Visited</b></h3>
             <br>
             <?= Html::a('Gallery', ['/site/gallery'], ['class'=>'btn btn-primary']) ?>
-            <br>
-            <br>
-            <?= Html::a('New Trip', ['/site/trips'], ['class'=>'btn btn-primary']) ?>
 
         </div>
 
