@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ecaadd4f-c834-402c-ac8b-93d3951391cc" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/behat/gherkin/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/bootstrap/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/inputmask/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery-ui/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/punycode/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/typeahead.js/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/yii2-pjax/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/cebe/markdown/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/codeception/base/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/codeception/phpunit-wrapper/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/codeception/stub/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/codeception/verify/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/components/flag-icon-css/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/composer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/conquer/excanvas/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/conquer/jvectormap/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/doctrine/instantiator/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/doctrine/lexer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/egulias/email-validator/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/ezyang/htmlpurifier/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/fzaninotto/faker/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/guzzlehttp/psr7/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/dependent-dropdown/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-dialog/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-grid/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-icons/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-depdrop/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-fileinput/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-rating/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/myclabs/deep-copy/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phar-io/manifest/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phar-io/version/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-common/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-docblock/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/type-resolver/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpspec/php-diff/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpspec/prophecy/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/php-code-coverage/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/php-file-iterator/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/php-text-template/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/php-timer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/php-token-stream/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/phpunit/phpunit/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/psr/http-message/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/ralouphie/getallheaders/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/code-unit-reverse-lookup/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/comparator/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/diff/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/environment/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/exporter/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/global-state/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/object-enumerator/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/object-reflector/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/recursion-context/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/resource-operations/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/sebastian/version/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/swiftmailer/swiftmailer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/browser-kit/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/console/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/contracts/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/css-selector/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/dom-crawler/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/finder/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-ctype/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-mbstring/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/symfony/yaml/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/theseer/tokenizer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/webmozart/assert/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-bootstrap/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-composer/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-debug/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-faker/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-gii/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-jui/" />
+    <ignored path="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-swiftmailer/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/typeahead.js" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/dependent-dropdown" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-depdrop" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-select2" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/conquer/jvectormap" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/conquer/excanvas" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/composer" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-datepicker" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-rating" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-star-rating" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/components/flag-icon-css" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-icons" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/bootstrap-fileinput" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-widget-fileinput" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/webtrip/vendor/kartik-v/yii2-grid" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="990" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecaadd4f-c834-402c-ac8b-93d3951391cc" name="Default" comment="" />
+      <created>1544803235973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544803235973</updated>
+      <workItem from="1544803245271" duration="136000" />
+      <workItem from="1544803385491" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="157000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
