@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace api\modules\v1\models;
 
 use Yii;
 
@@ -52,9 +52,9 @@ class Country extends \yii\db\ActiveRecord
             'name' => 'Name',
             'capital' => 'Capital',
             'population' => 'Population',
-            'cod' => 'Code',
+            'cod' => 'Cod',
             'description' => 'Description',
-            'id_continent' => 'Continent',
+            'id_continent' => 'Id Continent',
         ];
     }
 
@@ -69,10 +69,6 @@ class Country extends \yii\db\ActiveRecord
     public function getTrips()
     {
         return $this->hasMany(Trip::className(), ['id_country' => 'id_country']);
-    }
-    public function getReviews()
-    {
-        return $this->hasMany(Review::className(), ['id_review' => 'id_review']);
     }
     public static function getCountry($id_country) {
         $data=Country::find()

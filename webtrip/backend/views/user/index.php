@@ -1,41 +1,44 @@
 <?php
 
-/* @var $this yii\web\View */
-
-use kartik\grid\GridView;
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\UserSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'My Yii Application';
+$this->title = 'Users';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<table class="table">
-    <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Country</th>
-    </tr>
-    <?php foreach($users as $user){ ?>
-        <tr>
-            <td><?= $user->username; ?></td>
-            <td><?= $user->email; ?></td>
-            <td><?= $user->country->name; ?></td>
-            <td><?= Html::a("Edit",['edit', 'id' => $user->id],['class' => 'btn btn-primary']); ?>
-                <?php
-                if($user->status==10) { ?>
+<div class="user-index">
 
-                    <td><?= Html::a( "Block",['block', 'id' => $user->id],['class' => 'btn btn-danger']); ?></td>
-               <?php  } else {?>
-                    <td><?= Html::a( "Unblock",['block', 'id' => $user->id],['class' => 'btn btn-danger']); ?></td>
-            <?php } ?>
-        </tr>
-    <?php } ?>
-</table>
-<!---->
-<?php //echo GridView::widget([
-//    'id' => 'kv-grid-demo',
-//    'dataProvider' => $dataProvider,
-//    'filterModel' => $searchModel,
-//    'columns' => $gridColumns, // check the configuration for grid columns by clicking button above
-//    'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
-//    'headerRowOptions' => ['class' => 'kartik-sheet-style'],
-//    'filterRowOptions' => ['class' => 'kartik-sheet-style'],
-//    'pjax' => true, // pjax is set to always true for this demo?>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php Pjax::begin(); ?>
+
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+
+            'username',
+            'email',
+            ['class' => 'yii\grid\ActionColumn',
+                'template' => '{Edit} {Block}',
+                'buttons' => [
+                        'Edit' =>function ($url, $user) {
+                            return Html::a('Edit', ['update', 'id' => $user->id], ['class' => 'btn btn-primary']);},
+                        'Block' =>function ($url, $user) {
+                            if ($user->status==0){
+                                return Html::a('Unblock', ['block', 'id' => $user->id], ['class' => 'btn btn-danger']);
+                            }
+                            else {
+                                return Html::a('Block', ['block', 'id' => $user->id], ['class' => 'btn btn-danger']);
+                            }
+                        }
+            ],
+        ],
+    ]
+    ]); ?>
+    <?php Pjax::end(); ?>
+</div>

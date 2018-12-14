@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace api\modules\v1\models;
 
 use common\models\Country;
 use common\models\User;
@@ -33,17 +33,8 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             [['id_country', 'id_user'], 'integer'],
-            ['startdate', 'required'],
-            ['startdate', 'safe'],
-            ['startdate', 'date', 'format' => 'yyyy-M-d'],
-
-            ['enddate', 'required'],
-            ['enddate', 'safe'],
-            ['enddate', 'date', 'format' => 'yyyy-M-d'],
-
-            ['notes', 'required'],
-            ['notes', 'string'],
-            ['enddate', 'compare', 'compareAttribute' => 'startdate', 'operator' => '>'],
+            [['startdate', 'enddate'], 'safe'],
+            [['notes'], 'string'],
         ];
     }
 
@@ -54,10 +45,10 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             'id_trip' => 'Id Trip',
-            'id_country' => 'Country',
-            'id_user' => 'User',
-            'startdate' => 'Start date',
-            'enddate' => 'End date',
+            'id_country' => 'Id Country',
+            'id_user' => 'Id User',
+            'startdate' => 'Startdate',
+            'enddate' => 'Enddate',
             'notes' => 'Notes',
         ];
     }

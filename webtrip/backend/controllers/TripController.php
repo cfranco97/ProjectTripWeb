@@ -1,17 +1,17 @@
 <?php
+
 namespace backend\controllers;
 
-use common\models\Country;
-use common\models\Trip;
-use common\models\User;
 use Yii;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
+use common\models\Trip;
+use common\models\TripSearch;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 /**
- * Site controller
+ * TripController implements the CRUD actions for Trip model.
  */
 class TripController extends Controller
 {
@@ -23,15 +23,17 @@ class TripController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' =>['index','update','delete'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['index','update','delete'],
                         'allow' => true,
+                        'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['logout', 'index','edit','block','create','delete'],
+                        'actions' => ['index','update'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],
@@ -45,68 +47,69 @@ class TripController extends Controller
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
-
-    /**
-     * Displays homepage.
-     *
-     * @return string
+     * Lists all Trip models.
+     * @return mixed
      */
     public function actionIndex()
     {
+        $searchModel = new TripSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        //$dataProvider->pagination->pageSize=10;
 
-        $trips = $this->allTrips();
         return $this->render('index', [
-            'trips' => $trips,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
 
         ]);
     }
+    /**
+     * Updates an existing Trip model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
 
-    public function actionCreate(){
-
-        $trip = new Trip();
-
-
-        if($trip->load(Yii::$app->request->post()) && $trip->save()){
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', "Trip updated");
             return $this->redirect(['index']);
         }
 
-        return $this->render('create', ['trip' => $trip]);
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
 
-
-    public function actionEdit(){
-
-        $id_trip= Yii::$app->request->get('id_trip');
-        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
-        if ($trip->load(Yii::$app->request->post()) && $trip->save()) {
-            return $this->redirect(['index']);
-        }
-        else{
-            return $this->render('edit', [
-                'trip' =>$trip,
-            ]);}
-    }
-
-    public function actionDelete(){
-
-        $id_trip= Yii::$app->request->get('id_trip');
-        $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
-        $trip->delete();
+    /**
+     * Deletes an existing Trip model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        Yii::$app->session->setFlash('success', "Trip deleted");
         return $this->redirect(['index']);
     }
 
-    public function allTrips(){
-        $trips = Trip::find()->all();
-        return $trips;
+    /**
+     * Finds the Trip model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Trip the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Trip::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

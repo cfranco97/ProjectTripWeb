@@ -5,11 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Country */
 
-$this->title = 'Create Country';
+$this->title = 'Editing ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Countries', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id_country]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="country-create">
+<div class="country-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

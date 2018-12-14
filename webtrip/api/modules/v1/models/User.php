@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace api\modules\v1\models;
 
 use common\models\Country;
 use Yii;

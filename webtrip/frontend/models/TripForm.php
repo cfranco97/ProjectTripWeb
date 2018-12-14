@@ -1,9 +1,8 @@
 <?php
 namespace frontend\models;
 
-use frontend\controllers\SiteController;
+use common\models\Trip;
 use yii\base\Model;
-use yii\web\Controller;
 
 class TripForm extends Model
 {
