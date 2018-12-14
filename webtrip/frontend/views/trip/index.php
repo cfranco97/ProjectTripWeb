@@ -9,7 +9,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 ?>
-<h1>Your Trips</h1>
+<h1><b>Your Trips</b></h1>
 
     <div class="container">
 

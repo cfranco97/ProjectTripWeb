@@ -134,18 +134,19 @@ class SiteController extends Controller
      */
 
     public function actionSubcat() {
-        $out = [];
-        if (isset($_POST['depdrop_parents'])) {
-            $parents = $_POST['depdrop_parents'];
 
-            if ($parents != null) {
-                $cat_id = $parents[0];
-                $out = Country::getCountry($cat_id);
-                echo Json::encode(['output'=>$out, 'selected'=>'']);
-                return;
+            $out = [];
+            if (isset($_POST['depdrop_parents'])) {
+                $parents = $_POST['depdrop_parents'];
+
+                if ($parents != null) {
+                    $cat_id = $parents[0];
+                    $out = Country::getCountry($cat_id);
+                    echo Json::encode(['output' => $out, 'selected' => '']);
+                    return;
+                }
             }
-        }
-        echo Json::encode(['output'=>'', 'selected'=>'']);
+            echo Json::encode(['output' => '', 'selected' => '']);
     }
     /**
      * Displays contact page.
@@ -200,6 +201,7 @@ class SiteController extends Controller
     {
         return $this->render('gallery');
     }
+
 
 //    public function actionTrip()
 //    {
