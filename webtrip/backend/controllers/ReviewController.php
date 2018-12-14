@@ -1,13 +1,17 @@
 <?php
+
 namespace backend\controllers;
 
-use common\models\Review;
 use Yii;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
+use common\models\Review;
+use common\models\ReviewSearch;
 use yii\filters\AccessControl;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
 /**
- * Site controller
+ * ReviewController implements the CRUD actions for Review model.
  */
 class ReviewController extends Controller
 {
@@ -19,15 +23,15 @@ class ReviewController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','edit','delete'],
+                'only' =>['index','delete'],
                 'rules' => [
                     [
-                        'actions' => [ 'index','edit','delete'],
+                        'actions' => ['index','delete'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => [ 'index','edit'],
+                        'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -43,56 +47,47 @@ class ReviewController extends Controller
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
-
-    /**
-     * Displays homepage.
-     *
-     * @return string
+     * Lists all Review models.
+     * @return mixed
      */
     public function actionIndex()
     {
+        $searchModel = new ReviewSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        $reviews = $this->allReviews();
         return $this->render('index', [
-            'reviews' => $reviews,
-
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
+    /**     * Deletes an existing Review model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        Yii::$app->session->setFlash('success', "Review deleted");
 
-    public function actionEdit(){
-
-        $id_review= Yii::$app->request->get('id_review');
-        $review = Review::find()->where(['id_review' => $id_review])->one();
-        if ($review->load(Yii::$app->request->post()) && $review->save()) {
-            return $this->redirect(['index']);
-        }
-        else{
-            return $this->render('edit', [
-                'review' =>$review,
-            ]);}
-    }
-
-    public function actionDelete(){
-
-        $id_review= Yii::$app->request->get('id_review');
-        $review = Review::find()->where(['id_review' => $id_review])->one();
-        $review->delete();
         return $this->redirect(['index']);
     }
 
-    public function allReviews(){
-        $reviews = Review::find()->all();
-        return $reviews;
+    /**
+     * Finds the Review model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Review the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Review::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

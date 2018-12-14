@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\User;
+use common\models\Country;
 
 /**
- * UserSearch represents the model behind the search form of `common\models\User`.
+ * CountrySearch represents the model behind the search form of `common\models\Country`.
  */
-class UserSearch extends User
+class CountrySearch extends Country
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class UserSearch extends User
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at', 'id_country'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'filename'], 'safe'],
+            [['id_country'], 'integer'],
+            [['name', 'id_continent','capital', 'population', 'cod', 'description'], 'safe'],
         ];
     }
 
@@ -40,8 +40,8 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
-
+        $query = Country::find();
+        $query->joinWith(['continent']);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -58,19 +58,15 @@ class UserSearch extends User
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
             'id_country' => $this->id_country,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'filename', $this->filename]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'capital', $this->capital])
+            ->andFilterWhere(['like', 'population', $this->population])
+            ->andFilterWhere(['like', 'cod', $this->cod])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'continent.name', $this->id_continent]);
 
         return $dataProvider;
     }

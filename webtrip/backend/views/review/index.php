@@ -1,26 +1,46 @@
 <?php
 
-/* @var $this yii\web\View */
-
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\ReviewSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'My Yii Application';
+$this->title = 'Reviews';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-    <table class="table">
-        <tr>
-            <th>User</th>
-            <th>Rating</th>
-            <th>Country</th>
-            <th>Message</th>
-        </tr>
-        <?php foreach($reviews as $review){ ?>
-            <tr>
-                <td><?= $review->user->username; ?></td>
-                <td><?= $review->rating; ?></td>
-                <td><?= $review->trip->country->name; ?></td>
-                <td><?= $review->message; ?></td>
-                <td><?= Html::a("Edit",['edit', 'id_review' => $review->id_review],['class' => 'btn btn-primary']); ?></td>
-                <td><?= Html::a( "Delete",['delete', 'id_review' =>$review->id_review],['class' => 'btn btn-danger']); ?></td>
-            </tr>
-        <?php } ?>
-    </table>
+<div class="review-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php Pjax::begin(); ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            [
+                'attribute'=>'id_country',
+                'value'=>'country.name',
+                'label'=>'Country'
+            ],
+            [
+                'attribute'=>'id_user',
+                'value'=>'user.username',
+                'label'=>'User'
+            ],
+            'rating',
+            'message',
+            ['class' => 'yii\grid\ActionColumn',
+                'template' => '{Delete}',
+                'buttons' => [
+                    'Delete' =>function ($url, $review) {
+                        return Html::a('Delete', ['delete', 'id' => $review->id_review], ['class' => 'btn btn-danger']);
+
+                    }
+                ],
+            ],
+        ],
+    ]); ?>
+    <?php Pjax::end(); ?>
+</div>

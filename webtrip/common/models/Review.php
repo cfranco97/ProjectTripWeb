@@ -62,4 +62,8 @@ class Review extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
+    public function getCountry()
+    {
+        return $this->hasOne(Country::className(), ['id_country' => 'id_country']);
+    }
 }

@@ -1,15 +1,17 @@
 <?php
+
 namespace backend\controllers;
 
+use Yii;
 use common\models\User;
 use common\models\UserSearch;
-use Yii;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 /**
- * Site controller
+ * UserController implements the CRUD actions for User model.
  */
 class UserController extends Controller
 {
@@ -21,15 +23,15 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>['index','edit','block'],
+                'only' =>['index','update','block'],
                 'rules' => [
                     [
-                        'actions' => ['index','edit','block'],
+                        'actions' => ['index','update','block'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => ['index','edit'],
+                        'actions' => ['index','update'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -57,60 +59,71 @@ class UserController extends Controller
     }
 
     /**
-     * Displays homepage.
-     *
-     * @return string
+     * Lists all User models.
+     * @return mixed
      */
     public function actionIndex()
     {
-
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-//
-//        $users = $this->allUsers();
-//        return $this->render('index', [
-//            'users' => $users,
-//
-//        ]);
     }
 
-    public function actionEdit(){
-
-        $id= Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->load(Yii::$app->request->post()) && $user->save()) {
-            return $this->redirect(['index']);
-        }
-        else{
-            return $this->render('edit', [
-                'user' =>$user,
-            ]);}
-    }
-
-    public function actionBlock()
+    /**
+     * Updates an existing User model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionUpdate($id)
     {
+        $model = $this->findModel($id);
 
-        $id = Yii::$app->request->get('id');
-        $user = User::find()->where(['id' => $id])->one();
-        if ($user->status == 10) {
-            $user->status = 0;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User Blocked");
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', "Changes made to ".$model->username. " saved");
+            return $this->redirect(['index']);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionBlock($id)
+    {
+        $model = $this->findModel($id);
+        if ($model->status == 10) {
+            $model->status = 0;
+            $model->save();
+            Yii::$app->session->setFlash('success', $model->username." blocked");
             return $this->redirect(['index']);
         }
         else{
-            $user->status=10;
-            $user->save();
-            Yii::$app->session->setFlash('success', "User UnBlocked");
+            $model->status=10;
+            $model->save();
+            Yii::$app->session->setFlash('success', $model->username." unblocked");
             return $this->redirect(['index']);
         }
     }
-    public function allUsers(){
-        $users = User::find()->all();
-        return $users;
+
+    /**
+     * Finds the User model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return User the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

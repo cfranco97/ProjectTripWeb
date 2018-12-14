@@ -33,8 +33,17 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             [['id_country', 'id_user'], 'integer'],
-            [['startdate', 'enddate'], 'safe'],
-            [['notes'], 'string'],
+            ['startdate', 'required'],
+            ['startdate', 'safe'],
+            ['startdate', 'date', 'format' => 'yyyy-M-d'],
+
+            ['enddate', 'required'],
+            ['enddate', 'safe'],
+            ['enddate', 'date', 'format' => 'yyyy-M-d'],
+
+            ['notes', 'required'],
+            ['notes', 'string'],
+            ['enddate', 'compare', 'compareAttribute' => 'startdate', 'operator' => '>'],
         ];
     }
 
@@ -45,10 +54,10 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             'id_trip' => 'Id Trip',
-            'id_country' => 'Id Country',
-            'id_user' => 'Id User',
-            'startdate' => 'Startdate',
-            'enddate' => 'Enddate',
+            'id_country' => 'Country',
+            'id_user' => 'User',
+            'startdate' => 'Start date',
+            'enddate' => 'End date',
             'notes' => 'Notes',
         ];
     }

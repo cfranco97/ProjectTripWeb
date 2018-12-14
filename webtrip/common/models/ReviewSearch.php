@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\User;
+use common\models\Review;
 
 /**
- * UserSearch represents the model behind the search form of `common\models\User`.
+ * ReviewSearch represents the model behind the search form of `common\models\Review`.
  */
-class UserSearch extends User
+class ReviewSearch extends Review
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,9 @@ class UserSearch extends User
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at', 'id_country'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'filename'], 'safe'],
+            [['id_review', 'id_trip'], 'integer'],
+            [['rating'], 'number'],
+            [['message','id_user','id_country'], 'safe'],
         ];
     }
 
@@ -40,7 +41,9 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
+        $query = Review::find();
+        $query->joinWith(['country']);
+        $query->joinWith(['user']);
 
         // add conditions that should always apply here
 
@@ -58,19 +61,14 @@ class UserSearch extends User
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'id_country' => $this->id_country,
+            'id_review' => $this->id_review,
+            'rating' => $this->rating,
+            'id_trip' => $this->id_trip,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'filename', $this->filename]);
+        $query->andFilterWhere(['like', 'message', $this->message])
+              ->andFilterWhere(['like', 'country.name', $this->id_country])
+              ->andFilterWhere(['like', 'user.username', $this->id_user]);
 
         return $dataProvider;
     }
