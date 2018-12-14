@@ -4,22 +4,21 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Trip;
+use common\models\Country;
 
 /**
- * TripSearch represents the model behind the search form of `common\models\Trip`.
+ * CountrySearch represents the model behind the search form of `common\models\Country`.
  */
-class TripSearch extends Trip
+class CountrySearch extends Country
 {
     /**
      * {@inheritdoc}
      */
-
     public function rules()
     {
         return [
-            [['id_trip'], 'integer'],
-            [['id_country','id_user','startdate', 'enddate', 'notes'], 'safe'],
+            [['id_country'], 'integer'],
+            [['name', 'id_continent','capital', 'population', 'cod', 'description'], 'safe'],
         ];
     }
 
@@ -41,10 +40,8 @@ class TripSearch extends Trip
      */
     public function search($params)
     {
-        $query = Trip::find();
-        $query->joinWith(['country']);
-        $query->joinWith(['user']);
-
+        $query = Country::find();
+        $query->joinWith(['continent']);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -61,14 +58,16 @@ class TripSearch extends Trip
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_trip' => $this->id_trip,
-            'startdate' => $this->startdate,
-            'enddate' => $this->enddate,
+            'id_country' => $this->id_country,
         ]);
 
-        $query->andFilterWhere(['like', 'notes', $this->notes])
-            ->andFilterWhere(['like', 'country.name', $this->id_country])
-        ->andFilterWhere(['like', 'user.username', $this->id_user]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'capital', $this->capital])
+            ->andFilterWhere(['like', 'population', $this->population])
+            ->andFilterWhere(['like', 'cod', $this->cod])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'continent.name', $this->id_continent]);
+
         return $dataProvider;
     }
 }

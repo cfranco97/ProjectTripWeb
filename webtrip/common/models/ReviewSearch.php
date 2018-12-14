@@ -4,22 +4,22 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Trip;
+use common\models\Review;
 
 /**
- * TripSearch represents the model behind the search form of `common\models\Trip`.
+ * ReviewSearch represents the model behind the search form of `common\models\Review`.
  */
-class TripSearch extends Trip
+class ReviewSearch extends Review
 {
     /**
      * {@inheritdoc}
      */
-
     public function rules()
     {
         return [
-            [['id_trip'], 'integer'],
-            [['id_country','id_user','startdate', 'enddate', 'notes'], 'safe'],
+            [['id_review', 'id_trip'], 'integer'],
+            [['rating'], 'number'],
+            [['message','id_user','id_country'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class TripSearch extends Trip
      */
     public function search($params)
     {
-        $query = Trip::find();
+        $query = Review::find();
         $query->joinWith(['country']);
         $query->joinWith(['user']);
 
@@ -61,14 +61,15 @@ class TripSearch extends Trip
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'id_review' => $this->id_review,
+            'rating' => $this->rating,
             'id_trip' => $this->id_trip,
-            'startdate' => $this->startdate,
-            'enddate' => $this->enddate,
         ]);
 
-        $query->andFilterWhere(['like', 'notes', $this->notes])
-            ->andFilterWhere(['like', 'country.name', $this->id_country])
-        ->andFilterWhere(['like', 'user.username', $this->id_user]);
+        $query->andFilterWhere(['like', 'message', $this->message])
+              ->andFilterWhere(['like', 'country.name', $this->id_country])
+              ->andFilterWhere(['like', 'user.username', $this->id_user]);
+
         return $dataProvider;
     }
 }

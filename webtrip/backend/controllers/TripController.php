@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Trip;
 use common\models\TripSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,10 +21,26 @@ class TripController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' =>['index','update','delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index','update','delete'],
+                        'allow' => true,
+                        'roles' => ['superAdmin'],
+                    ],
+                    [
+                        'actions' => ['index','update'],
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -57,7 +74,8 @@ class TripController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_trip]);
+            Yii::$app->session->setFlash('success', "Trip updated");
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
@@ -75,7 +93,7 @@ class TripController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', "Trip deleted");
         return $this->redirect(['index']);
     }
 

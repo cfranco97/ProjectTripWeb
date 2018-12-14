@@ -1,16 +1,17 @@
 <?php
+
 namespace backend\controllers;
 
-use common\models\Country;
-use common\models\User;
 use Yii;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
+use common\models\Country;
+use common\models\CountrySearch;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 /**
- * Site controller
+ * CountryController implements the CRUD actions for Country model.
  */
 class CountryController extends Controller
 {
@@ -22,15 +23,15 @@ class CountryController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','create','edit','delete'],
+                'only' =>['index','create','update','delete'],
                 'rules' => [
                     [
-                        'actions' => [ 'index','edit','create','delete'],
+                        'actions' => ['index','create','update','delete'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
                     [
-                        'actions' => [ 'index','edit','create'],
+                        'actions' => ['index','update'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -43,71 +44,92 @@ class CountryController extends Controller
                 ],
             ],
         ];
+
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
-
-    /**
-     * Displays homepage.
-     *
-     * @return string
+     * Lists all Country models.
+     * @return mixed
      */
     public function actionIndex()
     {
+        $searchModel = new CountrySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        $countries = $this->allCountries();
         return $this->render('index', [
-            'countries' => $countries,
-
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
-    public function actionCreate(){
+    /**
+     * Creates a new Country model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new Country();
 
-        $country = new Country();
-
-
-        if($country->load(Yii::$app->request->post()) && $country->save()){
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', $model->name." created");
             return $this->redirect(['index']);
         }
 
-        return $this->render('create', ['country' => $country]);
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
+    /**
+     * Updates an existing Country model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
 
-    public function actionEdit(){
-
-        $id_country= Yii::$app->request->get('id_country');
-        $country = Country::find()->where(['id_country' => $id_country])->one();
-        if ($country->load(Yii::$app->request->post()) && $country->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', $model->name." updated");
             return $this->redirect(['index']);
         }
-        else{
-            return $this->render('edit', [
-                'country' =>$country,
-            ]);}
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
 
-    public function actionDelete(){
+    /**
+     * Deletes an existing Country model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        Yii::$app->session->setFlash('success', "Country deleted");
 
-        $id_country= Yii::$app->request->get('id_country');
-        $country = Country::find()->where(['id_country' => $id_country])->one();
-        $country->delete();
         return $this->redirect(['index']);
     }
 
-    public function allCountries(){
-        $countries = Country::find()->all();
-        return $countries;
+    /**
+     * Finds the Country model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Country the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Country::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

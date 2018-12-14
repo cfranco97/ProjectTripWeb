@@ -39,7 +39,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label'=>'End Date'
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template' => '{Edit} {Delete}',
+                'buttons' => [
+                    'Edit' =>function ($url, $trip) {
+                        return Html::a('Edit', ['update', 'id' => $trip->id_trip], ['class' => 'btn btn-primary']);},
+                    'Delete' =>function ($url, $trip) {
+                        return Html::a('Delete', ['delete', 'id' => $trip->id_trip], ['class' => 'btn btn-danger']);}
+
+                ],
+            ],
         ],
     ]); ?>
     <?php Pjax::end(); ?>

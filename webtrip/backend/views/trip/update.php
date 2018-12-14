@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Trip */
 
-$this->title = 'Update Trip: ' . $model->id_trip;
+$this->title = 'Editing '.$model->user->username.'´s trip to ' . $model->country->name;
 $this->params['breadcrumbs'][] = ['label' => 'Trips', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_trip, 'url' => ['view', 'id' => $model->id_trip]];
 $this->params['breadcrumbs'][] = 'Update';

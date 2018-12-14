@@ -1,5 +1,10 @@
 <?php
 
+use common\models\Country;
+use common\models\User;
+use kartik\date\DatePicker;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,13 +17,40 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_country')->textInput() ?>
+    <?= $form->field($model, 'id_country')->widget(Select2::className(),[
+        'data' => ArrayHelper::map(Country::find()->all(),'id_country','name'),
+        'options' => ['placeholder' => 'Select a Country'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
 
-    <?= $form->field($model, 'id_user')->textInput() ?>
+    <?= $form->field($model, 'id_user')->widget(Select2::className(),[
+        'data' => ArrayHelper::map(User::find()->all(),'id','username'),
+        'options' => ['placeholder' => 'Select a User'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
 
-    <?= $form->field($model, 'startdate')->textInput() ?>
+    <?=  $form-> field($model, 'startdate')->widget(DatePicker::classname(), [
 
-    <?= $form->field($model, 'enddate')->textInput() ?>
+        'options' => ['placeholder' => 'End date & time'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd',
+        ]
+    ])
+    ?>
+    <?=  $form-> field($model, 'enddate')->widget(DatePicker::classname(), [
+
+        'options' => ['placeholder' => 'End date & time'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd',
+        ]
+    ])
+    ?>
 
     <?= $form->field($model, 'notes')->textarea(['rows' => 6]) ?>
 
