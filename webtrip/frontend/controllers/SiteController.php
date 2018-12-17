@@ -3,13 +3,13 @@ namespace frontend\controllers;
 
 
 use common\models\Country;
+use common\models\Review;
 use common\models\User;
 use frontend\models\CountryForm;
 use common\models\Trip;
-use frontend\models\TripForm;
 use Yii;
 use yii\base\InvalidParamException;
-use yii\data\ActiveDataProvider;
+use yii\db\Expression;
 use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -20,7 +20,6 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use common\models\SignupForm;
 use frontend\models\ContactForm;
-use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -87,7 +86,9 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $country=Country::find()->where(['id_country'=>$model->country])->one();
-            return $this->render('country', ['model' => $model , 'country'=>$country]);
+            $reviews=Review::find()->where(['id_country'=>$country->id_country])->orderBy(new Expression('rand()'))->limit(3)->all();
+            return $this->render('country', [ 'country'=>$country,
+                                                   'reviews'=>$reviews]);
         } else {
             return $this->render('index', ['model' => $model]);
         }
@@ -134,18 +135,19 @@ class SiteController extends Controller
      */
 
     public function actionSubcat() {
-        $out = [];
-        if (isset($_POST['depdrop_parents'])) {
-            $parents = $_POST['depdrop_parents'];
 
-            if ($parents != null) {
-                $cat_id = $parents[0];
-                $out = Country::getCountry($cat_id);
-                echo Json::encode(['output'=>$out, 'selected'=>'']);
-                return;
+
+            if (isset($_POST['depdrop_parents'])) {
+                $parents = $_POST['depdrop_parents'];
+
+                if ($parents != null) {
+                    $cat_id = $parents[0];
+                    $out = Country::getCountry($cat_id);
+                    echo Json::encode(['output' => $out, 'selected' => '']);
+                    return;
+                }
             }
-        }
-        echo Json::encode(['output'=>'', 'selected'=>'']);
+            echo Json::encode(['output' => '', 'selected' => '']);
     }
     /**
      * Displays contact page.
@@ -200,6 +202,7 @@ class SiteController extends Controller
     {
         return $this->render('gallery');
     }
+
 
 //    public function actionTrip()
 //    {
@@ -330,38 +333,19 @@ class SiteController extends Controller
     public function actionTop(){
 
 
-        $query=Country::findBySql("SELECT country.name,COUNT(review.id_trip) AS numero FROM review
+        $query=Country::findBySql("SELECT country.flag, country.name,COUNT(review.id_trip) AS numero FROM review
 LEFT JOIN country ON review.id_country = country.id_country
 GROUP BY name ORDER BY numero DESC    ")->all();
 
-        $query2=Country::findBySql("SELECT country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
+        $query2=Country::findBySql("SELECT country.flag, country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
 LEFT JOIN country ON review.id_country = country.id_country
 GROUP BY name
 ORDER BY averagerating desc")->all();
 
-
-//            ->select(['{{country}}.name','COUNT({{review}}.id_trip)'])
-//            ->joinWith('trips')
-//            ->groupBy('country.id_country')
-//            ->orderBy(['review.id_trip'=> SORT_DESC])
-//            ->limit(10)->all();
-
-//        $dataProvider = new ActiveDataProvider([
-//            'query' =>  $query,
-//        ]);
         return $this->render('top', [
             'query' => $query,
             'query2' =>$query2,
         ]);
 
-    }
-
-    protected function findModel($id)
-    {
-        if (($model = User::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

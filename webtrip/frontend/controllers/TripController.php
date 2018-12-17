@@ -125,14 +125,14 @@ class TripController extends Controller
                     Yii::$app->session->setFlash('success', "Review sent");
 
                     return $this->render('view-information', [
-                        'review' => $trip,
+                        'trip' => $trip,
                         'model' => $model
                     ]);
                 }
             } else {
 
                 return $this->render('view-information', [
-                    'review' => $trip,
+                    'trip' => $trip,
                     'model' => $model
                 ]);
             }
@@ -166,15 +166,15 @@ class TripController extends Controller
 
     public function findTripsDoneByUser(){
         $today = date('Y-m-d');
-        $doneTrips=Trip::find()->where(['<','enddate',$today])->orderBy('startdate DESC')->all();
+        $doneTrips=Trip::find()->where(['<','enddate',$today])->andWhere(['id_user'=>Yii::$app->user->id])->orderBy('startdate DESC')->all();
         return $doneTrips;
 
     }
 
     public function findTripToDoByUser(){
         $today = date('Y-m-d');
-        $todoTrips=Trip::find()->where(['>=','enddate',$today])->orderBy('enddate ASC')->all();
-        return $todoTrips;
+        $toDoTrips=Trip::find()->where(['>=','enddate',$today])->andWhere(['id_user'=>Yii::$app->user->id])->orderBy('enddate ASC')->all();
+        return $toDoTrips;
     }
 
 

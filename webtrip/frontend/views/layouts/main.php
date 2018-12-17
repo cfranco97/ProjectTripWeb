@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use common\models\User;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -10,6 +11,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+$user=User::find()->where(['id' => Yii::$app->user->id])->one();
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -47,7 +49,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Wishlist', 'url' => ['/site/wishlist']];
         $menuItems[] = ['label' => 'Account', 'items' => [
-            ['label' => 'View Profile', 'url' => ['/user/profile']],
+            ['label' => 'View Profile', 'url' => ['/user/profile', 'id'=>$user->id]],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
         ]];
     }

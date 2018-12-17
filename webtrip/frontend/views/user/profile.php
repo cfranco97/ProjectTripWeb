@@ -19,22 +19,18 @@ use common\models\Country;
         <div class="col-lg-5" >
 
 
-            <p><b>Username: </b><?= $user->username?></p>
-            <p><b>Email: </b><?= $user->email?></p>
-            <p><b>Country: </b> <?= $country->name?></p>
+            <p><b>Username: </b><?= $model->username?></p>
+            <p><b>Email: </b><?= $model->email?></p>
+            <p><b>Country: </b> <?= $model->country->name?></p>
             <br>
-            <?= Html::a('Edit Profile', ['edit', 'user'=>$user], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a('Edit Profile', ['edit', 'id'=>$model->id], ['class' => 'btn btn-primary']) ?>
 
         </div>
-
         <div class="col-lg-5" >
-            <h3><b>X% World Visited</b></h3>
-            <h3><b>X Countries Visited</b></h3>
+            <h3><b><?=round($model->percentageWorld,2)?>% World Visited</b></h3>
+            <h3><b><?= $model->countriesVisited?> Countries Visited</b></h3>
             <br>
             <?= Html::a('Gallery', ['/site/gallery'], ['class'=>'btn btn-primary']) ?>
-            <br>
-            <br>
-            <?= Html::a('New Trip', ['/site/trips'], ['class'=>'btn btn-primary']) ?>
 
         </div>
 

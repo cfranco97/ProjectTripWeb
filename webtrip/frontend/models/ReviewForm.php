@@ -1,10 +1,8 @@
 <?php
 namespace frontend\models;
 
-use app\models\Review;
-use frontend\controllers\SiteController;
+use common\models\Review;
 use yii\base\Model;
-use yii\web\Controller;
 
 class ReviewForm extends Model
 {

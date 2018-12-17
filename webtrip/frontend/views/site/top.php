@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 <html lang="<?= Yii::$app->language ?>">
 
-<h1>Top</h1>
+<h1><b>Top</b></h1>
 
 <div class="container">
 
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <h2>Countries</h2>
         <table class="table">
             <thead>
@@ -30,7 +30,7 @@ use yii\widgets\DetailView;
                 <tr>
                <?php $x++; ?>
                     <td><?php echo $x ?></td>
-                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
                     <td><?php echo $row->numero ?></td>
 
         <br>
@@ -40,8 +40,8 @@ use yii\widgets\DetailView;
             </tbody>
         </table>
     </div>
-
-    <div class="col-lg-6">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-5">
         <h2>Continent</h2>
         <table class="table">
             <thead>
@@ -59,7 +59,7 @@ use yii\widgets\DetailView;
             <tr>
                 <?php $x++; ?>
                 <td><?php echo $x ?></td>
-                <td><?php echo $row->name; ?></td>
+                <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
                 <td><?php echo $row->averagerating ?></td>
 
                 <br>
