@@ -34,6 +34,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'flag')->textInput(['placeholder' => "Insert URL image here",'maxlength' => true]) ?>
+
+    <?= $form->field($model, 'country_image')->textInput(['placeholder' => "Insert URL image here",'maxlength' => true]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 
 <div class="container">
     <div class="col-lg-6" >
-    <h1><?= $trip->country->name?></h1>
+    <h1><?= Html::encode($trip->country->name);?>  <?=  Html::img($trip->country->flag, ['width' => '50px']); ?></h1>
     <p>You go on <?= $trip->startdate?></p>
     <p>Coming back on <?= $trip->enddate?></p>
     <h3>What you are going to do</h3>

@@ -28,8 +28,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'id_continent',
                 'value'=>'continent.name',
                 'label'=>'Continent'
+
             ],
             'name',
+            [
+                'attribute' => 'flag',
+                'format' => 'html',
+                'value' => function ($model) {
+                    if ($model->flag!='')
+                    return Html::img($model->flag,
+                        ['width' => '50px']);
+                    else return "no image";
+                },
+            ],
             'capital',
             'population',
             'cod',

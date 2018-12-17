@@ -15,7 +15,7 @@ $this->title = 'TripHelper';
 ?>
 
 <html>
-
+<img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ad.png" alt="My logo" />
 <div class="col-lg-9">
 <?= JVectorMapWidget::widget([
     'map'=>'world_mill_en',

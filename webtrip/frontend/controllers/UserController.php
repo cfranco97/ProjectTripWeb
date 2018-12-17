@@ -2,16 +2,14 @@
 
 namespace frontend\controllers;
 
-use common\models\Country;
 use common\models\User;
 use frontend\models\ChangePassword;
 use Yii;
 use app\models\UserSearch;
-use yii\base\InvalidParamException;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -60,24 +58,30 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionProfile()
+    public function actionProfile($id)
     {
-        $user= $this->findUser();
+        $model= $this->findModel($id);
         return $this->render('profile', [
-            'user' => $user,
+            'model' => $model,
         ]);
 
     }
 
-    public function actionEdit()
+    public function actionEdit($id)
     {
-        $user= $this->findUser();
-        if ($user->load(Yii::$app->request->post()) && $user->save()) {
-            return $this->redirect(['profile','user'=>$user]);
+        $model= $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+            if ($model->upload()) {
+                // file is uploaded successfully
+                return $this->redirect(['profile','model'=>$model]);
+            } else{
+            return $this->redirect(['profile','model'=>$model]);
+            }
         }
         else{
         return $this->render('edit', [
-            'user' =>$user,
+            'model' =>$model,
         ]);}
     }
 

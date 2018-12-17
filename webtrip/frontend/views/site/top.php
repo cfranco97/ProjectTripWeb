@@ -30,7 +30,7 @@ use yii\widgets\DetailView;
                 <tr>
                <?php $x++; ?>
                     <td><?php echo $x ?></td>
-                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
                     <td><?php echo $row->numero ?></td>
 
         <br>
@@ -59,7 +59,7 @@ use yii\widgets\DetailView;
             <tr>
                 <?php $x++; ?>
                 <td><?php echo $x ?></td>
-                <td><?php echo $row->name; ?></td>
+                <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
                 <td><?php echo $row->averagerating ?></td>
 
                 <br>

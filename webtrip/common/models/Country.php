@@ -33,8 +33,8 @@ class Country extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'capital', 'population', 'cod', 'description', 'id_continent'], 'required'],
-            [['description'], 'string'],
+            [['name', 'capital', 'population', 'cod', 'description', 'id_continent','flag','country_image'], 'required'],
+            [['description','flag','country_image'], 'string'],
             [['id_continent'], 'integer'],
             [['name', 'capital'], 'string', 'max' => 60],
             [['population'], 'string', 'max' => 20],
@@ -55,6 +55,8 @@ class Country extends \yii\db\ActiveRecord
             'cod' => 'Code',
             'description' => 'Description',
             'id_continent' => 'Continent',
+            'flag' => 'Flag',
+            'country_image'=>'Image about the country',
         ];
     }
 
@@ -72,7 +74,7 @@ class Country extends \yii\db\ActiveRecord
     }
     public function getReviews()
     {
-        return $this->hasMany(Review::className(), ['id_review' => 'id_review']);
+        return $this->hasMany(Review::className(), ['id_country' => 'id_country']);
     }
     public static function getCountry($id_country) {
         $data=Country::find()

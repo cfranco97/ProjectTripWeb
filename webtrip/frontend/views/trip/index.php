@@ -22,7 +22,8 @@ use yii\bootstrap\ActiveForm;
             <?php foreach ($todoTrips as $trip) {?>
                 <div class="list-group-item" >
 
-                    <h4 class="list-group-item-heading"><?= $trip->country->name?></h4>
+                    <h4 class="list-group-item-heading"><?= $trip->country->name?>
+                        <?=  Html::img($trip->country->flag, ['width' => '30px']) ?></h4>
                     <p class="list-group-item-text"><?= $trip->startdate ?></p>
                     <p class="list-group-item-text"><?= $trip->enddate ?></p>
                     <br>
@@ -39,7 +40,8 @@ use yii\bootstrap\ActiveForm;
             <?php foreach ($doneTrips as $trip) {?>
                 <div class="list-group-item" >
 
-                    <h4 class="list-group-item-heading"><?= $trip->country->name?></h4>
+                    <h4 class="list-group-item-heading"><?= $trip->country->name?>
+                        <?=  Html::img($trip->country->flag, ['width' => '30px']) ?></h4>
                     <p class="list-group-item-text"><?= $trip->startdate ?></p>
                     <p class="list-group-item-text"><?= $trip->enddate ?></p>
                     <br>

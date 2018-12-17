@@ -1,12 +1,12 @@
 <?php
 namespace common\models;
 
-use common\models\Country;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\web\UploadedFile;
 
 /**
  * User model
@@ -22,6 +22,7 @@ use yii\web\IdentityInterface;
  * @property integer $updated_at
  * @property string $password write-only password
  * @property int $id_country
+ * @property string $filename
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -29,6 +30,9 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_BLOCK = 5;
     const STATUS_ACTIVE = 10;
 
+    public $image;
+//    Yii::$app->basePath . '/uploads/';
+//    Yii::$app->urlManager->baseUrl . '/uploads/';
 
     /**
      * {@inheritdoc}
@@ -62,6 +66,10 @@ class User extends ActiveRecord implements IdentityInterface
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            [['filename'], 'string', 'max' => 255],
+            [['image'], 'safe'],
+            [['image'], 'file', 'extensions'=>'jpg, gif, png'],
+            [['image'], 'file', 'maxSize'=>'100000000'],
 
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -81,6 +89,7 @@ class User extends ActiveRecord implements IdentityInterface
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'id_country' => 'Country',
+            'imageFile' => 'Profile picture',
         ];
 
     }
@@ -96,9 +105,21 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasMany(Trip::className(), ['id' => 'id_user']);
     }
 
-    public function getReviews()
+    public function getReview()
     {
-        return $this->hasMany(Review::className(), ['id' => 'id_user']);
+        return $this->hasOne(Review::className(), ['id_review' => 'id_review']);
+    }
+
+    public function getCountriesVisited(){
+
+        $data = Trip::find()->select('id_country')->where(['id_user'=>$this->id])->distinct()->count();
+        return $data;
+    }
+
+    public function getPercentageWorld(){
+
+        $data = $this->getCountriesVisited()/195;
+        return $data;
     }
 
     /**
