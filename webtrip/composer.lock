@@ -1060,12 +1060,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "2bbb9cae329bd536f1a22ae14f8e0dc890063f66"
+                "reference": "dd09e46e618cf1c67a39fac9f38d97a95184fe8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/2bbb9cae329bd536f1a22ae14f8e0dc890063f66",
-                "reference": "2bbb9cae329bd536f1a22ae14f8e0dc890063f66",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/dd09e46e618cf1c67a39fac9f38d97a95184fe8a",
+                "reference": "dd09e46e618cf1c67a39fac9f38d97a95184fe8a",
                 "shasum": ""
             },
             "require": {
@@ -1105,7 +1105,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2018-11-05T12:34:42+00:00"
+            "time": "2018-12-11T10:34:32+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2583,16 +2583,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.0",
+            "version": "7.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "520723129e2b3fc1dc4c0953e43c9d40e1ecb352"
+                "reference": "c23d78776ad415d5506e0679723cb461d71f488f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/520723129e2b3fc1dc4c0953e43c9d40e1ecb352",
-                "reference": "520723129e2b3fc1dc4c0953e43c9d40e1ecb352",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c23d78776ad415d5506e0679723cb461d71f488f",
+                "reference": "c23d78776ad415d5506e0679723cb461d71f488f",
                 "shasum": ""
             },
             "require": {
@@ -2663,7 +2663,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-12-07T07:08:12+00:00"
+            "time": "2018-12-12T07:20:32+00:00"
         },
         {
             "name": "psr/http-message",
