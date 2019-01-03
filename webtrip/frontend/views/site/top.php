@@ -13,7 +13,7 @@ use yii\widgets\DetailView;
 <div class="container">
 
     <div class="col-lg-5">
-        <h2>Countries</h2>
+        <h2>Top Visited</h2>
         <table class="table">
             <thead>
             <tr>
@@ -30,7 +30,7 @@ use yii\widgets\DetailView;
                 <tr>
                <?php $x++; ?>
                     <td><?php echo $x ?></td>
-                    <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
+                    <td><?php echo Html::img("$row->flag", ['width' => '30px'])." ".$row->name ?></td>
                     <td><?php echo $row->numero ?></td>
 
         <br>
@@ -42,7 +42,7 @@ use yii\widgets\DetailView;
     </div>
     <div class="col-lg-2"></div>
     <div class="col-lg-5">
-        <h2>Continent</h2>
+        <h2>Top Rated </h2>
         <table class="table">
             <thead>
             <tr>
@@ -59,7 +59,7 @@ use yii\widgets\DetailView;
             <tr>
                 <?php $x++; ?>
                 <td><?php echo $x ?></td>
-                <td><?php echo $row->name." ".  Html::img("$row->flag", ['width' => '30px']) ?></td>
+                <td><?php echo Html::img("$row->flag", ['width' => '30px'])." ".$row->name ?></td>
                 <td><?php echo $row->averagerating ?></td>
 
                 <br>

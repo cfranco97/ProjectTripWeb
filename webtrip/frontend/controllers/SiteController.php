@@ -5,8 +5,10 @@ namespace frontend\controllers;
 use common\models\Country;
 use common\models\Review;
 use common\models\User;
+use common\models\Wishlist;
 use frontend\models\CountryForm;
 use common\models\Trip;
+use frontend\models\WishlistForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\db\Expression;
@@ -80,10 +82,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         $model = new CountryForm();
-
-
-
         if ($model->load(Yii::$app->request->post())) {
             $country=Country::find()->where(['id_country'=>$model->country])->one();
             $reviews=Review::find()->where(['id_country'=>$country->id_country])->orderBy(new Expression('rand()'))->limit(3)->all();
@@ -91,6 +91,33 @@ class SiteController extends Controller
                                                    'reviews'=>$reviews]);
         } else {
             return $this->render('index', ['model' => $model]);
+        }
+
+
+
+    }
+
+    public function actionAdd(){
+
+        $country = Yii::$app->request->get('country');
+        $wish = new WishlistForm();
+        $wish->id_country=$country;
+        $wish->id_user=Yii::$app->user->id;
+        if ($wish->load(Yii::$app->request->post())) {
+
+            if ($wish->addWish()) {
+                Yii::$app->session->setFlash('success', "Added to wishlist");
+
+                return $this->render('country', [
+                    'wish' => $wish,
+                    'country' => $country
+                ]);
+            }
+
+        }
+        else {
+            return $this->redirect(['index']);
+
         }
     }
 
@@ -149,6 +176,7 @@ class SiteController extends Controller
             }
             echo Json::encode(['output' => '', 'selected' => '']);
     }
+
     /**
      * Displays contact page.
      *

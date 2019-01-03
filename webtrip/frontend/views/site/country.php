@@ -4,6 +4,7 @@ use kartik\icons\Icon;
 use kartik\rating\StarRating;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\widgets\Pjax;
 
 $this->title = $country->name;
 ?>
@@ -17,7 +18,11 @@ $this->title = $country->name;
             <?=  Html::img("$country->country_image",['width' => '500px']); ?>
 
             <?= Html::a('Plan a trip to this country', ['trip/trip', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Add to wishlist', ['trip/trip', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
+            <?php Pjax::begin(); ?>
+            <?= Html::beginForm(['site/add'], 'post', ['data-pjax' => '', 'class' => 'form-inline']); ?>
+            <?= Html::submitButton('Add to your wishlist', ['class' => 'btn btn-primary', 'name' => 'hash-button']) ?>
+            <?= Html::endForm() ?>
+            <?php Pjax::end(); ?>
         </div>
         <div class="col-lg-4">
 <table>

@@ -110,6 +110,12 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Review::className(), ['id_review' => 'id_review']);
     }
 
+    public function getWhislist()
+    {
+        $data = Wishlist::find()->where(['id_user'=>$this->id])->all();
+        return $data;
+    }
+
     public function getCountriesVisited(){
 
         $data = Trip::find()->select('id_country')->where(['id_user'=>$this->id])->distinct()->count();
