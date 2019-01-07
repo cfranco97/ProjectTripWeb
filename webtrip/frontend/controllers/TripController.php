@@ -82,6 +82,7 @@ class TripController extends Controller
             return $this->redirect(['mytrips','trips'=>$trips]);
             }
 
+
     }else{
         return $this->render('create',[
             'model' => $model,

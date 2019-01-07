@@ -70,14 +70,9 @@ class UserController extends Controller
     public function actionEdit($id)
     {
         $model= $this->findModel($id);
-        if ($model->load(Yii::$app->request->post())) {
-            $model->image = UploadedFile::getInstance($model, 'image');
-            if ($model->upload()) {
-                // file is uploaded successfully
-                return $this->redirect(['profile','model'=>$model]);
-            } else{
-            return $this->redirect(['profile','model'=>$model]);
-            }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['profile', 'id' => $model->id]);
         }
         else{
         return $this->render('edit', [

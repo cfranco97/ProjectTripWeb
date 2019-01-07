@@ -8,7 +8,6 @@ use common\models\User;
 use common\models\Wishlist;
 use frontend\models\CountryForm;
 use common\models\Trip;
-use frontend\models\WishlistForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\db\Expression;
@@ -97,27 +96,32 @@ class SiteController extends Controller
 
     }
 
+    public function actionCountryInformation(){
+        $id_country = Yii::$app->request->get('id_country');
+        $country = Country::find()->where(['id_country' => $id_country])->one();
+        $reviews = Review::find()->where(['id_country' => $id_country])->orderBy(new Expression('rand()'))->limit(3)->all();
+        return $this->render('country', [ 'country'=>$country,
+            'reviews'=>$reviews]);
+    }
+
     public function actionAdd(){
 
-        $country = Yii::$app->request->get('country');
-        $wish = new WishlistForm();
-        $wish->id_country=$country;
-        $wish->id_user=Yii::$app->user->id;
-        if ($wish->load(Yii::$app->request->post())) {
 
-            if ($wish->addWish()) {
-                Yii::$app->session->setFlash('success', "Added to wishlist");
+    $id_country = Yii::$app->request->get('id_country');
+    $wish = new Wishlist();
+    $wish->id_country = $id_country;
+    $wish->id_user = Yii::$app->user->id;
+        if(Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()==null) {
+            $wish->save();
+            Yii::$app->session->setFlash('success', "added to wishlist");
 
-                return $this->render('country', [
-                    'wish' => $wish,
-                    'country' => $country
-                ]);
-            }
-
+            return $this->redirect(['country-information','id_country'=>$id_country]);
         }
-        else {
-            return $this->redirect(['index']);
+    else{
+        Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()->delete();
+        Yii::$app->session->setFlash('success', "Removed  from wishlist");
 
+        return $this->redirect(['country-information','id_country'=>$id_country]);
         }
     }
 

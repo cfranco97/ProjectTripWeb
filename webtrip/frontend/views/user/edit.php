@@ -29,11 +29,6 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'image')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*'],
-        'pluginOptions'=>['allowedFileExtensions'=>['jpg','png'],'showUpload' => false,],
-    ]);   ?>
-
     <?= Html::a('Edit password', ['user/change-password','model'=>$model]) ?>
 
 

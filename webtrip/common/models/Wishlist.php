@@ -49,6 +49,6 @@ class Wishlist extends \yii\db\ActiveRecord
     }
     public function getCountries()
     {
-        return $this->hasMany(User::className(), ['id_country' => 'id_country']);
+        return $this->hasMany(Country::className(), ['id_country' => 'id_country']);
     }
 }

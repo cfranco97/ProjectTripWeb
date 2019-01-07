@@ -15,13 +15,13 @@ class WishlistForm extends Model
      */
     public function rules()
     {
-        return [
-            ['id_user', 'required'],
-            ['id_user', 'integer'],
-
-            ['id_country', 'required'],
-            ['id_country', 'integer'],
-        ];
+//        return [
+//            ['id_user', 'required'],
+//            ['id_user', 'integer'],
+//
+//            ['id_country', 'required'],
+//            ['id_country', 'integer'],
+//        ];
     }
 
     public function addWish()
