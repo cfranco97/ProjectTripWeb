@@ -25,7 +25,7 @@ class TripController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','review-information','my-trips','review','edit','delete'],
+                'only' => ['logout', 'signup','review-information','trip','my-trips','review','edit','delete'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -33,7 +33,7 @@ class TripController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','review-information','my-trips','review','edit','delete'],
+                        'actions' => ['logout','review-information','my-trips','review','edit','trip','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

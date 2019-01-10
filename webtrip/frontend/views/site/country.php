@@ -38,11 +38,11 @@ $this->title = $country->name;
     </div>
 </div>
 <br>
-<div class="conainter"
+<div class="container"
     <div class="row">
     <?php
         foreach ($reviews as $review) { ?>
-        <div class="col-lg-4" >
+        <div class="col-lg-3" style="border:1px solid black; height:200px;margin-right:70px;border-radius:15px;">
             <small><?= $review->user->username?> review</small>
             <?php echo StarRating::widget([
                 'name' => 'rating_21',

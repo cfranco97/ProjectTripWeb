@@ -379,5 +379,6 @@ ORDER BY averagerating desc")->all();
             'query2' =>$query2,
         ]);
 
+
     }
 }

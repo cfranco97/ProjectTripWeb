@@ -14,7 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Country', ['create'], ['class' => 'btn btn-success']) ?>
@@ -30,7 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label'=>'Continent'
 
             ],
-            'name',
+            [
+                'attribute'=>'\name',
+                'value'=>'name',
+                'label'=>'Country'
+
+            ],
             [
                 'attribute' => 'flag',
                 'format' => 'html',
@@ -38,7 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     if ($model->flag!='')
                     return Html::img($model->flag,
                         ['width' => '50px']);
-                    else return "no image";
+                    else return Html::img('https://www.freeiconspng.com/uploads/no-image-icon-4.png',
+                        ['width' => '50px']);
                 },
             ],
             'capital',

@@ -61,7 +61,7 @@ class CountrySearch extends Country
             'id_country' => $this->id_country,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
+        $query->andFilterWhere(['like', 'country.name', $this->name])
             ->andFilterWhere(['like', 'capital', $this->capital])
             ->andFilterWhere(['like', 'population', $this->population])
             ->andFilterWhere(['like', 'cod', $this->cod])

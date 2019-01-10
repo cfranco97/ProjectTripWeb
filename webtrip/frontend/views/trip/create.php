@@ -1,4 +1,6 @@
 <?php
+
+use dosamigos\ckeditor\CKEditor;
 use kartik\date\DatePicker;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -30,7 +32,13 @@ use yii\bootstrap\ActiveForm;
         ]
     ])
     ?>
-    <?= $form->field($model, 'notes')->textArea() ?>
+    <?= $form->field($model, 'notes')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6,'removeButtons'=> 'ImageButton'],
+        'preset' => 'basic',
+
+        'clientOptions' => [
+            'buttonsHide' => ['image','file']],
+    ]) ?>
     <?= Html::submitButton('Ok', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
     <?php ActiveForm::end(); ?>
 
