@@ -5,6 +5,8 @@ use common\models\Country;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
+use yii\filters\RateLimitInterface;
+
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
@@ -106,7 +108,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        //return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne($id);
     }
 
     /**
@@ -114,7 +117,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        return static::findOne(['auth_key'=>$token]);
+        //return null;
+       // throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
 
     /**
@@ -125,7 +130,13 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        //return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        $user = self::find()->where(["username"=>$username])->one();
+
+//        if(!count($user)){
+//            return null;
+//        }
+        return new static($user);
     }
 
     /**
@@ -168,7 +179,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getId()
     {
-        return $this->getPrimaryKey();
+        //return $this->getPrimaryKey();
+        return $this->id;
     }
 
     /**
@@ -177,6 +189,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function getAuthKey()
     {
         return $this->auth_key;
+        //return null;
     }
 
     /**
@@ -185,6 +198,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
+        //return null;
     }
 
     /**
@@ -193,6 +207,7 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $password password to validate
      * @return bool if password provided is valid for current user
      */
+
     public function validatePassword($password)
     {
         return Yii::$app->security->validatePassword($password, $this->password_hash);
@@ -231,6 +246,5 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
-
 
 }

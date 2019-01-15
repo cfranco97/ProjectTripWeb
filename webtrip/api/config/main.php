@@ -21,15 +21,23 @@ return [
         'request' => [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
-            ]
+            ],
+            'enableCsrfCookie' => false
         ],
-//        'response'=>[
-//
-//            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON
-//        ],
+        'response'=>[
+            'formatters' =>[
+                'json' =>[
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'prettyPrint' => YII_DEBUG,
+                    'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+                ],
+            ],
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
+            'enableSession' => false,
+            'loginUrl' => null,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -49,9 +57,9 @@ return [
             'rules' => [
                 [
                     //função que desativa o plurize no link do url, vindo do vendor/yiisoft/yii2/rest/UrlRule.
-                    //'pluralize' => false,
+                    'pluralize' => false,
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => ['v1/country','v1/trip','v1/user','v1/review','v1/continent'],
+                    'controller' => ['v1/default','v1/country','v1/trip','v1/user','v1/review','v1/continent'],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
                     ]
