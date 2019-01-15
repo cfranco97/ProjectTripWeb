@@ -23,12 +23,13 @@ class DefaultController extends ActiveController
         ];
         return $behaviors;
     }
+
     public function checkAccess($action, $model = null, $params = [])
     {
-        if ($action === 'get' || $action === 'delete' || $action === 'update') {
-            if ($model->author_id !== \Yii::$app->user->id)
+        if ( $action === 'delete' || $action === 'post' || $action === 'put') {
+            if (\Yii::$app->user->isGuest)
             {
-                throw new \yii\web\ForbiddenHttpException(sprintf('You can only %s  that you\'ve created.', $action));
+                throw new \yii\web\ForbiddenHttpException(sprintf('You can only %s  if you are logged in.', $action));
             }
         }
     }
