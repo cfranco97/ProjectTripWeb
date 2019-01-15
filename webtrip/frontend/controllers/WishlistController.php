@@ -96,4 +96,9 @@ class WishlistController extends Controller
 
         }
     }
+
+    public function actionCountryInformation(){
+
+        
+    }
 }

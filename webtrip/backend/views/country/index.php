@@ -1,14 +1,13 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Html;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CountrySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Countries';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="country-index">
 
@@ -30,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ],
             [
-                'attribute'=>'\name',
+                'attribute'=>'name',
                 'value'=>'name',
                 'label'=>'Country'
 

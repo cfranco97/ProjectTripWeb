@@ -54,6 +54,7 @@ class ReviewController extends Controller
     {
         $searchModel = new ReviewSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination = ['pageSize' => 10];
 
         return $this->render('index', [
             'searchModel' => $searchModel,

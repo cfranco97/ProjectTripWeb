@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Country;
 use yii\helpers\html;
 
 ?>
@@ -12,6 +13,7 @@ use yii\helpers\html;
         <thead>
         <tr>
             <th>Country</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -19,11 +21,18 @@ use yii\helpers\html;
         <?php
         foreach ($wishlist as $row) { ?>
         <?php
-        foreach ($row->countries as $name) { ?>
+        foreach ($row->countries as $country) { ?>
         <tr>
-            <td><?php echo $name->name ?></td>
+            <td><?=  Html::img("$country->flag", ['width' => '50px']) ." "?><?php echo $country->name ?></td>
+            <td><?= Html::a('View information', ['review/index'], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a('Delete', ['review/index'], ['class' => 'btn btn-danger']) ?></td>
+            <?php $query=Country::findBySql('SELECT country.name,COUNT(review.id_trip) AS numero FROM review LEFT JOIN country ON review.id_country = country.id_country WHERE country.name="'.$country->name.'"')->all();
+            ?>
+            <td><?php echo count($country->trips)?></td>
 
             <?php } ?>
+
+
         </tr>
         <?php } ?>
         </tbody>
