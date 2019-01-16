@@ -59,7 +59,7 @@ return [
                     //função que desativa o plurize no link do url, vindo do vendor/yiisoft/yii2/rest/UrlRule.
                     'pluralize' => false,
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => ['v1/default','v1/country','v1/trip','v1/user','v1/review','v1/continent'],
+                    'controller' => ['v1/default','v1/country','v1/trip','v1/user','v1/review','v1/continent','v1/wishlist'],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
                     ]

@@ -3,6 +3,7 @@
 
 namespace api\modules\v1\controllers;
 use yii\filters\auth\HttpBasicAuth;
+use yii\filters\RateLimiter;
 use yii\rest\ActiveController;
 
 class DefaultController extends ActiveController
@@ -21,6 +22,10 @@ class DefaultController extends ActiveController
                 }
             }
         ];
+        $behaviors['rateLimiter'] = [
+            'class'=> RateLimiter::className(),
+            'enableRateLimitHeaders' => true,
+        ];
         return $behaviors;
     }
 
@@ -35,3 +40,4 @@ class DefaultController extends ActiveController
     }
 
 }
+

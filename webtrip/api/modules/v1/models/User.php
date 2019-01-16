@@ -2,6 +2,7 @@
 namespace api\modules\v1\models;
 
 use common\models\Country;
+use common\models\Wishlist;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -25,7 +26,7 @@ use yii\web\IdentityInterface;
  * @property string $password write-only password
  * @property int $id_country
  */
-class User extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord implements IdentityInterface, RateLimitInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_BLOCK = 5;
@@ -102,7 +103,23 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasMany(Review::className(), ['id' => 'id_user']);
     }
+    public function getWishlist()
+    {
+        $data = Wishlist::find()->where(['id_user'=>$this->id])->all();
+        return $data;
+    }
 
+    public function getCountriesVisited(){
+
+        $data = Trip::find()->select('id_country')->where(['id_user'=>$this->id])->distinct()->count();
+        return $data;
+    }
+
+    public function getPercentageWorld(){
+
+        $data = $this->getCountriesVisited()/195;
+        return $data;
+    }
     /**
      * {@inheritdoc}
      */
@@ -246,5 +263,45 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+    //https://www.yiiframework.com/doc/guide/2.0/en/rest-rate-limiting
+    /**
+     * Lets the system know how many requests are allowed for this user in a given period of time
+     *
+     * @param yii\web\Request $request
+     * @param string $action
+     * @return array
+     */
+    public function getRateLimit($request, $action)
+    {
+        // Tuple is num_requests, period_in_seconds
+        return [100, 1]; // $rateLimit requests per second
+    }
+    /**
+     * Return the current rate limit values for this user
+     *
+     * @param yii\web\Request $request
+     * @param string $action
+     * @return array
+     */
+    public function loadAllowance($request, $action)
+    {
+        //$allowance = 100; // fetch the allowance from a datasource.
+        return [100,time()];
+    }
+    /**
+     * Update this user's rate limit allowances based on a request.
+     *
+     * Note, this method can use the request and action to make decisions about
+     * if and what allowance values to save
+     *
+     * @param yii\web\Request $request The api request
+     * @param string $action The action being called
+     * @param int $allowance The updated allowance amount
+     * @param int $timestamp The unix timestamp of the request
+     */
+    public function saveAllowance($request, $action, $allowance, $timestamp)
+    {
 
+        return true;
+    }
 }

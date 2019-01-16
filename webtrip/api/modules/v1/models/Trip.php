@@ -63,8 +63,8 @@ class Trip extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 
-    public function getReviews()
+    public function getReview()
     {
-        return $this->hasMany(Review::className(), ['id_review' => 'id_review']);
+        return $this->hasOne(Review::className(), ['id_review' => 'id_review']);
     }
 }

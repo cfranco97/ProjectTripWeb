@@ -70,6 +70,10 @@ class Country extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Trip::className(), ['id_country' => 'id_country']);
     }
+    public function getReviews()
+    {
+        return $this->hasMany(Review::className(), ['id_country' => 'id_country']);
+    }
     public static function getCountry($id_country) {
         $data=Country::find()
             ->where(['id_continent'=>$id_country])

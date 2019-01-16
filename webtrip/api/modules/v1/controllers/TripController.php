@@ -24,12 +24,12 @@ class TripController extends ActiveController
     }
     public function checkAccess($action, $model = null, $params = [])
     {
-        if ( $action === 'delete' || $action === 'post' || $action === 'put') {
-            if (\Yii::$app->user->isGuest)
+        if ( $action === 'delete' || $action === 'post' || $action === 'put' || $action === 'get') {
+            if (\Yii::$app->user->can("admin"))
             {
-                throw new \yii\web\ForbiddenHttpException(sprintf('You can only %s  if you are logged in.', $action));
+                throw new \yii\web\ForbiddenHttpException(sprintf('You can only %s  if you are logged in as an Admin!.', $action));
             }
         }
     }
-    
+
 }
