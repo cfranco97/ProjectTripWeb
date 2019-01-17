@@ -9,7 +9,7 @@ use yii\rest\ActiveController;
 
 class ReviewController extends ActiveController
 {
-    public $modelClass = 'api\modules\v1\models\Review';
+    public $modelClass = 'common\models\Review';
 
     public function behaviors()
     {

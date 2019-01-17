@@ -7,7 +7,7 @@ use yii\rest\ActiveController;
 
 class WishlistController extends ActiveController
 {
-    public $modelClass = 'api\modules\v1\models\Wishlist';
+    public $modelClass = 'common\models\Wishlist';
 
     public function behaviors()
     {

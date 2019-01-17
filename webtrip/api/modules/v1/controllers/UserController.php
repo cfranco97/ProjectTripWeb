@@ -2,7 +2,7 @@
 
 namespace api\modules\v1\controllers;
 
-use api\modules\v1\models\User;
+use common\models\User;
 use Yii;
 use yii\filters\auth\HttpBasicAuth;
 use yii\rest\ActiveController;
@@ -11,12 +11,11 @@ use yii\web\Response;
 
 class UserController extends ActiveController
 {
-    public $modelClass = 'api\modules\v1\models\User';
+    public $modelClass = 'common\models\User';
 
 
     public function behaviors()
     {
-
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
             'class'=>HttpBasicAuth::className(),

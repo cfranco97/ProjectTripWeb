@@ -2,14 +2,14 @@
 
 namespace api\modules\v1\controllers;
 
-use api\modules\v1\models\Trip;
+use common\models\Trip;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
 
 class TripController extends ActiveController
 {
-    public $modelClass = 'api\modules\v1\models\Trip';
+    public $modelClass = 'common\models\Trip';
 
     public function behaviors()
     {

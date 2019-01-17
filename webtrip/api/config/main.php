@@ -110,8 +110,6 @@ return [
                 'extraPatterns'=>[
                     'GET  done/{id}'=>'done',
                     'GET todo/{id}'=>'todo',
-                    'PUT edit/{id}'=> 'edit',
-
                 ],
             ]
 

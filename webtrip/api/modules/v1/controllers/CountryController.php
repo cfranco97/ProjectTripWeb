@@ -9,7 +9,7 @@ use yii\rest\ActiveController;
 
 class CountryController extends ActiveController
 {
-    public $modelClass = 'api\modules\v1\models\Country';
+    public $modelClass = 'common\models\Country';
 
     public function behaviors()
     {
