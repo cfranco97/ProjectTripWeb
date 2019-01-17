@@ -59,23 +59,46 @@ return [
                     //função que desativa o plurize no link do url, vindo do vendor/yiisoft/yii2/rest/UrlRule.
                     'pluralize' => false,
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => ['v1/country','v1/trip','v1/review','v1/continent','v1/wishlist'],
+                    'controller' => ['v1/trip','v1/review','v1/wishlist'],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
                     ],
                 ],
 
-                [
+                [//ENDPOINTS DO USER
                     'pluralize'=> false,
                     'class'=> 'yii\rest\UrlRule',
                     'controller'=> 'v1/user',
+
                     'extraPatterns'=>[
                         'POST login'=>'login',
+                        'POST signup' => 'signup',
                     ],
                 ],
 
+                [//ENDPOINTS DO CONTRY
+                    'pluralize'=>false,
+                    'class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/country',
 
+                    'extraPatterns'=>[
+                      'GET top-visit'=>'top-visit',
+                        'GET top-avg'=>'top-avg',
+                    ],
+                ],
 
+                [//ENDPOINTS DO CONTINENT
+                'pluralize'=>false,
+                'class'=> 'yii\rest\UrlRule',
+                'controller'=>'v1/continent',
+                 'tokens'=>[
+                     '{id}'=>'<id:\\w+>'
+                 ],
+                'extraPatterns'=>[
+                    'GET  get-countries/{id}'=>'get-countries',
+
+                ],
+            ]
             ],        
         ]
     ],

@@ -5,6 +5,7 @@ namespace api\modules\v1\controllers;
 use api\modules\v1\models\User;
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\filters\auth\HttpBasicAuth;
 use yii\rest\ActiveController;
 use yii\web\Response;
@@ -45,5 +46,18 @@ class UserController extends ActiveController
         //return [false];
     }
 
+    public function actionSignup(){
+        $user = new User();
+
+    }
+
+    public function checkAccess($action, $model = null, $params = [])
+    {
+        if($action === 'post'){
+            if(!\Yii::$app->user->can('admin')){
+                throw new \yii\web\ForbiddenHttpException('tem que ser admin para fazer esta' .$action);
+            }
+        }
+    }
 
 }
