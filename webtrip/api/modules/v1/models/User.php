@@ -147,8 +147,8 @@ class User extends ActiveRecord implements IdentityInterface, RateLimitInterface
      */
     public static function findByUsername($username)
     {
-        //return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
-        $user = self::find()->where(["username"=>$username])->one();
+        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        //$user = self::find()->where(["username"=>$username])->one();
 
 //        if(!count($user)){
 //            return null;
@@ -274,7 +274,7 @@ class User extends ActiveRecord implements IdentityInterface, RateLimitInterface
     public function getRateLimit($request, $action)
     {
         // Tuple is num_requests, period_in_seconds
-        return [100, 1]; // $rateLimit requests per second
+        return [100, 10]; // $rateLimit requests per second
     }
     /**
      * Return the current rate limit values for this user

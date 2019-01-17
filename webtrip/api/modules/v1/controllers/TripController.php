@@ -2,6 +2,9 @@
 
 namespace api\modules\v1\controllers;
 
+use api\modules\v1\models\Trip;
+use api\modules\v1\models\User;
+use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBearerAuth;
 use yii\rest\ActiveController;
@@ -22,6 +25,9 @@ class TripController extends ActiveController
         ];
         return $behaviors;
     }
+
+
+
     public function checkAccess($action, $model = null, $params = [])
     {
         if ( $action === 'delete' || $action === 'post' || $action === 'put' || $action === 'get') {

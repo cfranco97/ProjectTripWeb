@@ -37,7 +37,7 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
             'enableSession' => false,
-            'loginUrl' => null,
+            'loginUrl'=> null,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -59,12 +59,23 @@ return [
                     //função que desativa o plurize no link do url, vindo do vendor/yiisoft/yii2/rest/UrlRule.
                     'pluralize' => false,
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => ['v1/default','v1/country','v1/trip','v1/user','v1/review','v1/continent','v1/wishlist'],
+                    'controller' => ['v1/country','v1/trip','v1/review','v1/continent','v1/wishlist'],
                     'tokens' => [
                         '{id}' => '<id:\\w+>'
-                    ]
-                    
-                ]
+                    ],
+                ],
+
+                [
+                    'pluralize'=> false,
+                    'class'=> 'yii\rest\UrlRule',
+                    'controller'=> 'v1/user',
+                    'extraPatterns'=>[
+                        'POST login'=>'login',
+                    ],
+                ],
+
+
+
             ],        
         ]
     ],
