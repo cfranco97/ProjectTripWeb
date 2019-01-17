@@ -98,7 +98,23 @@ return [
                     'GET  get-countries/{id}'=>'get-countries',
 
                 ],
+            ],
+
+                [//ENDPOINTS DO trip
+                'pluralize'=>false,
+                'class'=> 'yii\rest\UrlRule',
+                'controller'=>'v1/trip',
+                'tokens'=>[
+                    '{id}'=>'<id:\\w+>'
+                ],
+                'extraPatterns'=>[
+                    'GET  done/{id}'=>'done',
+                    'GET todo/{id}'=>'todo',
+                    'PUT edit/{id}'=> 'edit',
+
+                ],
             ]
+
             ],        
         ]
     ],

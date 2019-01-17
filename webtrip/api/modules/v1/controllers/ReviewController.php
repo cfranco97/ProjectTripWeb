@@ -2,8 +2,8 @@
 
 namespace api\modules\v1\controllers;
 
-use yii\filters\auth\CompositeAuth;
-use yii\filters\auth\HttpBearerAuth;
+
+use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
 
@@ -15,10 +15,7 @@ class ReviewController extends ActiveController
     {
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
-            'class'=>CompositeAuth::className(),
-            'authMethods'=>[
-                HttpBearerAuth::className(),
-            ],
+            'class' => QueryParamAuth::className(),
         ];
         return $behaviors;
     }

@@ -3,10 +3,7 @@
 namespace api\modules\v1\controllers;
 
 use api\modules\v1\models\Trip;
-use api\modules\v1\models\User;
-use Yii;
-use yii\filters\auth\CompositeAuth;
-use yii\filters\auth\HttpBearerAuth;
+use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
 
@@ -18,14 +15,26 @@ class TripController extends ActiveController
     {
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
-          'class'=>CompositeAuth::className(),
-          'authMethods'=>[
-              HttpBearerAuth::className(),
-          ],
+            'class' => QueryParamAuth::className(),
         ];
         return $behaviors;
     }
 
+    public function actionDone($id){
+        $today = date('Y-m-d');
+        $doneTrips=Trip::find()->where(['<','enddate',$today])->andWhere(['id_user'=>$id])->orderBy('startdate DESC')->all();
+        return $doneTrips;
+    }
+
+    public function actionTodo($id){
+        $today = date('Y-m-d');
+        $todoTrips=Trip::find()->where(['>=','enddate',$today])->andWhere(['id_user'=>$id])->orderBy('enddate ASC')->all();
+        return $todoTrips;
+    }
+
+    public function actionEdit($id){
+
+    }
 
 
     public function checkAccess($action, $model = null, $params = [])
