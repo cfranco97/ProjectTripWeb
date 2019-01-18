@@ -7,6 +7,7 @@ use yii\bootstrap\ActiveForm;
 
 
 ?>
+
 <div class="site-trip">
 
     <div class="row">

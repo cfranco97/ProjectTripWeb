@@ -13,26 +13,25 @@ use yii\helpers\html;
         <thead>
         <tr>
             <th>Country</th>
+            <th>No. of visits</th>
+            <th>Avg. rating</th>
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
 
         <?php
-        foreach ($wishlist as $row) { ?>
+        foreach ($wishlist as $wish) { ?>
         <?php
-        foreach ($row->countries as $country) { ?>
+        foreach ($wish->countries as $country) { ?>
         <tr>
             <td><?=  Html::img("$country->flag", ['width' => '50px']) ." "?><?php echo $country->name ?></td>
-            <td><?= Html::a('View information', ['review/index'], ['class' => 'btn btn-primary']) ?>
-                <?= Html::a('Delete', ['review/index'], ['class' => 'btn btn-danger']) ?></td>
-            <?php $query=Country::findBySql('SELECT country.name,COUNT(review.id_trip) AS numero FROM review LEFT JOIN country ON review.id_country = country.id_country WHERE country.name="'.$country->name.'"')->all();
-            ?>
-            <td><?php echo count($country->trips)?></td>
+            <td><?php echo $country->visits;?></td>
 
+            <td><?php echo $country->average?></td>
+            <td><?= Html::a('View information', ['site/country-information', 'id_country'=>$country->id_country], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a('Delete', ['wishlist/delete','id_wishlist'=>$wish->id_wishlist], ['class' => 'btn btn-danger']) ?></td>
             <?php } ?>
-
-
         </tr>
         <?php } ?>
         </tbody>

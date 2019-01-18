@@ -23,7 +23,7 @@ use common\models\Country;
             <p><b>Email: </b><?= $model->email?></p>
             <p><b>Country: </b> <?= $model->country->name?></p>
             <br>
-            <?= Html::a('Edit Profile', ['edit', 'id'=>$model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a('Edit Profile', ['edit'], ['class' => 'btn btn-primary']) ?>
 
         </div>
         <div class="col-lg-5" >

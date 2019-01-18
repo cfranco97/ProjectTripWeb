@@ -35,6 +35,16 @@ $this->title = $country->name;
     </tr>
 </table>
         </div>
+        <div class="col-lg-2">
+            <table>
+                <tr>
+                    <th>No. of visits <?= $country->visits?></th>
+                </tr>
+                <tr>
+                    <th>Avg. rating: <?= $country->average?></th>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 <br>
