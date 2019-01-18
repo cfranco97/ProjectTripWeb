@@ -33,6 +33,7 @@ class Trip extends \yii\db\ActiveRecord
     {
         return [
             [['id_country', 'id_user'], 'integer'],
+            [['id_country', 'id_user'], 'required'],
             ['startdate', 'required'],
             ['startdate', 'safe'],
             ['startdate', 'date', 'format' => 'yyyy-M-d'],

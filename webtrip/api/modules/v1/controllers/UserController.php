@@ -21,7 +21,7 @@ class UserController extends ActiveController
             'class'=>HttpBasicAuth::className(),
             'auth'=>function($username,$password){
                 Yii::$app->response->format = Response::FORMAT_JSON;//retorna em formato JSON
-                $user = \api\modules\v1\models\User::findByUsername($username);
+                $user = User::findByUsername($username);
                 if($user && $user->validatePassword($password) ){
                     return $user;
 
