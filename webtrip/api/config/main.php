@@ -111,7 +111,19 @@ return [
                     'GET  done/{id}'=>'done',
                     'GET todo/{id}'=>'todo',
                 ],
-            ]
+            ],
+
+                [//ENDPOINTS DO WISHLIST
+                    'pluralize'=>false,
+                    'class'=> 'yii\rest\UrlRule',
+                    'controller'=>'v1/wishlist',
+                    'tokens'=>[
+                        '{id}'=>'<id:\\w+>'
+                    ],
+                    'extraPatterns'=>[
+                        'GET  by-user/{id}'=>'by-user',
+                    ],
+                ],
 
             ],        
         ]
