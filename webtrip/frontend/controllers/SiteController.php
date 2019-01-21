@@ -365,8 +365,8 @@ class SiteController extends Controller
     public function actionTop(){
 
 
-        $query=Country::findBySql("SELECT country.flag, country.name,COUNT(review.id_trip) AS numero FROM review
-LEFT JOIN country ON review.id_country = country.id_country
+        $query=Country::findBySql("SELECT country.flag, country.name,COUNT(trip.id_trip) AS numero FROM trip
+LEFT JOIN country ON trip.id_country = country.id_country
 GROUP BY name ORDER BY numero DESC    ")->all();
 
         $query2=Country::findBySql("SELECT country.flag, country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
@@ -378,6 +378,7 @@ ORDER BY averagerating desc")->all();
             'query' => $query,
             'query2' =>$query2,
         ]);
+
 
     }
 }

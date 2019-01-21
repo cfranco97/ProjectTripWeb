@@ -24,7 +24,13 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->widget(Select2::classname(), [
+        'data' => Country::getAvailableCountries(),
+        'options' => ['placeholder' => 'Select a Country ...'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
 
     <?= $form->field($model, 'capital')->textInput(['maxlength' => true]) ?>
 

@@ -17,7 +17,9 @@ class CountryController extends Controller
 {
     /**
      * {@inheritdoc}
+     *
      */
+
     public function behaviors()
     {
         return [
@@ -55,6 +57,7 @@ class CountryController extends Controller
     {
         $searchModel = new CountrySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination = ['pageSize' => 10];
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -70,8 +73,9 @@ class CountryController extends Controller
     public function actionCreate()
     {
         $model = new Country();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->name=Country::getAvailableCountries()[$model->name];
+            $model->save();
             Yii::$app->session->setFlash('success', $model->name." created");
             return $this->redirect(['index']);
         }
@@ -91,8 +95,9 @@ class CountryController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->name=Country::getAvailableCountries()[$model->name];
+            $model->save();
             Yii::$app->session->setFlash('success', $model->name." updated");
             return $this->redirect(['index']);
         }

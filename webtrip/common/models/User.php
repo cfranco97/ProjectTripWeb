@@ -105,9 +105,9 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasMany(Trip::className(), ['id' => 'id_user']);
     }
 
-    public function getReview()
+    public function getReviews()
     {
-        return $this->hasOne(Review::className(), ['id_review' => 'id_review']);
+        return $this->hasMany(Review::className(), ['id' => 'id_user']);
     }
 
     public function getWhislist()

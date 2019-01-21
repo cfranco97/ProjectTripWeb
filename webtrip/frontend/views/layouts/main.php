@@ -11,7 +11,6 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
-$user=User::find()->where(['id' => Yii::$app->user->id])->one();
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -49,7 +48,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Wishlist', 'url' => ['/wishlist/index']];
         $menuItems[] = ['label' => 'Account', 'items' => [
-            ['label' => 'View Profile', 'url' => ['/user/profile', 'id'=>$user->id]],
+            ['label' => 'View Profile', 'url' => ['/user/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
         ]];
     }

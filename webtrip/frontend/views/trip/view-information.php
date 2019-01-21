@@ -18,7 +18,7 @@ use yii\bootstrap\ActiveForm;
 
 
     <p>
-        <?= Html::a('Edit Profile', ['edit','id_trip'=>$trip->id_trip], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Edit this trip', ['edit','id_trip'=>$trip->id_trip], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete this Trip',['delete','id_trip'=>$trip->id_trip],[
             'class'=>'btn btn-danger',
             'data'=>[

@@ -25,7 +25,7 @@ class TripController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','review-information','my-trips','review','edit','delete'],
+                'only' => ['logout', 'signup','review-information','trip','my-trips','review','edit','delete'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -33,7 +33,7 @@ class TripController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','review-information','my-trips','review','edit','delete'],
+                        'actions' => ['logout','review-information','my-trips','review','edit','trip','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -68,27 +68,32 @@ class TripController extends Controller
 
     public function actionTrip()
     {
-    $id_country = Yii::$app->request->get('id_country');
-    $country = Country::find()->where(['id_country' => $id_country])->one();
-    $model = new TripForm();
+        $id_country = Yii::$app->request->get('id_country');
+        $country = Country::find()->where(['id_country' => $id_country])->one();
+        $country_exists = Country::find()->where(['id_country' => $id_country])->exists();
+        $model = new TripForm();
 
-    if ($model->load(Yii::$app->request->post())&& $model->validate()) {
-        $model->id_country=$id_country;
-        $model->id_user=Yii::$app->user->id;
-        if ($model->saveTrip()) {
+        if ($country_exists == true) {
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+                $model->id_country = $id_country;
+                $model->id_user = Yii::$app->user->id;
+                if ($model->saveTrip()) {
 
-            $trips = $this->findTripsDoneByUser();
+                    $trips = $this->findTripsDoneByUser();
 
-            return $this->redirect(['mytrips','trips'=>$trips]);
+                    return $this->redirect(['mytrips', 'trips' => $trips]);
+                }
+
+
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                    'country' => $country]);
             }
-
-
-    }else{
-        return $this->render('create',[
-            'model' => $model,
-            'country' => $country]);
+        } else{
+            Yii::$app->session->setFlash('error', "Invalid Country");
+            return $this->goHome();}
     }
-}
 
     public function actionMytrips()
     {
@@ -104,41 +109,48 @@ class TripController extends Controller
     {
         $id_trip = Yii::$app->request->get('id_trip');
         $trip = Trip::find()->where(['id_trip' => $id_trip])->one();
+        $trip_existance = Trip::find()->where(['id_trip' => $id_trip])->exists();
         $model = Review::find()->where(['id_trip' => $id_trip])->one();
-        if ($model != null) {
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                Yii::$app->session->setFlash('success', "Review Updated");
-                return $this->render('view-information', [
-                    'model' => $model,
-                    'trip' => $trip]);
+
+        if ($trip_existance == true) {
+            if ($model != null) {
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    Yii::$app->session->setFlash('success', "Review Updated");
+                    return $this->render('view-information', [
+                        'model' => $model,
+                        'trip' => $trip]);
+                } else {
+                    return $this->render('view-information', [
+                        'model' => $model,
+                        'trip' => $trip]);
+                }
             } else {
-                return $this->render('view-information', [
-                    'model' => $model,
-                    'trip' => $trip]);
-            }
-        } else {
-            $model = new ReviewForm();
-            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-                $model->id_user = Yii::$app->user->id;
-                $model->id_trip = $id_trip;
-                $model->id_country = $trip->id_country;
-                if ($model->saveReview()) {
-                    Yii::$app->session->setFlash('success', "Review sent");
+                $model = new ReviewForm();
+                if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+                    $model->id_user = Yii::$app->user->id;
+                    $model->id_trip = $id_trip;
+                    $model->id_country = $trip->id_country;
+                    if ($model->saveReview()) {
+                        Yii::$app->session->setFlash('success', "Review sent");
+
+                        return $this->render('view-information', [
+                            'trip' => $trip,
+                            'model' => $model
+                        ]);
+                    }
+                } else {
 
                     return $this->render('view-information', [
                         'trip' => $trip,
                         'model' => $model
                     ]);
                 }
-            } else {
-
-                return $this->render('view-information', [
-                    'trip' => $trip,
-                    'model' => $model
-                ]);
             }
-        }
 
+        }   else {
+                Yii::$app->session->setFlash('error', "Invalid trip");
+                return $this->redirect(['mytrips']);
+        }
     }
 
     public function actionEdit()

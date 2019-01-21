@@ -63,7 +63,8 @@ class WishlistController extends Controller
     }
 
     public function actionIndex(){
-       $wishlist = Wishlist::find()->where(['id_user' => Yii::$app->user->id])->all();
+
+        $wishlist = Wishlist::find()->where(['id_user' => Yii::$app->user->id])->all();
         return $this->render('index', [
             'wishlist' => $wishlist,
         ]);
@@ -95,5 +96,12 @@ class WishlistController extends Controller
 
 
         }
+    }
+
+    public function actionDelete()
+    {
+        $id_wishlist = Yii::$app->request->get('id_wishlist');
+        Wishlist::find()->where(['id_wishlist' => $id_wishlist])->one()->delete();
+        return $this->redirect(['index']);
     }
 }
