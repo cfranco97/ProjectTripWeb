@@ -1,8 +1,8 @@
 <?php
+use backend\tests\FunctionalTester;
 
-use backend\tests\AcceptanceTester;
+$I = new FunctionalTester($scenario);
 
-$I = new AcceptanceTester($scenario);
 
 $I->wantTo('login as admin');
 
