@@ -189,6 +189,4 @@ class TripController extends Controller
         $toDoTrips=Trip::find()->where(['>=','enddate',$today])->andWhere(['id_user'=>Yii::$app->user->id])->orderBy('enddate ASC')->all();
         return $toDoTrips;
     }
-
-
 }

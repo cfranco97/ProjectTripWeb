@@ -1,7 +1,7 @@
 <?php
 
 use common\models\Country;
-use yii\helpers\html;
+use yii\helpers\Html;
 
 ?>
 
