@@ -10,25 +10,18 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * CountryController implements the CRUD actions for Country model.
- */
+
 class CountryController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     *
-     */
-
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>['index','create','update','delete'],
+                'only' =>['index','create','update'],
                 'rules' => [
                     [
-                        'actions' => ['index','create','update','delete'],
+                        'actions' => ['index','create','update'],
                         'allow' => true,
                         'roles' => ['superAdmin'],
                     ],
@@ -50,8 +43,7 @@ class CountryController extends Controller
     }
 
     /**
-     * Lists all Country models.
-     * @return mixed
+     * Lists all Country
      */
     public function actionIndex()
     {
@@ -66,9 +58,7 @@ class CountryController extends Controller
     }
 
     /**
-     * Creates a new Country model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
+     * Creates a Country
      */
     public function actionCreate()
     {
@@ -86,11 +76,7 @@ class CountryController extends Controller
     }
 
     /**
-     * Updates an existing Country model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * Updates a country
      */
     public function actionUpdate($id)
     {
@@ -107,27 +93,8 @@ class CountryController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing Country model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-        Yii::$app->session->setFlash('success', "Country deleted");
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the Country model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Country the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+    /*
+     * Finds the selected country
      */
     protected function findModel($id)
     {

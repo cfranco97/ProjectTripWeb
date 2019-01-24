@@ -10,14 +10,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * TripController implements the CRUD actions for Trip model.
- */
+
 class TripController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -47,8 +42,7 @@ class TripController extends Controller
     }
 
     /**
-     * Lists all Trip models.
-     * @return mixed
+     * Lists all Trips
      */
     public function actionIndex()
     {
@@ -63,11 +57,7 @@ class TripController extends Controller
         ]);
     }
     /**
-     * Updates an existing Trip model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * Updates the selected trip
      */
     public function actionUpdate($id)
     {
@@ -84,11 +74,7 @@ class TripController extends Controller
     }
 
     /**
-     * Deletes an existing Trip model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * Deletes the selected trip
      */
     public function actionDelete($id)
     {
@@ -98,11 +84,7 @@ class TripController extends Controller
     }
 
     /**
-     * Finds the Trip model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Trip the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     * Finds the selected trip
      */
     protected function findModel($id)
     {

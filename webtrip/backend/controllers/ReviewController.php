@@ -10,14 +10,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * ReviewController implements the CRUD actions for Review model.
- */
+
 class ReviewController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -47,8 +42,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Lists all Review models.
-     * @return mixed
+     * Lists all Reviews
      */
     public function actionIndex()
     {
@@ -61,12 +55,8 @@ class ReviewController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
-
-    /**     * Deletes an existing Review model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+    /*
+     * Deletes the selected review
      */
     public function actionDelete($id)
     {
@@ -76,12 +66,8 @@ class ReviewController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the Review model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Review the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+    /*
+     * Finds the selected review
      */
     protected function findModel($id)
     {
