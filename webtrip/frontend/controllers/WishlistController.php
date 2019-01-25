@@ -23,15 +23,14 @@ class WishlistController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' =>  ['index','add','delete'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['index','add','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -62,6 +61,9 @@ class WishlistController extends Controller
         ];
     }
 
+    /*
+     *
+     */
     public function actionIndex(){
 
         $wishlist = Wishlist::find()->where(['id_user' => Yii::$app->user->id])->all();

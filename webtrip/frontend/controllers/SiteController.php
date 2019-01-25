@@ -29,15 +29,15 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout','get-started','index','signup','country-information'],
+                'only' => ['logout','get-started','index','signup','country-information','top','profile','wishlist','gallery','about'],
                 'rules' => [
                     [
-                        'actions' => ['signup','index'],
+                        'actions' => ['signup','index','top','about'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','get-started','country-information','index'],
+                        'actions' => ['logout','get-started','country-information','index','top','profile','wishlist','gallery','about'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -255,18 +255,18 @@ class SiteController extends Controller
     }
 
     public function actionTop(){
-        $query=Country::findBySql("SELECT country.flag, country.name,COUNT(trip.id_trip) AS numero FROM trip
+        $topvisited=Country::findBySql("SELECT country.flag, country.name,COUNT(trip.id_trip) AS numero FROM trip
 LEFT JOIN country ON trip.id_country = country.id_country
 GROUP BY name ORDER BY numero DESC  LIMIT 10  ")->all();
 
-        $query2=Country::findBySql("SELECT country.flag, country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
+        $toprated=Country::findBySql("SELECT country.flag, country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
 LEFT JOIN country ON review.id_country = country.id_country
 GROUP BY name
 ORDER BY averagerating DESC LIMIT 10")->all();
 
         return $this->render('top', [
-            'query' => $query,
-            'query2' =>$query2,
+            'toprated' => $toprated,
+            'topvisited' =>$topvisited,
         ]);
     }
 }

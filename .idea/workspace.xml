@@ -3,24 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="4db88a75-bda7-4fc8-8265-0d5e4323291f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/Continent.php" afterPath="$PROJECT_DIR$/webtrip/common/models/Continent.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/Country.php" afterPath="$PROJECT_DIR$/webtrip/common/models/Country.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/CountrySearch.php" afterPath="$PROJECT_DIR$/webtrip/common/models/CountrySearch.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/Review.php" afterPath="$PROJECT_DIR$/webtrip/common/models/Review.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/ReviewSearch.php" afterPath="$PROJECT_DIR$/webtrip/common/models/ReviewSearch.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/SignupForm.php" afterPath="$PROJECT_DIR$/webtrip/common/models/SignupForm.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/Trip.php" afterPath="$PROJECT_DIR$/webtrip/common/models/Trip.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/TripSearch.php" afterPath="$PROJECT_DIR$/webtrip/common/models/TripSearch.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/User.php" afterPath="$PROJECT_DIR$/webtrip/common/models/User.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/UserSearch.php" afterPath="$PROJECT_DIR$/webtrip/common/models/UserSearch.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/common/models/Wishlist.php" afterPath="$PROJECT_DIR$/webtrip/common/models/Wishlist.php" />
       <change beforePath="$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php" />
       <change beforePath="$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php" afterPath="$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php" afterPath="$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php" />
       <change beforePath="$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php" afterPath="$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/country.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/country.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/index.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/index.php" />
-      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/login.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/login.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/about.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/about.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/contact.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/gallery.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/gallery.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/requestPasswordResetToken.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/resetPassword.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/top.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/top.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/trip/edit.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/trip/edit.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/trip/index.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/trip/index.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/_form.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/_search.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/change-password.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/user/change-password.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/create.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/edit.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/user/edit.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/index.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/user/index.php" />
       <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/profile.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/user/profile.php" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/user/view.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php" afterPath="$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php" />
     </list>
     <ignored path="$PROJECT_DIR$/webtrip/vendor/behat/gherkin/" />
     <ignored path="$PROJECT_DIR$/webtrip/vendor/bower-asset/bootstrap/" />
@@ -121,11 +127,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#28#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state relative-caret-position="462">
+              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,100 +172,69 @@
       <file leaf-file-name="welcome.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignupForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/SignupForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trip.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/Trip.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TripSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/TripSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <element signature="e#33#52#0#PHP" expanded="true" />
+                <element signature="e#7#33#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/User.php">
+      <file leaf-file-name="top.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/top.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="89" column="14" lean-forward="true" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="46" />
+            <state relative-caret-position="409">
+              <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding>
-                <element signature="e#32#40#0#PHP" expanded="true" />
+                <element signature="e#7#29#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/UserSearch.php">
+      <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-              <folding>
-                <element signature="e#33#52#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wishlist.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/Wishlist.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="257" column="9" lean-forward="true" selection-start-line="257" selection-start-column="9" selection-end-line="257" selection-end-column="14" />
-              <folding>
-                <marker date="1548427191761" expanded="true" signature="6649:6815" ph="SELECT count... trip" />
-                <marker date="1548427191761" expanded="true" signature="6649:6825" ph="SELECT count... trip" />
-                <marker date="1548427191761" expanded="true" signature="6875:7041" ph="SELECT count... review" />
-                <marker date="1548427191761" expanded="true" signature="6875:7077" ph="SELECT count... review" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtrip/common/models/LoginForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-4">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#39#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <element signature="e#7#39#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-information.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-186">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#36#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -252,26 +259,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webtrip/composer.json" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/web/css/index_backoffice.css" />
-        <option value="$PROJECT_DIR$/webtrip/backend/assets/AppAsset.php" />
-        <option value="$PROJECT_DIR$/webtrip/backend/web/css/index_backoffice.css" />
-        <option value="$PROJECT_DIR$/webtrip/backend/views/site/index.php" />
-        <option value="$PROJECT_DIR$/webtrip/environments/dev/backend/web/index-test.php" />
         <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/ContinentController.php" />
         <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/index.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/create.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/webtrip/api/modules/v1/controllers/TripController.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/config/main-local.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/config/main-local.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/top.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/top.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/country.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/index 2.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.php" />
@@ -284,7 +278,6 @@
         <option value="$PROJECT_DIR$/webtrip/backend/views/country/_form.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/views/country/update.php" />
         <option value="$PROJECT_DIR$/webtrip/backend/controllers/CountryController.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/site/login.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/site/get-started.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/views/site/country.php" />
@@ -294,15 +287,29 @@
         <option value="$PROJECT_DIR$/webtrip/common/models/Country.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/Continent.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/ReviewSearch.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php" />
-        <option value="$PROJECT_DIR$/webtrip/frontend/views/user/profile.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/SignupForm.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/Trip.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/TripSearch.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/User.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/UserSearch.php" />
         <option value="$PROJECT_DIR$/webtrip/common/models/Wishlist.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/top.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/gallery.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/about.php" />
         <option value="$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/user/profile.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/user/index.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/user/edit.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/user/change-password.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/index.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php" />
+        <option value="$PROJECT_DIR$/webtrip/frontend/views/trip/edit.php" />
       </list>
     </option>
   </component>
@@ -668,12 +675,12 @@
       <workItem from="1548183863983" duration="2004000" />
       <workItem from="1548240098978" duration="1693000" />
       <workItem from="1548349395047" duration="3267000" />
-      <workItem from="1548412691822" duration="14130000" />
+      <workItem from="1548412691822" duration="17302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157883000" />
+    <option name="totallyTimeSpent" value="161055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -687,7 +694,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49570355" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25349087" sideWeight="0.50396377" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -730,100 +737,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webtrip/common/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/backend/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/top.php" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/country.php" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index 2.php" />
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/top.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="62" column="31" lean-forward="false" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.php" />
-    <entry file="file://$PROJECT_DIR$/webtrip/backend/tests/unit.suite.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/common/codeception.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/tests/functional.suite.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/backend/controllers/ReviewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#39#47#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/backend/views/user/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -864,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/backend/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -880,26 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="80" />
           <folding />
         </state>
       </provider>
@@ -941,16 +830,6 @@
         <state relative-caret-position="693">
           <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="e#38#66#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -998,50 +877,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/country.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/common/models/Country.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-182">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="93" column="39" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1057,7 +896,7 @@
     <entry file="file://$PROJECT_DIR$/webtrip/common/models/SignupForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1075,7 +914,7 @@
         <state relative-caret-position="105">
           <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
           <folding>
-            <element signature="e#33#52#0#PHP" expanded="true" />
+            <element signature="e#33#52#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1083,9 +922,9 @@
     <entry file="file://$PROJECT_DIR$/webtrip/common/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="89" column="14" lean-forward="true" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="46" />
+          <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="46" />
           <folding>
-            <element signature="e#32#40#0#PHP" expanded="true" />
+            <element signature="e#32#40#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1095,7 +934,7 @@
         <state relative-caret-position="105">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding>
-            <element signature="e#33#52#0#PHP" expanded="true" />
+            <element signature="e#33#52#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1108,15 +947,231 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/web/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/vendor/conquer/jvectormap/assets/jquery-jvectormap-2.0.3.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="257" column="9" lean-forward="true" selection-start-line="257" selection-start-column="9" selection-end-line="257" selection-end-column="14" />
+        <state relative-caret-position="693">
+          <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
           <folding>
-            <marker date="1548427191761" expanded="true" signature="6649:6815" ph="SELECT count... trip" />
-            <marker date="1548427191761" expanded="true" signature="6649:6825" ph="SELECT count... trip" />
-            <marker date="1548427191761" expanded="true" signature="6875:7041" ph="SELECT count... review" />
-            <marker date="1548427191761" expanded="true" signature="6875:7077" ph="SELECT count... review" />
+            <marker date="1548428752571" expanded="true" signature="6758:6924" ph="SELECT count... trip" />
+            <marker date="1548428752571" expanded="true" signature="6758:6934" ph="SELECT count... trip" />
+            <marker date="1548428752571" expanded="true" signature="6986:7152" ph="SELECT count... review" />
+            <marker date="1548428752571" expanded="true" signature="6986:7188" ph="SELECT count... review" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/WishlistController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-331">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/TripController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="142" column="79" lean-forward="true" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#63#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/change-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#27#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/view-information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#33#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/site/top.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+          <folding>
+            <element signature="e#7#29#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#28#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/user/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/wishlist/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtrip/frontend/views/trip/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#39#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
