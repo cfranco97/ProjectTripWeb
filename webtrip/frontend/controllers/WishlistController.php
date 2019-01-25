@@ -84,14 +84,14 @@ class WishlistController extends Controller
             $wish->save();
             Yii::$app->session->setFlash('success', $country->name." added to wishlist");
 
-            return $this->render('country', ['country' => $country,
+            return $this->render('site/country', ['country' => $country,
                 'reviews' => $reviews]);
         }
         else{
             Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()->delete();
             Yii::$app->session->setFlash('success', "Removed ".$country->name." from wishlist");
 
-            return $this->render('country', ['country' => $country,
+            return $this->render('site/country', ['country' => $country,
                 'reviews' => $reviews]);
 
 

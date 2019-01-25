@@ -21,7 +21,7 @@ use common\models\Country;
 
             <p><b>Username: </b><?= $model->username?></p>
             <p><b>Email: </b><?= $model->email?></p>
-            <p><b>Country: </b> <?= $model->country->name?></p>
+            <p><b>Country: </b> <?php if($model->country !=null){echo  $model->country->name;}else { echo "oof";}?></p>
             <br>
             <?= Html::a('Edit Profile', ['edit'], ['class' => 'btn btn-primary']) ?>
 

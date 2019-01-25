@@ -22,28 +22,22 @@ use frontend\models\ResetPasswordForm;
 use common\models\SignupForm;
 use frontend\models\ContactForm;
 
-/**
- * Site controller
- */
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['logout','get-started','index','signup','country-information'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['signup','index'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout','get-started','country-information','index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -74,55 +68,65 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
+    /*
+     * Displays the form to choose a country
      */
-    public function actionIndex()
-    {
 
+    public function actionIndex(){
+
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['welcome']);
+        }
         $model = new CountryForm();
         if ($model->load(Yii::$app->request->post())) {
             $country=Country::find()->where(['id_country'=>$model->country])->one();
             $reviews=Review::find()->where(['id_country'=>$country->id_country])->orderBy(new Expression('rand()'))->limit(3)->all();
             return $this->render('country', [ 'country'=>$country,
-                                                   'reviews'=>$reviews]);
+                'reviews'=>$reviews]);
         } else {
             return $this->render('index', ['model' => $model]);
         }
-
-
-
     }
 
+    /*
+     * Renders the welcome page
+     * Has login and signup
+     */
+    public function actionWelcome()
+    {
+        $modelLogin = new LoginForm();
+        $modelRegister = new SignupForm();
+
+
+        if ($modelRegister->load(Yii::$app->request->post())) {
+            if ($user = $modelRegister->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->redirect(['index']);
+                }
+            }
+        }
+        if ($modelLogin->load(Yii::$app->request->post()) && $modelLogin->login()) {
+            return $this->redirect(['index']);
+        } else {
+
+
+            return $this->render('welcome', [
+                'modelRegister' => $modelRegister,
+                'modelLogin' => $modelLogin,
+            ]);
+
+        }
+
+    }
+    /*
+     * Renders the view with information about a country
+     */
     public function actionCountryInformation(){
         $id_country = Yii::$app->request->get('id_country');
         $country = Country::find()->where(['id_country' => $id_country])->one();
         $reviews = Review::find()->where(['id_country' => $id_country])->orderBy(new Expression('rand()'))->limit(3)->all();
         return $this->render('country', [ 'country'=>$country,
             'reviews'=>$reviews]);
-    }
-
-    public function actionAdd(){
-
-
-    $id_country = Yii::$app->request->get('id_country');
-    $wish = new Wishlist();
-    $wish->id_country = $id_country;
-    $wish->id_user = Yii::$app->user->id;
-        if(Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()==null) {
-            $wish->save();
-            Yii::$app->session->setFlash('success', "added to wishlist");
-
-            return $this->redirect(['country-information','id_country'=>$id_country]);
-        }
-    else{
-        Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()->delete();
-        Yii::$app->session->setFlash('success', "Removed  from wishlist");
-
-        return $this->redirect(['country-information','id_country'=>$id_country]);
-        }
     }
 
     /**
@@ -138,7 +142,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['index']);
         } else {
             $model->password = '';
 
@@ -162,7 +166,7 @@ class SiteController extends Controller
 
     /**
      *
-     * return all country from a continent
+     * return all countrys from a continent
      */
 
     public function actionSubcat() {
@@ -180,39 +184,6 @@ class SiteController extends Controller
             }
             echo Json::encode(['output' => '', 'selected' => '']);
     }
-
-    /**
-     * Displays contact page.
-     *
-     * @return mixed
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-
-//    protected function findModel($id)
-//    {
-//        if (($model = Country::findOne($id)) !== null) {
-//            return $model;
-//        }
-//
-//        throw new NotFoundHttpException('The requested page does not exist.');
-//    }
 
     /**
      * Displays pages.
@@ -235,44 +206,10 @@ class SiteController extends Controller
         return $this->render('gallery');
     }
 
-
-//    public function actionTrip()
-//    {
-//        $id_country = Yii::$app->request->get('id_country');
-//        $country = Country::find()->where(['id_country' => $id_country])->one();
-//        $model = new TripForm();
-//
-//        if ($model->load(Yii::$app->request->post())&& $model->validate()) {
-//            $model->id_country=$id_country;
-//            $model->id_user=Yii::$app->user->id;
-//            if ($model->Trip()) {
-//
-//
-//
-//                $trips = $this->findTrips();
-//
-//
-//                return $this->render('trips', [
-//                    'trips'=> $trips
-//
-//                    ]);
-//
-//
-//            }
-//            return $this->refresh();
-//        }else{
-//        return $this->render('newtrip',[
-//        'model' => $model,
-//        'country' => $country]);
-//        }
-//    }
-//
-//    public function actionMytrips()
-//    {
-//        $trips = $this->findTrips();
-//        return $this->render('trips', [
-//            'trips'=> $trips]);
-//    }
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
 
     public function actionEditProfile()
     {
@@ -290,7 +227,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+                    return $this->redirect(['index']);
                 }
             }
         }
@@ -300,62 +237,17 @@ class SiteController extends Controller
         ]);
     }
 
-
-
-    /**
-     * Requests password reset.
-     *
-     * @return mixed
+    /*
+     * Finds the current logged user
      */
-    public function actionRequestPasswordReset()
-    {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
-            }
-        }
-
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Resets password.
-     *
-     * @param string $token
-     * @return mixed
-     * @throws BadRequestHttpException
-     */
-    public function actionResetPassword($token)
-    {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidParamException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
-    }
-
     public function findUser(){
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
         return $user;
     }
 
+    /*
+     * Finds all trips from the current user
+     */
     public function findTrips(){
         $alltrips=Trip::find()->where(['id_user' =>  Yii::$app->user->id])->all();
         return $alltrips;
@@ -363,22 +255,18 @@ class SiteController extends Controller
     }
 
     public function actionTop(){
-
-
         $query=Country::findBySql("SELECT country.flag, country.name,COUNT(trip.id_trip) AS numero FROM trip
 LEFT JOIN country ON trip.id_country = country.id_country
-GROUP BY name ORDER BY numero DESC    ")->all();
+GROUP BY name ORDER BY numero DESC  LIMIT 10  ")->all();
 
         $query2=Country::findBySql("SELECT country.flag, country.name,ROUND(AVG(review.rating), 1) AS averagerating FROM review
 LEFT JOIN country ON review.id_country = country.id_country
 GROUP BY name
-ORDER BY averagerating desc")->all();
+ORDER BY averagerating DESC LIMIT 10")->all();
 
         return $this->render('top', [
             'query' => $query,
             'query2' =>$query2,
         ]);
-
-
     }
 }

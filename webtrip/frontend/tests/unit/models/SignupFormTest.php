@@ -14,37 +14,34 @@ class SignupFormTest extends \Codeception\Test\Unit
 
     public function _before()
     {
-        $this->tester->haveFixtures([
-            'user' => [
-                'class' => UserFixture::className(),
-                'dataFile' => codecept_data_dir() . 'user.php'
-            ]
-        ]);
+
     }
 
-    public function testCorrectSignup()
+    public function CorrectSignup()
     {
         $model = new SignupForm([
-            'username' => 'some_username',
-            'email' => 'some_email@example.com',
-            'password' => 'some_password',
+            'username' => 'test_username',
+            'email' => 'test_email@example.com',
+            'password' => 'test_password',
+            'id_country' => '1',
+
         ]);
 
         $user = $model->signup();
 
         expect($user)->isInstanceOf('common\models\User');
 
-        expect($user->username)->equals('some_username');
-        expect($user->email)->equals('some_email@example.com');
-        expect($user->validatePassword('some_password'))->true();
+        expect($user->username)->equals('test_username');
+        expect($user->email)->equals('test_email@example.com');
+        expect($user->validatePassword('test_password'))->true();
     }
 
-    public function testNotCorrectSignup()
+    public function SignupError()
     {
         $model = new SignupForm([
-            'username' => 'troy.becker',
-            'email' => 'nicolas.dianna@hotmail.com',
-            'password' => 'some_password',
+            'username' => 'carlos',
+            'email' => 'carlos@mail.com',
+            'password' => 'test_password',
         ]);
 
         expect_not($model->signup());

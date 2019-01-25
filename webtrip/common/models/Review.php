@@ -2,8 +2,6 @@
 
 namespace common\models;
 
-use common\models\Trip;
-use Yii;
 
 /**
  * This is the model class for table "review".

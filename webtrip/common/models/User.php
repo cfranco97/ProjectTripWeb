@@ -2,11 +2,9 @@
 namespace common\models;
 
 use Yii;
-use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\web\UploadedFile;
 
 /**
  * User model
@@ -30,7 +28,7 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_BLOCK = 5;
     const STATUS_ACTIVE = 10;
 
-    public $image;
+   // public $image; (for future use)
 //    Yii::$app->basePath . '/uploads/';
 //    Yii::$app->urlManager->baseUrl . '/uploads/';
 
@@ -66,10 +64,10 @@ class User extends ActiveRecord implements IdentityInterface
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-            [['filename'], 'string', 'max' => 255],
-            [['image'], 'safe'],
-            [['image'], 'file', 'extensions'=>'jpg, gif, png'],
-            [['image'], 'file', 'maxSize'=>'100000000'],
+//            [['filename'], 'string', 'max' => 255],
+//            [['image'], 'safe'],
+//            [['image'], 'file', 'extensions'=>'jpg, gif, png'],
+//            [['image'], 'file', 'maxSize'=>'100000000'],
 
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -89,7 +87,7 @@ class User extends ActiveRecord implements IdentityInterface
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'id_country' => 'Country',
-            'imageFile' => 'Profile picture',
+//            'imageFile' => 'Profile picture',
         ];
 
     }

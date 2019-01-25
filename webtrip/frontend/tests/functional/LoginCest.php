@@ -3,7 +3,6 @@
 namespace frontend\tests\functional;
 
 use frontend\tests\FunctionalTester;
-use common\fixtures\UserFixture;
 
 class LoginCest
 {
@@ -16,12 +15,6 @@ class LoginCest
       */
     public function _fixtures()
     {
-        return [
-            'user' => [
-                'class' => UserFixture::className(),
-                'dataFile' => codecept_data_dir() . 'login_data.php'
-            ]
-        ];
     }
 
     public function _before(FunctionalTester $I)
@@ -52,8 +45,8 @@ class LoginCest
     
     public function checkValidLogin(FunctionalTester $I)
     {
-        $I->submitForm('#login-form', $this->formParams('erau', 'password_0'));
-        $I->see('Logout (erau)', 'form button[type=submit]');
+        $I->submitForm('#login-form', $this->formParams('carlos', '123456789'));
+        $I->seeLink('Wishlist');
         $I->dontSeeLink('Login');
         $I->dontSeeLink('Signup');
     }
