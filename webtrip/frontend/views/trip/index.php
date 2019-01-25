@@ -9,6 +9,7 @@ use yii\helpers\Html;
 
     </div>
 <div class="container">
+    <?php if($todoTrips !=null || $doneTrips !=null){ ?>
 
     <div class="col-lg-6">
         <h4>To do Trips</h4>
@@ -44,6 +45,7 @@ use yii\helpers\Html;
                 </div>
             <?php } ?>
         </div>
+        <?php }else{ echo "No trips found! Check some ".Html::a('countries', ['site/index'])." you might like to visit";}?>
     </div>
 
 </div>
