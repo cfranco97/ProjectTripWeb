@@ -21,7 +21,6 @@ $this->title = 'TripHelper';
 ]); ?>
 </div>
 
-
 <div class="col-lg-3">
 <h1>Choose a country</h1>
     <div>

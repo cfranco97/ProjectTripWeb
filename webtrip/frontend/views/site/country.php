@@ -41,7 +41,7 @@ $this->title = $country->name;
                     <th>No. of visits <?= $country->visits?></th>
                 </tr>
                 <tr>
-                    <th>Avg. rating: <?= $country->average?></th>
+                    <th>Avg. rating: <?= round($country->average,2)?></th>
                 </tr>
             </table>
         </div>
