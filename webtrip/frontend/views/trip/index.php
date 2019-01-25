@@ -1,12 +1,6 @@
 <?php
 
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
-
-use kartik\date\DatePicker;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
 
 ?>
 <h1><b>Your Trips</b></h1>

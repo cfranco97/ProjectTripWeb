@@ -1,16 +1,10 @@
 <?php
 
-use common\models\Continent;
 use common\models\Country;
-use frontend\assets\AppAsset;
-use kartik\depdrop\DepDrop;
 use kartik\select2\Select2;
 use yii\bootstrap\Html;
 use yii\bootstrap\Modal;
 use yii\helpers\ArrayHelper;
-
-use yii\helpers\Url;
-use conquer\jvectormap\JVectorMapWidget;
 use yii\widgets\ActiveForm;
 
 $this->title = 'TripHelper';

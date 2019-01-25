@@ -5,11 +5,12 @@ namespace frontend\controllers;
 use common\models\User;
 use frontend\models\ChangePassword;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 
 /**
- * UserController implements the CRUD actions for User model.
+ * UserController
  */
 class UserController extends Controller
 {
@@ -19,15 +20,32 @@ class UserController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['profile','edit','change-password'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['profile','edit','change-password'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'logout' => ['post'],
                 ],
             ],
         ];
     }
-
+    /*
+     * Renders the view with profile information
+     */
     public function actionProfile()
     {
         $model= $this->findUser();
@@ -37,11 +55,16 @@ class UserController extends Controller
 
     }
 
+    /*
+     * updates the logged user
+     */
+
     public function actionEdit()
     {
         $model= $this->findUser();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', "Information updated");
             return $this->redirect(['profile']);
         }
         else{
@@ -49,6 +72,10 @@ class UserController extends Controller
             'model' =>$model,
         ]);}
     }
+
+    /*
+     * changes the password of the logged user
+     */
     public function actionChangePassword()
     {
         $model = new ChangePassword();
@@ -60,7 +87,9 @@ class UserController extends Controller
         ]);
     }
 
-    //
+    /*
+     * finds the current logged user
+     */
     public function findUser(){
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
         return $user;

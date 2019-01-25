@@ -1,6 +1,5 @@
 <?php
 
-use common\models\Country;
 use yii\helpers\Html;
 
 ?>

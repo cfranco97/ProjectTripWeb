@@ -1,19 +1,9 @@
 <?php
 
-use app\models\Continent;
-use app\models\Country;
+use dosamigos\ckeditor\CKEditor;
 use kartik\date\DatePicker;
-use kartik\depdrop\DepDrop;
-use kartik\select2\Select2;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
-/* @var $this yii\web\View */
-/* @var $model app\models\User */
-/* @var $form yii\widgets\ActiveForm */
-
 ?>
 
 <div class="site-trip">
@@ -41,7 +31,13 @@ use yii\widgets\ActiveForm;
         ]
     ])
     ?>
-    <?= $form->field($trip, 'notes')->textArea() ?>
+    <?= $form->field($trip, 'notes')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6,'removeButtons'=> 'ImageButton'],
+        'preset' => 'basic',
+
+        'clientOptions' => [
+            'buttonsHide' => ['image','file']],
+    ]) ?>
     <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'trip-button']) ?>
     <?php ActiveForm::end(); ?>
 

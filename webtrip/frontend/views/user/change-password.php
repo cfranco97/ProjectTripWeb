@@ -2,10 +2,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\ChangePassword */
-/* @var $form ActiveForm */
-
 $this->title = 'Change Password';
 ?>
 <div class="user-changePassword">
