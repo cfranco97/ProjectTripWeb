@@ -1,8 +1,6 @@
 <?php
 
-use yii\grid\GridView;
 use yii\helpers\Html;
-use yii\widgets\DetailView;
 
 ?>
 
@@ -60,7 +58,7 @@ use yii\widgets\DetailView;
                 <?php $x++; ?>
                 <td><?php echo $x ?></td>
                 <td><?php echo Html::img("$row->flag", ['width' => '30px'])." ".$row->name ?></td>
-                <td><?php echo $row->averagerating ?></td>
+                <td><?php echo round($row->averagerating,2) ?></td>
 
                 <br>
 

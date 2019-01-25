@@ -8,6 +8,7 @@ use yii\helpers\Html;
 
 <h1><b>Wishlist</b></h1>
 <div class="col-lg-12">
+    <?php if($wishlist != null){ ?>
     <table class="table">
         <thead>
         <tr>
@@ -20,19 +21,21 @@ use yii\helpers\Html;
         <tbody>
 
         <?php
-        foreach ($wishlist as $wish) { ?>
-        <?php
-        foreach ($wish->countries as $country) { ?>
-        <tr>
-            <td><?=  Html::img("$country->flag", ['width' => '50px']) ." "?><?php echo $country->name ?></td>
-            <td><?php echo $country->visits;?></td>
+        foreach ($wishlist as $wish) {
+            foreach ($wish->countries as $country) {?>
+            <tr>
+                <td><?=  Html::img("$country->flag", ['width' => '50px']) ." "?><?php echo $country->name ?></td>
+                <td><?php echo $country->visits;?></td>
 
-            <td><?php echo round($country->average,2)?></td>
-            <td><?= Html::a('View information', ['site/country-information', 'id_country'=>$country->id_country], ['class' => 'btn btn-primary']) ?>
-                <?= Html::a('Delete', ['wishlist/delete','id_wishlist'=>$wish->id_wishlist], ['class' => 'btn btn-danger']) ?></td>
+                <td><?php echo round($country->average,2)?></td>
+                <td><?= Html::a('View information', ['site/country-information', 'id_country'=>$country->id_country], ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a('Delete', ['wishlist/delete','id_wishlist'=>$wish->id_wishlist], ['class' => 'btn btn-danger']) ?></td>
+                <?php } ?>
+            </tr>
             <?php } ?>
-        </tr>
-        <?php } ?>
         </tbody>
+        <?php } else{echo "Your wishlist is empty! Check some ".Html::a('countries', ['site/index'])." you might like to visit";} ?>
+
     </table>
+
 </div>
