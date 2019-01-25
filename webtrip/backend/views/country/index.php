@@ -48,18 +48,11 @@ $this->title = 'Countries';
             'capital',
             'population',
             'cod',
-            //'description:ntext',
-            //'id_continent',
-
             ['class' => 'yii\grid\ActionColumn',
-                'template' => '{Edit} {Delete}',
+                'template' => '{Edit}',
                 'buttons' => [
                     'Edit' =>function ($url, $country) {
-                        return Html::a('Edit', ['update', 'id' => $country->id_country], ['class' => 'btn btn-primary']);},
-                    'Delete' =>function ($url, $country) {
-                            return Html::a('Delete', ['block', 'id' => $country->id_country], ['class' => 'btn btn-danger']);
-
-                    }
+                        return Html::a('Edit', ['update', 'id' => $country->id_country], ['class' => 'btn btn-primary']);}
                 ],
             ],
         ],

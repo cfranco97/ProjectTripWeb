@@ -1,7 +1,7 @@
 <?php
 
 use yii\grid\GridView;
-use yii\helpers\html;
+use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 ?>
@@ -26,7 +26,7 @@ use yii\widgets\DetailView;
 
         <?php
         $x=0; ?><?php
-            foreach ($query as $row) { ?>
+            foreach ($topvisited as $row) { ?>
                 <tr>
                <?php $x++; ?>
                     <td><?php echo $x ?></td>
@@ -55,7 +55,7 @@ use yii\widgets\DetailView;
 
             <?php
             $x=0; ?><?php
-            foreach ($query2 as $row) { ?>
+            foreach ($toprated as $row) { ?>
             <tr>
                 <?php $x++; ?>
                 <td><?php echo $x ?></td>

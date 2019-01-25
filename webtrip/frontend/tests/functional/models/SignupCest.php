@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\tests\functional;
+namespace frontend\tests\functiona\models;
 
 use frontend\tests\FunctionalTester;
 
@@ -30,8 +30,8 @@ class SignupCest
         $I->submitForm(
             $this->formId, [
             'SignupForm[username]'  => 'tester',
-            'SignupForm[email]'     => 'ttttt',
-            'SignupForm[password]'  => 'tester_password',
+            'SignupForm[email]'     => 'test@gmail',
+            'SignupForm[password]'  => 'tested',
         ]
         );
         $I->dontSee('Username cannot be blank.', '.help-block');
@@ -45,6 +45,7 @@ class SignupCest
             'SignupForm[username]' => 'tester',
             'SignupForm[email]' => 'tester.email@example.com',
             'SignupForm[password]' => 'tester_password',
+            'SignupForm[id_country]'=> '1',
         ]);
 
         $I->seeRecord('common\models\User', [
@@ -52,6 +53,6 @@ class SignupCest
             'email' => 'tester.email@example.com',
         ]);
 
-        $I->see('Logout (tester)', 'form button[type=submit]');
+        $I->seeLink('Wishlist');
     }
 }

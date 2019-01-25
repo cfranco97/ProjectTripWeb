@@ -25,15 +25,14 @@ class TripController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','review-information','trip','my-trips','review','edit','delete'],
+                'only' => ['trip-information','trip','my-trips','edit','delete'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','review-information','my-trips','review','edit','trip','delete'],
+                        'actions' => ['trip-information','my-trips','edit','trip','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -64,7 +63,9 @@ class TripController extends Controller
             ],
         ];
     }
-
+    /*
+     * Creates a new trip
+     */
 
     public function actionTrip()
     {
@@ -73,6 +74,7 @@ class TripController extends Controller
         $country_exists = Country::find()->where(['id_country' => $id_country])->exists();
         $model = new TripForm();
 
+        //validating an existing id_country
         if ($country_exists == true) {
             if ($model->load(Yii::$app->request->post()) && $model->validate()) {
                 $model->id_country = $id_country;
@@ -95,6 +97,9 @@ class TripController extends Controller
             return $this->goHome();}
     }
 
+    /*
+     * Lists all trips done and to do
+     */
     public function actionMytrips()
     {
         $todoTrips = $this->findTripToDoByUser();
@@ -105,6 +110,10 @@ class TripController extends Controller
         ]);
     }
 
+    /*
+     * Return information about a trip and review
+     * Checks if there is a review and the user can create one or edit it
+     */
     public function actionTripInformation()
     {
         $id_trip = Yii::$app->request->get('id_trip');
@@ -152,6 +161,9 @@ class TripController extends Controller
                 return $this->redirect(['mytrips']);
         }
     }
+    /*
+     * Updates a trip
+     */
 
     public function actionEdit()
     {
@@ -168,27 +180,31 @@ class TripController extends Controller
             ]);}
     }
 
-
-
-
+    /*
+     * Deletes the selected trip
+     */
     public function actionDelete(){
         $id_trip = Yii::$app->request->get('id_trip');
         Trip::find()->where(['id_trip' =>$id_trip])->one()->delete();
         return $this->goHome();
     }
 
+    /*
+     * All trips done by user
+     */
     public function findTripsDoneByUser(){
         $today = date('Y-m-d');
         $doneTrips=Trip::find()->where(['<','enddate',$today])->andWhere(['id_user'=>Yii::$app->user->id])->orderBy('startdate DESC')->all();
         return $doneTrips;
 
     }
+    /*
+     * All trips to do by user
+     */
 
     public function findTripToDoByUser(){
         $today = date('Y-m-d');
         $toDoTrips=Trip::find()->where(['>=','enddate',$today])->andWhere(['id_user'=>Yii::$app->user->id])->orderBy('enddate ASC')->all();
         return $toDoTrips;
     }
-
-
 }

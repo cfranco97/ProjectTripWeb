@@ -2,8 +2,6 @@
 
 namespace common\models;
 
-use Yii;
-
 /**
  * This is the model class for table "country".
  *
@@ -93,12 +91,17 @@ class Country extends \yii\db\ActiveRecord
         return $all_countries;
     }
 
+    /*
+     * Returns the number of visits a country has
+     */
     public function getVisits(){
         return count($this->reviews);
 
     }
 
-
+    /*
+     * Return the average review of the country
+     */
     public function getAverage(){
         if(count($this->reviews)!=0){
                 $a = 0;

@@ -2,7 +2,6 @@
 namespace common\models;
 
 use yii\base\Model;
-use common\models\User;
 
 /**
  * Signup form
@@ -35,7 +34,14 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
 
-            ['id_country', 'exist', 'targetClass' => '\common\models\Country', 'targetAttribute' => 'id_country', 'skipOnEmpty' => true],
+            ['id_country', 'exist', 'targetClass' => '\common\models\Country', 'targetAttribute' => 'id_country'],
+            ['id_country','required']
+        ];
+    }
+    public function attributeLabels()
+    {
+        return [
+            'id_country' => 'Country'
         ];
     }
 
@@ -44,18 +50,6 @@ class SignupForm extends Model
      *
      * @return User|null the saved model or null if saving fails
      */
-
-    public function createUser(){
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->id_country = $this->id_country;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-
-        return $user;
-    }
-
     public function signup()
     {
         if (!$this->validate()) {

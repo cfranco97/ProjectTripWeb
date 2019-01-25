@@ -38,15 +38,17 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Top', 'url' => ['/site/top']],
-        //['label' => 'FaQ', 'url' => ['/site/signup']],
+
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
     } else {
         $menuItems[] = ['label' => 'Trips', 'url' => ['/trip/mytrips']];
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Wishlist', 'url' => ['/wishlist/index']];
+        $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
         $menuItems[] = ['label' => 'Account', 'items' => [
             ['label' => 'View Profile', 'url' => ['/user/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],

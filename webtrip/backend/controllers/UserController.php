@@ -10,14 +10,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * UserController implements the CRUD actions for User model.
- */
+
 class UserController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -46,9 +41,6 @@ class UserController extends Controller
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function actions()
     {
         return [
@@ -59,8 +51,7 @@ class UserController extends Controller
     }
 
     /**
-     * Lists all User models.
-     * @return mixed
+     * Lists all Users
      */
     public function actionIndex()
     {
@@ -75,11 +66,7 @@ class UserController extends Controller
     }
 
     /**
-     * Updates an existing User model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * Updates the selected User
      */
     public function actionUpdate($id)
     {
@@ -94,7 +81,9 @@ class UserController extends Controller
             'model' => $model,
         ]);
     }
-
+    /*
+     * Blocks/unblocks the selected User
+     */
     public function actionBlock($id)
     {
         $model = $this->findModel($id);
@@ -112,12 +101,8 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Finds the User model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return User the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+    /*
+     * Finds the selected User
      */
     protected function findModel($id)
     {
