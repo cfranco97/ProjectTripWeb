@@ -75,4 +75,10 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+    public function getUsername()
+    {
+
+       $user = User::findByUsername($this->username);
+        return $user;
+    }
 }

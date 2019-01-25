@@ -1,7 +1,6 @@
 <?php
 namespace frontend\tests\unit\models;
 
-use common\fixtures\UserFixture;
 use common\models\SignupForm;
 
 class SignupFormTest extends \Codeception\Test\Unit
@@ -17,7 +16,7 @@ class SignupFormTest extends \Codeception\Test\Unit
 
     }
 
-    public function CorrectSignup()
+    public function testCorrectSignup()
     {
         $model = new SignupForm([
             'username' => 'test_username',
@@ -36,7 +35,7 @@ class SignupFormTest extends \Codeception\Test\Unit
         expect($user->validatePassword('test_password'))->true();
     }
 
-    public function SignupError()
+    public function testSignupError()
     {
         $model = new SignupForm([
             'username' => 'carlos',
