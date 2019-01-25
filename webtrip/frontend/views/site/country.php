@@ -17,9 +17,9 @@ $this->title = $country->name;
 
             <?= Html::a('Plan a trip to this country', ['trip/trip', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
             <?php if(Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$country->id_country])->one()==null) {?>
-            <?= Html::a('Add to wishlist', ['wishlist/add', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
+            <?= Html::a('Add to wishlist', ['site/add', 'id_country' => $country->id_country],['class' => 'addwish btn btn-primary']) ?>
             <?php } else {?>
-            <?= Html::a('Remove from wishlist', ['site/add', 'id_country' => $country->id_country],['class' => 'btn btn-danger  ']) ?>
+            <?= Html::a('Remove from wishlist', ['site/add', 'id_country' => $country->id_country],['class' => 'removewish btn btn-danger  ']) ?>
             <?php } ?>
         </div>
         <div class="col-lg-4">
