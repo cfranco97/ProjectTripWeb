@@ -14,22 +14,22 @@ class UserController extends ActiveController
     public $modelClass = 'common\models\User';
 
 
-    public function behaviors()
-    {
-        $behaviors = parent::behaviors();
-        $behaviors['authenticator'] = [
-            'class'=>HttpBasicAuth::className(),
-            'auth'=>function($username,$password){
-                Yii::$app->response->format = Response::FORMAT_JSON;//retorna em formato JSON
-                $user = User::findByUsername($username);
-                if($user && $user->validatePassword($password) ){
-                    return $user;
-
-                }
-            }
-        ];
-        return $behaviors;
-    }
+//    public function behaviors()
+//    {
+//        $behaviors = parent::behaviors();
+//        $behaviors['authenticator'] = [
+//            'class'=>HttpBasicAuth::className(),
+//            'auth'=>function($username,$password){
+//                Yii::$app->response->format = Response::FORMAT_JSON;//retorna em formato JSON
+//                $user = User::findByUsername($username);
+//                if($user && $user->validatePassword($password) ){
+//                    return $user;
+//
+//                }
+//            }
+//        ];
+//        return $behaviors;
+//    }
 
 
 
@@ -39,8 +39,8 @@ class UserController extends ActiveController
         if($user->validatePassword(Yii::$app->request->post('password'))){
             return $user;
         }
-        return "wrong data inserted!";
-        //return [false];
+        //return "wrong data inserted!";
+        return [false];
     }
 
     public function actionSignup(){

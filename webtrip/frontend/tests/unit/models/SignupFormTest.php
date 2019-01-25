@@ -14,12 +14,7 @@ class SignupFormTest extends \Codeception\Test\Unit
 
     public function _before()
     {
-        $this->tester->haveFixtures([
-            'user' => [
-                'class' => UserFixture::className(),
-                'dataFile' => codecept_data_dir() . 'user.php'
-            ]
-        ]);
+
     }
 
     public function testCorrectSignup()
@@ -28,6 +23,8 @@ class SignupFormTest extends \Codeception\Test\Unit
             'username' => 'some_username',
             'email' => 'some_email@example.com',
             'password' => 'some_password',
+            'id_country' => '1',
+
         ]);
 
         $user = $model->signup();
@@ -42,8 +39,8 @@ class SignupFormTest extends \Codeception\Test\Unit
     public function testNotCorrectSignup()
     {
         $model = new SignupForm([
-            'username' => 'troy.becker',
-            'email' => 'nicolas.dianna@hotmail.com',
+            'username' => 'carlos',
+            'email' => 'carlos@mail.com',
             'password' => 'some_password',
         ]);
 
