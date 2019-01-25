@@ -9,7 +9,8 @@ class AboutCest
     {
         $I->amOnRoute('site/about');
         $I->see('About', 'h1');
-        $I->see('This website is intended to people who wants to plan trips. They can check a variety of countries, check the most visited and the most rated.');
+        $I->see('Those stats can be checked by any user to see what are the most visited countries and those with the most rating.
+        This website is completely free');
 
     }
 }
