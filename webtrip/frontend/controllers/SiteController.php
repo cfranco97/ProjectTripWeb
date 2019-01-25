@@ -152,6 +152,28 @@ class SiteController extends Controller
         }
     }
 
+    public function actionAdd(){
+
+        $id_country = Yii::$app->request->get('id_country');
+        $wish = new Wishlist();
+        $wish->id_country = $id_country;
+        $wish->id_user = Yii::$app->user->id;
+        if(Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()==null) {
+            $wish->save();
+            Yii::$app->session->setFlash('success', "Added to wishlist");
+
+            return $this->redirect(['country-information', 'id_country' => $id_country]);
+        }
+        else{
+            Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$id_country])->one()->delete();
+            Yii::$app->session->setFlash('success', "Removed from wishlist");
+
+            return $this->redirect(['country-information', 'id_country' => $id_country]);
+
+
+        }
+    }
+
     /**
      * Logs out the current user.
      *
