@@ -27,7 +27,7 @@ use yii\helpers\Html;
             <td><?=  Html::img("$country->flag", ['width' => '50px']) ." "?><?php echo $country->name ?></td>
             <td><?php echo $country->visits;?></td>
 
-            <td><?php echo $country->average?></td>
+            <td><?php echo round($country->average,2)?></td>
             <td><?= Html::a('View information', ['site/country-information', 'id_country'=>$country->id_country], ['class' => 'btn btn-primary']) ?>
                 <?= Html::a('Delete', ['wishlist/delete','id_wishlist'=>$wish->id_wishlist], ['class' => 'btn btn-danger']) ?></td>
             <?php } ?>

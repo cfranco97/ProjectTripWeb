@@ -17,9 +17,9 @@ $this->title = $country->name;
 
             <?= Html::a('Plan a trip to this country', ['trip/trip', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
             <?php if(Wishlist::find()->where(['id_user' => Yii::$app->user->id])->andWhere(['id_country'=>$country->id_country])->one()==null) {?>
-            <?= Html::a('Add to wishlist', ['wishlist/add', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
+            <?= Html::a('Add to wishlist', ['wishlist\add', 'id_country' => $country->id_country],['class' => 'btn btn-primary']) ?>
             <?php } else {?>
-            <?= Html::a('Remove from wishlist', ['site/add', 'id_country' => $country->id_country],['class' => 'btn btn-danger  ']) ?>
+            <?= Html::a('Remove from wishlist', ['wishlist\add', 'id_country' => $country->id_country],['class' => 'btn btn-danger  ']) ?>
             <?php } ?>
         </div>
         <div class="col-lg-4">
@@ -41,7 +41,7 @@ $this->title = $country->name;
                     <th>No. of visits <?= $country->visits?></th>
                 </tr>
                 <tr>
-                    <th>Avg. rating: <?= $country->average?></th>
+                    <th>Avg. rating: <?= round($country->average,2)?></th>
                 </tr>
             </table>
         </div>
