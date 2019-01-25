@@ -17,12 +17,12 @@ class SignupFormTest extends \Codeception\Test\Unit
 
     }
 
-    public function testCorrectSignup()
+    public function CorrectSignup()
     {
         $model = new SignupForm([
-            'username' => 'some_username',
-            'email' => 'some_email@example.com',
-            'password' => 'some_password',
+            'username' => 'test_username',
+            'email' => 'test_email@example.com',
+            'password' => 'test_password',
             'id_country' => '1',
 
         ]);
@@ -31,17 +31,17 @@ class SignupFormTest extends \Codeception\Test\Unit
 
         expect($user)->isInstanceOf('common\models\User');
 
-        expect($user->username)->equals('some_username');
-        expect($user->email)->equals('some_email@example.com');
-        expect($user->validatePassword('some_password'))->true();
+        expect($user->username)->equals('test_username');
+        expect($user->email)->equals('test_email@example.com');
+        expect($user->validatePassword('test_password'))->true();
     }
 
-    public function testNotCorrectSignup()
+    public function SignupError()
     {
         $model = new SignupForm([
             'username' => 'carlos',
             'email' => 'carlos@mail.com',
-            'password' => 'some_password',
+            'password' => 'test_password',
         ]);
 
         expect_not($model->signup());

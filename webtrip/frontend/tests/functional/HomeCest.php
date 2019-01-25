@@ -10,7 +10,7 @@ class HomeCest
     {
         $I->amOnPage(\Yii::$app->homeUrl);
         $I->see('My Application');
-        $I->seeLink('About');
+        $I->seeLink('Wishlist');
         $I->click('About');
         $I->see('This is the About page.');
     }
