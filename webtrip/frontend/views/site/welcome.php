@@ -11,8 +11,7 @@ $this->title = 'TripHelper';
 ?>
 <div class="container">
 <div class="jumbotron">
-    <h1>Welcome Bitches</h1>
-    <p>YO THERES SOMETHING TO WRITE HERE BUT I DUNNO WAT</p>
+    <h1>Welcome</h1>
 
 </div>
 
