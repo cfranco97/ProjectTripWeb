@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\tests\functional\models;
+namespace frontend\tests\functional;
 
 use frontend\tests\FunctionalTester;
 
@@ -10,8 +10,7 @@ class HomeCest
     {
         $I->amOnPage(\Yii::$app->homeUrl);
         $I->see('TripHelper');
-        $I->seeLink('Top');
-        $I->click('Top');
-        $I->see('Top Rated');
+        $I->click('About');
+        $I->see('');
     }
 }
