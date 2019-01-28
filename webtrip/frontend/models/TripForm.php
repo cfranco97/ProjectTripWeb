@@ -38,6 +38,15 @@ class TripForm extends Model
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'startdate' => 'Start date',
+            'enddate' => 'End date',
+            'notes' => 'Notes',
+        ];
+    }
+
     public function saveTrip()
     {
         if (!$this->validate()) {

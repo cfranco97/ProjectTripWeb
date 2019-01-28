@@ -30,9 +30,6 @@ use yii\helpers\Html;
                     <td><?php echo $x ?></td>
                     <td><?php echo Html::img("$row->flag", ['width' => '30px'])." ".$row->name ?></td>
                     <td><?php echo $row->numero ?></td>
-
-        <br>
-
             <?php } ?>
                 </tr>
             </tbody>
@@ -60,7 +57,6 @@ use yii\helpers\Html;
                 <td><?php echo Html::img("$row->flag", ['width' => '30px'])." ".$row->name ?></td>
                 <td><?php echo round($row->averagerating,2) ?></td>
 
-                <br>
 
                 <?php } ?>
             </tr>

@@ -95,7 +95,7 @@ class Country extends \yii\db\ActiveRecord
      * Returns the number of visits a country has
      */
     public function getVisits(){
-        return count($this->reviews);
+        return count($this->trips);
 
     }
 
