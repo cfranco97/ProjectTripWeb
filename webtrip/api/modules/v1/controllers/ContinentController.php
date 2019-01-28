@@ -6,7 +6,6 @@ use common\models\Country;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
-
 class ContinentController extends ActiveController
 {
     public $modelClass = 'common\models\Continent';

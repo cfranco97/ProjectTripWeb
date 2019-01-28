@@ -2,6 +2,7 @@
 
 namespace api\modules\v1\controllers;
 
+use common\models\Trip;
 use common\models\User;
 use Yii;
 use yii\filters\auth\HttpBasicAuth;
@@ -12,26 +13,6 @@ use yii\web\Response;
 class UserController extends ActiveController
 {
     public $modelClass = 'common\models\User';
-
-
-//    public function behaviors()
-//    {
-//        $behaviors = parent::behaviors();
-//        $behaviors['authenticator'] = [
-//            'class'=>HttpBasicAuth::className(),
-//            'auth'=>function($username,$password){
-//                Yii::$app->response->format = Response::FORMAT_JSON;//retorna em formato JSON
-//                $user = User::findByUsername($username);
-//                if($user && $user->validatePassword($password) ){
-//                    return $user;
-//
-//                }
-//            }
-//        ];
-//        return $behaviors;
-//    }
-
-
 
     public function actionLogin()
     {
@@ -59,8 +40,6 @@ class UserController extends ActiveController
             return $user;
         }
         return $user;
-
-
     }
 
     public function checkAccess($action, $model = null, $params = [])
@@ -72,4 +51,15 @@ class UserController extends ActiveController
         }
     }
 
+    public function actionVisits($id){
+
+        $data = Trip::find()->select('id_country')->where(['id_user'=>$id])->distinct()->count();
+        return $data;
+    }
+
+    public function actionPercentage($id){
+
+        $data = $this->actionVisits($id)/195;
+        return $data;
+    }
 }
