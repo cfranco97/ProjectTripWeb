@@ -10,11 +10,17 @@ $today = date("YYYY-mm-dd");
 <div class="container">
     <div class="col-lg-6" >
     <h1><?= Html::encode($trip->country->name);?>  <?=  Html::img($trip->country->flag, ['width' => '50px']); ?></h1>
-    <?php if($today < $trip->startdate){ ?><p>You go on <?= $trip->startdate?></p> <?php ;}else{?> <p>You went on <?= $trip->startdate?></p><?php ;}?>
-    <?php if($today > $trip->enddate){ ?><p>Coming back on <?= $trip->enddate?></p> <?php ;}else{?> <p>You came back on <?= $trip->enddate?></p><?php ;}?>
-    <?php if($today > $trip->enddate){ ?><h3>What you are going to do</h3> <?php ;}else{?> <h3>What you did </h3><?php ;}?>
+    <?php if($today < $trip->startdate){ ?><p>You go on <?= $trip->startdate?></p> <?php ;}
+            else{?> <p>You went on <?= $trip->startdate?></p><?php ;}?>
+    <?php if($today > $trip->enddate){ ?><p>Coming back on <?= $trip->enddate?></p> <?php ;}
+            else{?> <p>You came back on <?= $trip->enddate?></p><?php ;}?>
+    <?php if($today < $trip->enddate){ ?><h3>What you are going to do</h3> <?php ;}
+            else{?>
+                <br>
+                <h3>What you did </h3><?php ;}?>
+                <br>
     <p><?= $trip->notes?></p>
-
+                <br>
 
     <p>
         <?= Html::a('Edit this trip', ['edit','id_trip'=>$trip->id_trip], ['class' => 'btn btn-primary']) ?>

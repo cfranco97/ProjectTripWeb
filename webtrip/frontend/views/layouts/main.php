@@ -45,7 +45,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Gallery', 'url' => ['/site/gallery']];
         $menuItems[] = ['label' => 'Wishlist', 'url' => ['/wishlist/index']];
         $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
-        $menuItems[] = ['label' => 'Account', 'items' => [
+        $menuItems[] = ['label' => 'Account (' . Yii::$app->user->identity->username .")", 'items' => [
             ['label' => 'View Profile', 'url' => ['/user/profile']],
             ['label' => 'Logout', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
         ]];

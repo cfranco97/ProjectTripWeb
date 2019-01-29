@@ -27,8 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute'=>'id_user',
-                'value'=>'user.username',
-                'label'=>'User'
+//                'value'=>'user.username',
+//                'label'=>'User'
             ],
             [
                 'attribute'=>'startdate',
